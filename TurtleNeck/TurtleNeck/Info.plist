@@ -18,5 +18,14 @@
 		<string>kakaokompassauth</string>
 		<string>kakaolink</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>MainGreenColor</string>
+		<key>UIImageName</key>
+		<string>LaunchScreenLogo</string>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
