@@ -10,6 +10,8 @@
 		53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */; };
 		53AE2AD128B8B87A00BC66B2 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD028B8B87A00BC66B2 /* AccountView.swift */; };
 		53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */; };
+		3B7DA64E28B8AC2A0078004B /* OnboardingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7DA64D28B8AC290078004B /* OnboardingItem.swift */; };
+		3B91D15628B779A10023A587 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B91D15528B779A10023A587 /* LoginView.swift */; };
 		53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */; };
 		53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E628B4DB00002D8C77 /* ContentView.swift */; };
 		53C338E928B4DB02002D8C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338E828B4DB02002D8C77 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 		53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		53AE2AD028B8B87A00BC66B2 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
+		3B7DA64D28B8AC290078004B /* OnboardingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingItem.swift; sourceTree = "<group>"; };
+		3B91D15528B779A10023A587 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		53C338E128B4DB00002D8C77 /* TurtleNeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurtleNeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleNeckApp.swift; sourceTree = "<group>"; };
 		53C338E628B4DB00002D8C77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,9 +68,11 @@
 			children = (
 				53C338F228B4DCA5002D8C77 /* Info.plist */,
 				53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */,
+				3B7DA64D28B8AC290078004B /* OnboardingItem.swift */,
 				53C338E628B4DB00002D8C77 /* ContentView.swift */,
 				53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */,
 				53AE2AD028B8B87A00BC66B2 /* AccountView.swift */,
+				3B91D15528B779A10023A587 /* LoginView.swift */,
 				53C338E828B4DB02002D8C77 /* Assets.xcassets */,
 				53C338EA28B4DB02002D8C77 /* Preview Content */,
 				53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */,
@@ -161,6 +167,8 @@
 			files = (
 				53AE2AD128B8B87A00BC66B2 /* AccountView.swift in Sources */,
 				53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */,
+				3B91D15628B779A10023A587 /* LoginView.swift in Sources */,
+				3B7DA64E28B8AC2A0078004B /* OnboardingItem.swift in Sources */,
 				53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */,
 				53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */,
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
@@ -294,7 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/Preview Content\"";
-				DEVELOPMENT_TEAM = 79WK37N5M5;
+				DEVELOPMENT_TEAM = UKU2UB96JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TurtleNeck/Info.plist;
@@ -322,10 +330,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/Preview Content\"";
-				DEVELOPMENT_TEAM = 79WK37N5M5;
+				DEVELOPMENT_TEAM = UKU2UB96JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TurtleNeck/Info.plist;
@@ -342,6 +351,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunwoo.TurtleNeck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
