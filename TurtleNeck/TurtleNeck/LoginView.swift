@@ -15,6 +15,18 @@ struct LoginView: View {
     var body: some View {
         
         VStack() {
+            HStack {
+                Spacer()
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("둘러보기")
+                        .font(.body)
+                        .foregroundColor(.white)
+                        .underline()
+                }
+                .padding()
+            }
             TabView {
                 OnboardingItem()
                 OnboardingItem()
@@ -46,7 +58,6 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 270, height: 50)
                         .aspectRatio(contentMode: .fit)
-                        
                         .padding(.vertical, 0)
                 }
                 
@@ -62,7 +73,7 @@ struct LoginView: View {
                 }
             }
         }
-        .background(.blue)
+        .background(Color("MainGreenColor"))
     }
 }
 
