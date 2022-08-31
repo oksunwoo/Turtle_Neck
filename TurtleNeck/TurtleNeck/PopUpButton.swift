@@ -55,22 +55,6 @@ struct PopUpButton: View {
     }
 }
 
-
-//struct RealButton: View {
-//
-//
-//    var body: some View {
-//        Button {
-//
-//        } label: {
-//            Image("ButtonImage")
-//                .resizable()
-//                .frame(width: 20, height: 20)
-//        }
-//    }
-//}
-
-
 struct TrimmedCircle: View {
     let degrees: Double
     
