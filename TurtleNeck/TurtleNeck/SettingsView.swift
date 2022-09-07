@@ -1,5 +1,5 @@
 //
-//  AccountView.swift
+//  SettingsView.swift
 //  TurtleNeck
 //
 //  Created by Sunwoo on 2022/08/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AccountView: View {
+struct SettingsView: View {
     var body: some View {
         VStack{
             Spacer()
@@ -17,8 +17,8 @@ struct AccountView: View {
     }
 }
 
-struct AccountView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        SettingsView()
     }
 }

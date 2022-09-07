@@ -14,7 +14,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
-            AccountView()
+            SettingsView()
                 .tabItem {
                     Label("Account", systemImage: "person.crop.circle")
                 }
