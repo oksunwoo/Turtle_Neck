@@ -19,6 +19,7 @@
 		53C338F528B4E1F2002D8C77 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 53C338F428B4E1F2002D8C77 /* KakaoSDKAuth */; };
 		53C338F728B4E1F2002D8C77 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 53C338F628B4E1F2002D8C77 /* KakaoSDKUser */; };
 		53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A0C28C880A800F3128A /* SettingsRow.swift */; };
+		53D65A1528C8907600F3128A /* SettingsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A1428C8907600F3128A /* SettingsDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53C338F228B4DCA5002D8C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53D65A0C28C880A800F3128A /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		53D65A1428C8907600F3128A /* SettingsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				3B91D15528B779A10023A587 /* LoginView.swift */,
 				3B91D15528B779A10023A587 /* OnboardingView.swift */,
 				53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */,
+				53D65A1428C8907600F3128A /* SettingsDetail.swift */,
 				53D65A0C28C880A800F3128A /* SettingsRow.swift */,
 				53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */,
 				53C338E828B4DB02002D8C77 /* Assets.xcassets */,
@@ -179,6 +182,7 @@
 				53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */,
 				53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */,
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
+				53D65A1528C8907600F3128A /* SettingsDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
