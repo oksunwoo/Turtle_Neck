@@ -9,10 +9,15 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        VStack{
-            Spacer()
-            Text("AccountView")
-            Spacer()
+        NavigationView {
+            List {
+                NavigationLink {
+                    SettingsDetail()
+                } label: {
+                    SettingsRow(title: "DD")
+                }
+
+            }
         }
     }
 }
