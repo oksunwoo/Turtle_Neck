@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct OnboardingItem: View {
+    let image: String
+    let title: String
     
     var body: some View {
-        VStack {
-            Image(systemName: "swift")
+        VStack(alignment: .center) {
+            Image(systemName: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.white)
-            
-            Text("Onboarding Item")
+           
+            Text(title)
                 .foregroundColor(.white)
-                .font(.title2)
+                .font(.largeTitle)
         }
-        .frame(width: 300, height: 300)
-        .scaledToFit()
+        .frame(width: 250, height: 250)
     }
 }
 
 struct OnboardingItem_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingItem()
+        OnboardingItem(image: "swift", title: "title")
     }
 }
