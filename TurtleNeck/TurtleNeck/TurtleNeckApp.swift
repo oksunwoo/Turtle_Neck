@@ -22,7 +22,7 @@ struct TurtleNeckApp: App {
         WindowGroup {
             ContentView()
                 .fullScreenCover(isPresented: $isFirstLaunching) {
-                    LoginView(isFirstLaunching: $isFirstLaunching)
+                    OnboardingView(isFirstLaunching: $isFirstLaunching)
                 }
                 .onOpenURL(perform: { url in
                     if (AuthApi.isKakaoTalkLoginUrl(url)) {

@@ -8,16 +8,16 @@
 import SwiftUI
 import KakaoSDKUser
 
-struct LoginView: View {
+struct OnboardingView: View {
     @Binding var isFirstLaunching: Bool
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        
         VStack() {
             HStack {
                 Spacer()
                 Button {
+                    isFirstLaunching = false
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("둘러보기")
@@ -39,6 +39,7 @@ struct LoginView: View {
                 
                 Button {
                     if (UserApi.isKakaoTalkLoginAvailable()) {
+                        // 카카오톡 설치
                         UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                             if let error = error {
                                 print(error)
@@ -46,7 +47,23 @@ struct LoginView: View {
                             else {
                                 print("loginWithKakaoTalk() success.")
                                 
-                                _ = oauthToken
+                                // userdefault에 access토큰 저장
+//                                UserDefaults.standard.set(oauthToken, forKey: "accessToken")
+                                isFirstLaunching = false
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }
+                    } else {
+                        // 카카오톡 미설치
+                        // 웹으로 로그인
+                        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                            if let error = error {
+                                print(error)
+                            }
+                            else {
+                                print("loginWithKakaoAccount() success.")
+
+//                                UserDefaults.standard.set(oauthToken, forKey: "accessToken")
                                 isFirstLaunching = false
                                 presentationMode.wrappedValue.dismiss()
                             }
@@ -79,6 +96,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(isFirstLaunching: .constant(true))
+        OnboardingView(isFirstLaunching: .constant(true))
     }
 }
