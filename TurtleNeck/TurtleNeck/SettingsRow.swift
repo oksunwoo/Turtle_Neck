@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct SettingsRow: View {
-    let title: String
+    let setting: Setting
     
     var body: some View {
         HStack {
-            Text(title)
+            NavigationLink {
+                SettingsDetail()
+            } label: {
+                Text(setting.rawValue)
+            }
             Spacer()
         }
     }
@@ -20,7 +24,7 @@ struct SettingsRow: View {
 
 struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsRow(title: "미리보기")
+        SettingsRow(setting: .notice)
             .previewLayout(.fixed(width: 300, height: 70))
     }
 }

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SettingsDetail: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            Text("Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.")
+        }
+        .navigationTitle("Dd")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
