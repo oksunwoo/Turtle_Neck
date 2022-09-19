@@ -21,7 +21,7 @@ struct SettingsView: View {
                     presentMailCompose()
                 } label: {
                     Text("1:1 문의")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
             }
             .toolbar {
