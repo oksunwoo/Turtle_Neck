@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B57393E28D882C100529A3E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57393D28D882C100529A3E /* Setting.swift */; };
 		3B8BE7BB28D755B1005C93AA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BE7BA28D755B1005C93AA /* ProfileView.swift */; };
 		53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */; };
 		53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B57393D28D882C100529A3E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		3B8BE7BA28D755B1005C93AA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */,
 				3B8BE7BA28D755B1005C93AA /* ProfileView.swift */,
 				53D65A1428C8907600F3128A /* SettingsDetail.swift */,
+				3B57393D28D882C100529A3E /* Setting.swift */,
 				53D65A0C28C880A800F3128A /* SettingsRow.swift */,
 				53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */,
 				53C338E828B4DB02002D8C77 /* Assets.xcassets */,
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
 				53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */,
 				53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */,
 				53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */,

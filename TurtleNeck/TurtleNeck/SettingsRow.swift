@@ -13,9 +13,19 @@ struct SettingsRow: View {
     var body: some View {
         HStack {
             NavigationLink {
-                SettingsDetail()
+                switch setting {
+                case .notice:
+                    SettingsDetail()
+                case .version:
+                    SettingsDetail()
+                }
             } label: {
-                Text(setting.rawValue)
+                switch setting {
+                case .notice:
+                    Text(setting.koreanValue)
+                case .version:
+                    Text(setting.koreanValue)
+                }
             }
             Spacer()
         }
