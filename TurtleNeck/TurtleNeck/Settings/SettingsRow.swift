@@ -17,7 +17,7 @@ struct SettingsRow: View {
                 case .notice:
                     SettingsDetail()
                 case .version:
-                    SettingsDetail()
+                    VersionView()
                 }
             } label: {
                 switch setting {
