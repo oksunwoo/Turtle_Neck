@@ -15,7 +15,7 @@ struct SettingsRow: View {
             NavigationLink {
                 switch setting {
                 case .notice:
-                    SettingsDetail()
+                    NoticeView()
                 case .version:
                     VersionView()
                 }
