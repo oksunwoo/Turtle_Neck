@@ -7,9 +7,11 @@
 
 import SwiftUI
 import MessageUI
+import KakaoSDKAuth
+import KakaoSDKUser
 
 struct SettingsView: View {
-    @State private var showingProfile = false
+    @State private var showProfile = false
     private let mailComposeDelegate = MailDelegate()
     
     var body: some View {
@@ -28,16 +30,16 @@ struct SettingsView: View {
                 HStack {
                     Spacer()
                     Button {
-                        showingProfile.toggle()
+                        showProfile.toggle()
                     } label: {
                         Label("User Profile", systemImage: "person.crop.circle")
                     }
                 }
             }
             .navigationTitle("Settings")
-            .fullScreenCover(isPresented: $showingProfile, content: {
-                ProfileView(showingProfile: $showingProfile)
-            })
+            .fullScreenCover(isPresented: $showProfile) {
+                showLoginView()
+            }
         }
     }
 }
@@ -92,5 +94,29 @@ extension SettingsView {
         composeVC.setMessageBody("문의내용: ", isHTML: true)
         
         rootVC?.present(composeVC, animated: true)
+    }
+    
+    // ViewBuilder 왜 붙여야하는지 모르겠네
+    @ViewBuilder
+    func showLoginView() -> some View {
+            if AuthApi.hasToken() {
+                // 토큰있을때 access token 다시 저장해야하는지 의문
+                // 저장해야하는거같은데 어떻게 해야하는지 모르겠따
+                // 분명 refresh token으로 access token 얻는다고 했는데 왜 access token만 주는걸까...?
+                
+//                UserApi.shared.accessTokenInfo { accessToken, error in
+//                    if let error = error {
+//                        if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
+//                            //로그인 필요
+//                             EmptyProfileView()
+//                        }
+//                    }
+//                    // 토큰 유효성 체크 성공(필요시 토큰 갱신됨)
+//                    ProfileView(showingProfile: $showingProfile)
+//                }
+                ProfileView(showingProfile: $showProfile)
+            } else {
+                 EmptyProfileView(showEmptyProfile: $showProfile)
+            }
     }
 }
