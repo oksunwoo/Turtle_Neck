@@ -30,56 +30,13 @@ struct OnboardingView: View {
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
             VStack(spacing: 20) {
-                Button {
-                    if (UserApi.isKakaoTalkLoginAvailable()) {
-                        // 카카오톡 설치
-                        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                            if let error = error {
-                                print(error)
-                            }
-                            else {
-                                print("loginWithKakaoTalk() success.")
-                                
-                                // userdefault에 access토큰 저장
-//                                UserDefaults.standard.set(oauthToken, forKey: "accessToken")
-                                isFirstLaunching = false
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        }
-                    } else {
-                        // 카카오톡 미설치
-                        // 웹으로 로그인
-                        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                            if let error = error {
-                                print(error)
-                            }
-                            else {
-                                print("loginWithKakaoAccount() success.")
-
-//                                UserDefaults.standard.set(oauthToken, forKey: "accessToken")
-                                isFirstLaunching = false
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                        }
-                    }
-                    
-                } label: {
-                    Image("KakaoButton")
-                        .resizable()
-                        .frame(width: 270, height: 50)
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.vertical, 0)
-                }
-                
-                Button {
-                    isFirstLaunching = false
+                KakaoLoginButton {
+                    isFirstLaunching.toggle()
                     presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image("AppleButton")
-                        .resizable()
-                        .frame(width: 270, height: 50)
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.vertical, 0)
+                }
+                AppleLoginButton {
+                    isFirstLaunching.toggle()
+                    presentationMode.wrappedValue.dismiss()
                 }
             }
             HStack {

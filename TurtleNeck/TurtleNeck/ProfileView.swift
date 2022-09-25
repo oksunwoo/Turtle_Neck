@@ -13,18 +13,7 @@ struct ProfileView: View {
     var body: some View {
         ScrollView {
             VStack() {
-                HStack {
-                    Spacer()
-                    Button {
-                        showingProfile.toggle()
-                    } label: {
-                        Text("x")
-                            .bold()
-                            .font(.title2)
-                            .foregroundColor(.black)
-                            .padding(.trailing, 20)
-                    }
-                }
+              closeButton()
                 Text("Hello zoe")
                     .bold()
                     .font(.title)
@@ -37,5 +26,23 @@ struct ProfileView: View {
 struct ProfileHost_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView(showingProfile: .constant(true))
+    }
+}
+
+
+extension ProfileView {
+    func closeButton() -> some View {
+        HStack {
+            Spacer()
+            Button {
+                showingProfile.toggle()
+            } label: {
+                Text("x")
+                    .bold()
+                    .font(.title2)
+                    .foregroundColor(.black)
+                    .padding(.trailing, 20)
+            }
+        }
     }
 }
