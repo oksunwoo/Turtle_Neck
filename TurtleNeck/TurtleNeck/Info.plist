@@ -13,13 +13,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>KAKAO_APP_KEY</key>
-	<string>e9c2ba1f75d16da690aa76136ef43de4</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>kakaokompassauth</string>
-		<string>kakaolink</string>
-	</array>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

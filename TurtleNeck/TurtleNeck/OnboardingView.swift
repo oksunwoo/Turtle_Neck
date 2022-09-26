@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import KakaoSDKUser
 
 struct OnboardingView: View {
     @Binding var isFirstLaunching: Bool
@@ -15,12 +14,12 @@ struct OnboardingView: View {
     var body: some View {
         VStack() {
             HStack(alignment: .center) {
-            Image("LaunchScreenLogo")
-                .resizable()
-                .frame(width: 300, height: 50)
-                .padding(.top, 60)
+                Image("LaunchScreenLogo")
+                    .resizable()
+                    .frame(width: 300, height: 50)
+                    .padding(.top, 60)
             }
-           
+            
             TabView {
                 OnboardingItem(image: "tortoise.fill", title: "당신은 거북이")
                 OnboardingItem(image: "person.fill.questionmark", title: "인가요?")
@@ -29,16 +28,6 @@ struct OnboardingView: View {
             .tabViewStyle(.page)
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
-            VStack(spacing: 20) {
-                KakaoLoginButton {
-                    isFirstLaunching.toggle()
-                    presentationMode.wrappedValue.dismiss()
-                }
-                AppleLoginButton {
-                    isFirstLaunching.toggle()
-                    presentationMode.wrappedValue.dismiss()
-                }
-            }
             HStack {
                 Spacer()
                 Button {
