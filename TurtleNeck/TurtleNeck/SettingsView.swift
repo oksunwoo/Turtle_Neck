@@ -9,7 +9,6 @@ import SwiftUI
 import MessageUI
 
 struct SettingsView: View {
-    @State private var showingProfile = false
     private let mailComposeDelegate = MailDelegate()
     
     var body: some View {
@@ -24,20 +23,7 @@ struct SettingsView: View {
                         .foregroundColor(.black)
                 }
             }
-            .toolbar {
-                HStack {
-                    Spacer()
-                    Button {
-                        showingProfile.toggle()
-                    } label: {
-                        Label("User Profile", systemImage: "person.crop.circle")
-                    }
-                }
-            }
             .navigationTitle("Settings")
-            .fullScreenCover(isPresented: $showingProfile, content: {
-                ProfileView(showingProfile: $showingProfile)
-            })
         }
     }
 }
@@ -50,7 +36,7 @@ struct SettingsView_Previews: PreviewProvider {
 
 extension SettingsView {
     private class MailDelegate: NSObject, MFMailComposeViewControllerDelegate {
-
+        
         func mailComposeController(_ controller: MFMailComposeViewController,
                                    didFinishWith result: MFMailComposeResult,
                                    error: Error?) {
@@ -71,7 +57,7 @@ extension SettingsView {
             controller.dismiss(animated: true)
         }
     }
-
+    
     private func presentMailCompose() {
         let rootVC = UIApplication.shared.keyWindow?.rootViewController
         
@@ -83,10 +69,10 @@ extension SettingsView {
             rootVC?.present(alert, animated: true)
             return
         }
-
+        
         let composeVC = MFMailComposeViewController()
         composeVC.mailComposeDelegate = mailComposeDelegate
-
+        
         composeVC.setToRecipients(["kny0651@naver.com"])
         composeVC.setSubject("터틀넥 문의하기")
         composeVC.setMessageBody("문의내용: ", isHTML: true)
