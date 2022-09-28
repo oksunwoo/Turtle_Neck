@@ -8,16 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isShowing = false
+    
     var body: some View {
-        TabView() {
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }
-            SettingsView()
-                .tabItem {
-                    Label("Account", systemImage: "person.crop.circle")
-                }
+        ZStack(alignment: .bottom) {
+            TabView() {
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house.fill")
+                    }
+                SettingsView()
+                    .tabItem {
+                        Label("Account", systemImage: "person.crop.circle")
+                    }
+            }
+
+            PopUpButton(action: {
+                isShowing = true
+            })
+            .padding(.bottom, 30)
+        }
+        .fullScreenCover(isPresented: $isShowing) {
+            UploadPhotoView(isShowing: $isShowing)
         }
     }
 }
