@@ -9,6 +9,9 @@ import SwiftUI
 
 struct UploadPhotoView: View {
     @Binding var isShowing: Bool
+    @State private var selectedImage: UIImage?
+    @State private var profileImage: Image?
+    @State private var imagePickerPresented = false
     
     var body: some View {
         VStack() {
@@ -28,8 +31,13 @@ struct UploadPhotoView: View {
             noticeText()
             selectPhoto()
                 .onTapGesture {
-                    print("사진선택 기능 구현")
+                    imagePickerPresented.toggle()
                 }
+                .sheet(isPresented: $imagePickerPresented,
+                       onDismiss: loadImage,
+                       content: {
+                    ImagePicker(image: $selectedImage)
+                })
             Spacer()
             Button {
                 print("결과분석")
@@ -101,7 +109,6 @@ extension UploadPhotoView {
             }
             .foregroundColor(.gray)
             .font(.caption)
-            
             Spacer()
         }
     }
@@ -110,12 +117,25 @@ extension UploadPhotoView {
         GroupBox {
             HStack {
                 Spacer()
-                Image("camera")
-                    .resizable()
-                    .frame(width: 100, height: 100)
+                if profileImage == nil {
+                    Image("camera")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                } else {
+                    profileImage!
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                }
                 Spacer()
             }
-            Text("사진을 선택해 주세요")
+            Text(profileImage == nil ? "사진을 선택해 주세요" : "다시 선택하기")
         }
+    }
+    
+    func loadImage() {
+        guard let selectedImage = selectedImage else {
+            return
+        }
+        profileImage = Image(uiImage: selectedImage)
     }
 }
