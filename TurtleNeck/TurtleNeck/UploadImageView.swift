@@ -7,57 +7,58 @@
 
 import SwiftUI
 
-struct UploadPhotoView: View {
+struct UploadImageView: View {
     @Binding var isShowing: Bool
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
     @State private var imagePickerPresented = false
     
     var body: some View {
-        VStack() {
-            ZStack {
-                closeButton()
-                Text("자세분석")
-                    .font(.title2)
-                    .bold()
-            }
-            Divider()
-            HStack {
-                Text("주의")
-                    .foregroundColor(.gray)
-                Spacer()
-            }
-            noticeImage()
-            noticeText()
-            selectPhoto()
-                .onTapGesture {
-                    imagePickerPresented.toggle()
+        NavigationView {
+            VStack() {
+                ZStack {
+                    closeButton()
+                    Text("자세분석")
+                        .font(.title2)
+                        .bold()
                 }
-                .sheet(isPresented: $imagePickerPresented,
-                       onDismiss: loadImage,
-                       content: {
-                    ImagePicker(image: $selectedImage)
-                })
-            Spacer()
-            Button {
-                print("결과분석")
-            } label: {
-                Text("결과분석하기")
-                    .padding()
-                    .background(Capsule().strokeBorder())
+                Divider()
+                HStack {
+                    Text("주의")
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+                noticeImage()
+                noticeText()
+                selectPhoto()
+                    .onTapGesture {
+                        imagePickerPresented.toggle()
+                    }
+                    .sheet(isPresented: $imagePickerPresented,
+                           onDismiss: loadImage,
+                           content: { ImagePicker(image: $selectedImage) })
+                Spacer()
+                NavigationLink {
+                    ResultView()
+                } label: {
+                    Text("결과분석하기")
+                        .padding()
+                        .background(Capsule().strokeBorder())
+                }
             }
+            .padding()
+            .navigationBarHidden(true)
         }
-        .padding()
     }
 }
 
 struct UploadPhotoView_Previews: PreviewProvider {
     static var previews: some View {
-        UploadPhotoView(isShowing: .constant(true))
+        UploadImageView(isShowing: .constant(true))
     }
 }
 
-extension UploadPhotoView {
+extension UploadImageView {
     func closeButton() -> some View {
         HStack {
             Spacer()
@@ -79,7 +80,7 @@ extension UploadPhotoView {
                         .resizable()
                         .frame(width: 150, height: 150)
                 }
-                .padding(.top, 20)
+                .padding([.top, .leading])
                 Text("O")
                     .bold()
                     .font(.largeTitle)
@@ -91,7 +92,7 @@ extension UploadPhotoView {
                         .resizable()
                         .frame(width: 150, height: 150)
                 }
-                .padding(.top, 20)
+                .padding([.top, .trailing])
                 Text("X")
                     .bold()
                     .font(.largeTitle)
@@ -130,6 +131,7 @@ extension UploadPhotoView {
             }
             Text(profileImage == nil ? "사진을 선택해 주세요" : "다시 선택하기")
         }
+        .padding([.leading, .trailing])
     }
     
     func loadImage() {
