@@ -29,7 +29,7 @@ struct ContentView: View {
             .padding(.bottom, 30)
         }
         .fullScreenCover(isPresented: $isShowing) {
-            UploadPhotoView(isShowing: $isShowing)
+            UploadImageView(isShowing: $isShowing)
         }
     }
 }
