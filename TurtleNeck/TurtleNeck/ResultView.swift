@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ResultView: View {
+    @State private var taskCompleted = false
     
     var body: some View {
         ProgressView("결과 분석중...")
             .tint(.orange)
             .padding()
             .progressViewStyle(.circular)
+
+            .navigationTitle("분석결과")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
