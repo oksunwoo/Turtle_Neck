@@ -9,8 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
+        VStack() {
+            titleView()
             EmptyHomeView()
+                .padding(.top, 150)
+            Spacer()
         }
     }
 }
@@ -18,5 +21,18 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+extension HomeView {
+    func titleView() -> some View {
+        HStack {
+            Image("TurtleNeckLogo_bk")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 250, height: 50)
+            Spacer()
+        }
+        .padding(.top, 40)
     }
 }
