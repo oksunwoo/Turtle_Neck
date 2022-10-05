@@ -10,8 +10,10 @@ import SwiftUI
 struct VersionView: View {
     var body: some View {
         VStack {
-            Image("LaunchScreenLogo")
-                .background(.blue)
+            Image("TurtleNeckLogo_bk")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 300, height: 80)
             Text(isUpdateAvailable() ? "업데이트 필요" : "최신버전입니다")
             Text("현재 버전: \(currentVersion!)")
         }

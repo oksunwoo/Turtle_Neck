@@ -15,7 +15,7 @@ struct EmptyHomeView: View {
         VStack(alignment: .center) {
             Image(emptyHomeImage.randomElement()!)
                 .resizable()
-                .frame(width: 100, height: 100)
+                .frame(width: 200, height: 200)
             
             VStack(alignment: .center) {
                 Text("분석을 통해")
@@ -27,6 +27,7 @@ struct EmptyHomeView: View {
             } label: {
                 Text("+ 검사하러 가기")
                     .foregroundColor(.white)
+                    .bold()
             }
             .buttonStyle(.borderedProminent)
             .fullScreenCover(isPresented: $isShowing) {
