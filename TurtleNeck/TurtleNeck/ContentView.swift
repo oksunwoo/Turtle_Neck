@@ -24,6 +24,7 @@ struct ContentView: View {
             }
             
             DeviderView()
+                .foregroundColor(.gray)
             PopUpButton(action: {
                 isShowing = true
             })

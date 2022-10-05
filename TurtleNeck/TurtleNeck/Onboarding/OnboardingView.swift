@@ -46,7 +46,7 @@ struct OnboardingView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView(isFirstLaunching: .constant(true))
     }
