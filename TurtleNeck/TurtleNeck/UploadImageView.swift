@@ -131,7 +131,7 @@ extension UploadImageView {
             }
             Text(profileImage == nil ? "사진을 선택해 주세요" : "다시 선택하기")
         }
-        .padding([.leading, .trailing])
+        .padding(.horizontal)
     }
     
     func loadImage() {

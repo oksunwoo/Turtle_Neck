@@ -22,7 +22,8 @@ struct ContentView: View {
                         Label("Account", systemImage: "person.crop.circle")
                     }
             }
-
+            
+            DeviderView()
             PopUpButton(action: {
                 isShowing = true
             })
