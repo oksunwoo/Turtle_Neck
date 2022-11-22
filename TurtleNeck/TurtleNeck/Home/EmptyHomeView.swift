@@ -30,9 +30,9 @@ struct EmptyHomeView: View {
                     .bold()
             }
             .buttonStyle(.borderedProminent)
-            .fullScreenCover(isPresented: $isShowing) {
-                UploadImageView(isShowing: $isShowing)
-            }
+//            .fullScreenCover(isPresented: $isShowing) {
+//                PoseView(isShowing: $isShowing)
+//            }
         }
     }
 }
