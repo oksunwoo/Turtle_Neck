@@ -6,38 +6,45 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
     @State private var isShowing = false
+    let store: Store<RootState, RootAction>
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            TabView() {
-                HomeView()
-                    .tabItem {
-                        Label("Home", systemImage: "house.fill")
-                    }
-                SettingsView()
-                    .tabItem {
-                        Label("Account", systemImage: "person.crop.circle")
-                    }
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ZStack(alignment: .bottom) {
+                TabView(selection: viewStore.binding(get: { $0.currentTab }, send: RootAction.selectTab)) {
+                    HomeView()
+                        .tabItem {
+                            Label("Home", systemImage: "house.fill")
+                        }
+                    SettingsView()
+                        .tabItem {
+                            Label("Account", systemImage: "person.crop.circle")
+                        }
+                }
+                
+                DeviderView()
+                    .foregroundColor(.gray)
+                PopUpButton(action: {
+                    isShowing = true
+                })
+                .padding(.bottom, 30)
             }
-            
-            DeviderView()
-                .foregroundColor(.gray)
-            PopUpButton(action: {
-                isShowing = true
-            })
-            .padding(.bottom, 30)
-        }
-        .fullScreenCover(isPresented: $isShowing) {
-            UploadImageView(isShowing: $isShowing)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(
+            store: Store(
+                initialState: RootState(),
+                reducer: rootReducer,
+                environment: RootEnvironment(mainQueue: .main)
+            )
+        )
     }
 }

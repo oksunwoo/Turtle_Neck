@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UploadImageView: View {
+struct PoseView: View {
     @Binding var isShowing: Bool
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
@@ -54,11 +54,11 @@ struct UploadImageView: View {
 
 struct UploadPhotoView_Previews: PreviewProvider {
     static var previews: some View {
-        UploadImageView(isShowing: .constant(true))
+        PoseView(isShowing: .constant(true))
     }
 }
 
-extension UploadImageView {
+extension PoseView {
     func closeButton() -> some View {
         HStack {
             Spacer()

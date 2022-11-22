@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TurtleNeckApp: App {
@@ -13,7 +14,11 @@ struct TurtleNeckApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(store: Store(initialState: RootState(),
+                                     reducer: rootReducer,
+                                     environment: .live
+                                    )
+                        )
                 .fullScreenCover(isPresented: $isFirstLaunching) {
                     OnboardingView(isFirstLaunching: $isFirstLaunching)
                 }
