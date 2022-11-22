@@ -6,55 +6,75 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct PoseView: View {
-    @Binding var isShowing: Bool
-    @State private var selectedImage: UIImage?
-    @State private var profileImage: Image?
-    @State private var imagePickerPresented = false
+    let store: Store<PoseState, PoseAction>
+    
+    @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
-        NavigationView {
-            VStack() {
-                ZStack {
-                    closeButton()
-                    Text("자세분석")
-                        .font(.title2)
-                        .bold()
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            ZStack {
+                closeButton()
+                Text("자세분석")
+                    .font(.title2)
+                    .bold()
+            }
+            Divider()
+            HStack {
+                Text("주의")
+                    .foregroundColor(.gray)
+                    .padding(.leading, 12)
+                Spacer()
+            }
+            noticeImage()
+            noticeText()
+            
+            VStack {
+                Button {
+                    viewStore.send(.showImagePicker)
+                } label: {
+                    Text("사진 선택하기")
                 }
-                Divider()
-                HStack {
-                    Text("주의")
-                        .foregroundColor(.gray)
+                .sheet(isPresented: viewStore.binding(\.$imagePickerPresented),
+                       content: {
+                    ImagePicker(image: viewStore.binding(\.$selectedImage))
+                })
+                
+                if let selectedImage = viewStore.selectedImage {
+                    Spacer()
+                    Image(uiImage: selectedImage)
+                        .resizable()
+                        .frame(width: 200, height: 300)
+                    Spacer()
+                } else {
+                    Spacer()
+                    Image("camera")
+                        .resizable()
+                        .frame(width: 150, height: 120)
                     Spacer()
                 }
-                noticeImage()
-                noticeText()
-                selectPhoto()
-                    .onTapGesture {
-                        imagePickerPresented.toggle()
-                    }
-                    .sheet(isPresented: $imagePickerPresented,
-                           onDismiss: loadImage,
-                           content: { ImagePicker(image: $selectedImage) })
-                Spacer()
-                NavigationLink {
-                    ResultView()
+                
+                Button {
+                    print("카카오포즈 api 연결")
                 } label: {
-                    Text("결과분석하기")
-                        .padding()
-                        .background(Capsule().strokeBorder())
+                    Text("분석하기")
                 }
             }
-            .padding()
-            .navigationBarHidden(true)
         }
     }
 }
 
-struct UploadPhotoView_Previews: PreviewProvider {
+struct PoseView_Previews: PreviewProvider {
     static var previews: some View {
-        PoseView(isShowing: .constant(true))
+        PoseView(
+            store: Store(
+                initialState: PoseState(),
+                reducer: poseReducer,
+                environment: PoseEnvironment()
+            )
+        )
     }
 }
 
@@ -63,11 +83,12 @@ extension PoseView {
         HStack {
             Spacer()
             Button {
-                isShowing.toggle()
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("x")
                     .font(.largeTitle)
                     .foregroundColor(.gray)
+                    .padding(.trailing, 12)
             }
         }
     }
@@ -108,36 +129,10 @@ extension PoseView {
                 Text("* 코, 눈, 귀, 어깨, 팔꿈치, 손목, 골반, 무릎, 발목이 보이게 찍어주세요")
                 Text("* 또 다른 주의사항")
             }
+            .padding(.leading, 12)
             .foregroundColor(.gray)
             .font(.caption)
             Spacer()
         }
-    }
-    
-    func selectPhoto() -> some View {
-        GroupBox {
-            HStack {
-                Spacer()
-                if profileImage == nil {
-                    Image("camera")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                } else {
-                    profileImage!
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                }
-                Spacer()
-            }
-            Text(profileImage == nil ? "사진을 선택해 주세요" : "다시 선택하기")
-        }
-        .padding(.horizontal)
-    }
-    
-    func loadImage() {
-        guard let selectedImage = selectedImage else {
-            return
-        }
-        profileImage = Image(uiImage: selectedImage)
     }
 }

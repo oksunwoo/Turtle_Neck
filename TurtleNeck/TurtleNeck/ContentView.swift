@@ -28,10 +28,30 @@ struct ContentView: View {
                 
                 DeviderView()
                     .foregroundColor(.gray)
-                PopUpButton(action: {
-                    isShowing = true
-                })
+                
+                PopUpButton() {
+                    viewStore.send(.setSheet(isPresented: true))
+                }
                 .padding(.bottom, 30)
+                .fullScreenCover(
+                    isPresented: viewStore.binding(
+                        get: { $0.optionalPose != nil },
+                        send: RootAction.setSheet(isPresented:)
+                    )
+                ) {
+                    // content
+                    IfLetStore(
+                        self.store.scope(
+                            state: \.optionalPose,
+                            action: RootAction.optionalPose
+                        )
+                    ) {
+                        // then
+                        // optionlPose가 nil이 아닐때
+                        // pose뷰 보여주기
+                        PoseView(store: $0)
+                    }
+                }
             }
         }
     }
