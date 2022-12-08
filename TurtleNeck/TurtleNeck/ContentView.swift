@@ -9,13 +9,12 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ContentView: View {
-    @State private var isShowing = false
-    let store: Store<RootState, RootAction>
+    let store: StoreOf<Root>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack(alignment: .bottom) {
-                TabView(selection: viewStore.binding(get: { $0.currentTab }, send: RootAction.selectTab)) {
+                TabView(selection: viewStore.binding(get: { $0.currentTab }, send: Root.Action.selectTab)) {
                     HomeView()
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
@@ -36,21 +35,21 @@ struct ContentView: View {
                 .fullScreenCover(
                     isPresented: viewStore.binding(
                         get: { $0.optionalPose != nil },
-                        send: RootAction.setSheet(isPresented:)
+                        send: Root.Action.setSheet(isPresented:)
                     )
                 ) {
-                    // content
-                    IfLetStore(
-                        self.store.scope(
-                            state: \.optionalPose,
-                            action: RootAction.optionalPose
-                        )
-                    ) {
-                        // then
-                        // optionlPose가 nil이 아닐때
-                        // pose뷰 보여주기
-                        PoseView(store: $0)
-                    }
+//                    // content
+//                    IfLetStore(
+//                        self.store.scope(
+//                            state: \.optionalPose,
+//                            action: Root.Action.optionalPose
+//                        )
+//                    ) {
+//                        // then
+//                        // optionlPose가 nil이 아닐때
+//                        // pose뷰 보여주기
+//                        PoseView(store: $0)
+//                    }
                 }
             }
         }
@@ -61,9 +60,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
             store: Store(
-                initialState: RootState(),
-                reducer: rootReducer,
-                environment: RootEnvironment(mainQueue: .main)
+                initialState: Root.State(),
+                reducer: Root()
             )
         )
     }
