@@ -38,18 +38,10 @@ struct ContentView: View {
                         send: Root.Action.setSheet(isPresented:)
                     )
                 ) {
-//                    // content
-//                    IfLetStore(
-//                        self.store.scope(
-//                            state: \.optionalPose,
-//                            action: Root.Action.optionalPose
-//                        )
-//                    ) {
-//                        // then
-//                        // optionlPose가 nil이 아닐때
-//                        // pose뷰 보여주기
-//                        PoseView(store: $0)
-//                    }
+                    IfLetStore(self.store.scope(state: \.optionalPose,
+                                                action: Root.Action.optionalPose)) {
+                        PoseView(store: $0)
+                    }
                 }
             }
         }
