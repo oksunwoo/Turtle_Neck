@@ -14,11 +14,8 @@ struct TurtleNeckApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(store: Store(initialState: RootState(),
-                                     reducer: rootReducer,
-                                     environment: .live
-                                    )
-                        )
+            ContentView(store: Store(initialState: Root.State(),
+                                     reducer: Root()))
                 .fullScreenCover(isPresented: $isFirstLaunching) {
                     OnboardingView(isFirstLaunching: $isFirstLaunching)
                 }
