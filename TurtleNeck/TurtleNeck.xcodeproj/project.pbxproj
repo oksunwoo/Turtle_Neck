@@ -122,9 +122,9 @@
 		3B57869628ED7C61002327F8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3BF63983292CA6CE0002A03E /* HomeCore.swift */,
 				53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */,
 				3B57869328ED7BF4002327F8 /* EmptyHomeView.swift */,
-				3BF63983292CA6CE0002A03E /* HomeCore.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
