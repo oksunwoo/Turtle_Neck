@@ -30,6 +30,7 @@
 		53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E628B4DB00002D8C77 /* ContentView.swift */; };
 		53C338E928B4DB02002D8C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338E828B4DB02002D8C77 /* Assets.xcassets */; };
 		53C338EC28B4DB02002D8C77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */; };
+		53CDEDF429421D1D00A4B1EA /* PoseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEDF329421D1D00A4B1EA /* PoseClient.swift */; };
 		53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A0C28C880A800F3128A /* SettingsRow.swift */; };
 		53D65A1528C8907600F3128A /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A1428C8907600F3128A /* NoticeView.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		53C338E828B4DB02002D8C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53C338F228B4DCA5002D8C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		53CDEDF329421D1D00A4B1EA /* PoseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseClient.swift; sourceTree = "<group>"; };
 		53D65A0C28C880A800F3128A /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsRow.swift; path = TurtleNeck/SettingsRow.swift; sourceTree = SOURCE_ROOT; };
 		53D65A1428C8907600F3128A /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = ../NoticeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				3B57868528E41F65002327F8 /* PoseView.swift */,
 				3B57868C28E59340002327F8 /* ResultView.swift */,
 				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
+				53CDEDF329421D1D00A4B1EA /* PoseClient.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				3B57868F28E6E094002327F8 /* ResultFailView.swift in Sources */,
 				3BF63988292CB4490002A03E /* PoseCore.swift in Sources */,
 				3B57868D28E59340002327F8 /* ResultView.swift in Sources */,
+				53CDEDF429421D1D00A4B1EA /* PoseClient.swift in Sources */,
 				3BF63982292CA6290002A03E /* RootCore.swift in Sources */,
 				53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */,
 				3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */,
