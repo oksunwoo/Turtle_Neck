@@ -8,26 +8,28 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct PoseState: Equatable {
-    @BindableState var selectedImage: UIImage?
-    @BindableState var imagePickerPresented = false
-}
+struct PoseCore: ReducerProtocol {
+    struct State: Equatable {
+        @BindableState var selectedImage: UIImage?
+        @BindableState var imagePickerPresented = false
+    }
 
-enum PoseAction: BindableAction, Equatable {
-    case binding(BindingAction<PoseState>)
-    case showImagePicker
-}
-
-struct PoseEnvironment { }
-
-let poseReducer = Reducer<PoseState, PoseAction, PoseEnvironment> { state, action, _ in
-    switch action {
-    case .binding(_):
-        return .none
-        
-    case .showImagePicker:
-        state.imagePickerPresented.toggle()
-        return .none
+    enum Action: BindableAction, Equatable {
+        case binding(BindingAction<State>)
+        case showImagePicker
+    }
+    
+    var body: some ReducerProtocol<State, Action> {
+        BindingReducer()
+        Reduce { state, action in
+            switch action {
+            case .binding(_):
+                return .none
+                
+            case .showImagePicker:
+                state.imagePickerPresented.toggle()
+                return .none
+            }
+        }
     }
 }
-.binding()
