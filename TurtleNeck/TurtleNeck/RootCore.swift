@@ -5,61 +5,63 @@
 //  Created by 권나영 on 2022/11/22.
 //
 
-import UIKit
 import ComposableArchitecture
 
-struct RootState: Equatable {
-    var home = HomeState()
-    var setting = SettingState()
-    var currentTab: Tab = .home
-    var optionalPose: PoseState?
+struct Root: ReducerProtocol {
+    struct State: Equatable {
+        var home = HomeCore.State()
+        var settings = SettingsCore.State()
+        var currentTab: Tab = .home
+        var optionalPose: PoseCore.State?
+        
+        enum Tab {
+            case home, setting
+        }
+    }
     
-    enum Tab {
-        case home, setting
+    enum Action: Equatable {
+        case onAppear
+        case home(HomeCore.Action)
+        case settings(SettingsCore.Action)
+        case selectTab(State.Tab)
+        case optionalPose(PoseCore.Action)
+        case setSheet(isPresented: Bool)
+    }
+    
+    var body: some ReducerProtocol<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case .onAppear:
+                state = .init()
+                return .none
+                
+            case .selectTab(let tab):
+                state.currentTab = tab
+                return .none
+                
+            case .setSheet(isPresented: true):
+                state.optionalPose = PoseCore.State()
+                return .none
+                
+            case .setSheet(isPresented: false):
+                state.optionalPose = nil
+                return .none
+                
+            default:
+                return .none
+            }
+        }
+        
+        Scope(state: \.home, action: /Action.home) {
+            HomeCore()
+        }
+        
+        Scope(state: \.settings, action: /Action.settings) {
+            SettingsCore()
+        }
+        
+        .ifLet(\.optionalPose, action: /Action.optionalPose) {
+            PoseCore()
+        }
     }
 }
-
-enum RootAction {
-    case home(HomeState)
-    case setting(SettingState)
-    case selectTab(RootState.Tab)
-    case optionalPose(PoseAction)
-    case setSheet(isPresented: Bool)
-}
-
-struct RootEnvironment {
-    var mainQueue: AnySchedulerOf<DispatchQueue>
-    
-    static let live = Self(mainQueue: .main)
-}
-
-let rootReducer = Reducer<RootState, RootAction, RootEnvironment>.combine(
-    .init { state, action, _ in
-        switch action {
-        case .home, .setting:
-            return .none
-            
-        case let .selectTab(tab):
-            state.currentTab = tab
-            return .none
-            
-        case .optionalPose:
-            return .none
-            
-        case .setSheet(isPresented: true):
-            state.optionalPose = PoseState()
-            return .none
-            
-        case .setSheet(isPresented: false):
-            state.optionalPose = nil
-            return .none
-        }
-    },
-    poseReducer
-        .optional()
-        .pullback(
-            state: \.optionalPose,
-            action: /RootAction.optionalPose,
-            environment: { _ in PoseEnvironment() }
-        )
-)
