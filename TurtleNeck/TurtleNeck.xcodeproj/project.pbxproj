@@ -78,10 +78,10 @@
 		3B57394028D8ADCF00529A3E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3BF63985292CA6FE0002A03E /* SettingsCore.swift */,
 				3B57393D28D882C100529A3E /* Setting.swift */,
 				53D65A0C28C880A800F3128A /* SettingsRow.swift */,
 				53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */,
-				3BF63985292CA6FE0002A03E /* SettingsCore.swift */,
 				3B57394328D9958600529A3E /* Notice.swift */,
 				53D65A1428C8907600F3128A /* NoticeView.swift */,
 				3B57394128D8AE0E00529A3E /* VersionView.swift */,
