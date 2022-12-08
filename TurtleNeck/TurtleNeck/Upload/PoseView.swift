@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct PoseView: View {
-    let store: Store<PoseState, PoseAction>
+    let store: StoreOf<PoseCore>
     
     @Environment(\.presentationMode) private var presentationMode
     
@@ -70,9 +70,8 @@ struct PoseView_Previews: PreviewProvider {
     static var previews: some View {
         PoseView(
             store: Store(
-                initialState: PoseState(),
-                reducer: poseReducer,
-                environment: PoseEnvironment()
+                initialState: PoseCore.State(),
+                reducer: PoseCore()
             )
         )
     }
