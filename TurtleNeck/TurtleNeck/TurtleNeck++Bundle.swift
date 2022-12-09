@@ -18,7 +18,7 @@ extension Bundle {
         }
         
         guard let key = resource["API_KEY"] as? String else {
-            fatalError("PoseInfo.plist에 API_KEY 설정을 확인해주세요.")
+            return KeychainError.failedToGetAccountID.errorDescription
         }
         
         return key
