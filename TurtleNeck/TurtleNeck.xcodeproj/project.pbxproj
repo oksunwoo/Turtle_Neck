@@ -32,6 +32,7 @@
 		53C338EC28B4DB02002D8C77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */; };
 		53CDEDF429421D1D00A4B1EA /* PoseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEDF329421D1D00A4B1EA /* PoseClient.swift */; };
 		53CDEDF6294325D600A4B1EA /* PoseInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53CDEDF5294325D600A4B1EA /* PoseInfo.plist */; };
+		53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEDF729432FD300A4B1EA /* TurtleNeck++Bundle.swift */; };
 		53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A0C28C880A800F3128A /* SettingsRow.swift */; };
 		53D65A1528C8907600F3128A /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A1428C8907600F3128A /* NoticeView.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		53C338F228B4DCA5002D8C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53CDEDF329421D1D00A4B1EA /* PoseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseClient.swift; sourceTree = "<group>"; };
 		53CDEDF5294325D600A4B1EA /* PoseInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PoseInfo.plist; sourceTree = "<group>"; };
+		53CDEDF729432FD300A4B1EA /* TurtleNeck++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TurtleNeck++Bundle.swift"; sourceTree = "<group>"; };
 		53D65A0C28C880A800F3128A /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsRow.swift; path = TurtleNeck/SettingsRow.swift; sourceTree = SOURCE_ROOT; };
 		53D65A1428C8907600F3128A /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = ../NoticeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				53C338F228B4DCA5002D8C77 /* Info.plist */,
 				53CDEDF5294325D600A4B1EA /* PoseInfo.plist */,
 				53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */,
+				53CDEDF729432FD300A4B1EA /* TurtleNeck++Bundle.swift */,
 				3BF63981292CA6290002A03E /* RootCore.swift */,
 				53C338E628B4DB00002D8C77 /* ContentView.swift */,
 				3B57869628ED7C61002327F8 /* Home */,
@@ -274,6 +277,7 @@
 				53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */,
 				53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */,
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
+				53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */,
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,
 				3B57394228D8AE0E00529A3E /* VersionView.swift in Sources */,
 				3B57394428D9958600529A3E /* Notice.swift in Sources */,
