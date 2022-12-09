@@ -11,7 +11,9 @@ import ComposableArchitecture
 struct PoseCore: ReducerProtocol {
     struct State: Equatable {
         @BindableState var selectedImage: UIImage?
-        @BindableState var imagePickerPresented = false
+        @BindableState var isImagePickerPresented = false
+        var photoData: Data?
+        var isPhotoRequest = false
     }
 
     enum Action: BindableAction, Equatable {
@@ -27,7 +29,7 @@ struct PoseCore: ReducerProtocol {
                 return .none
                 
             case .showImagePicker:
-                state.imagePickerPresented.toggle()
+                state.isImagePickerPresented.toggle()
                 return .none
             }
         }

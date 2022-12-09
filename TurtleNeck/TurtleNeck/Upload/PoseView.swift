@@ -37,7 +37,7 @@ struct PoseView: View {
                 } label: {
                     Text("사진 선택하기")
                 }
-                .sheet(isPresented: viewStore.binding(\.$imagePickerPresented),
+                .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
                        content: {
                     ImagePicker(image: viewStore.binding(\.$selectedImage))
                 })
