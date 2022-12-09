@@ -23,7 +23,8 @@ extension PoseClient: DependencyKey {
     static let liveValue = PoseClient(fetch: { imageData in
         var request = URLRequest(url: URL(string: "https://cv-api.kakaobrain.com/pose")!)
         let boundary = UUID().uuidString
-        let headers: [String: String] = ["Content-Type": "multipart/form-data; boundary=\(boundary)", "Authorization": ""]
+        let appId = Bundle.main.apikey
+        let headers: [String: String] = ["Content-Type": "multipart/form-data; boundary=\(boundary)", "Authorization": "\(appId)"]
         
         request.httpMethod = "POST"
         headers.forEach { (key, value) in
