@@ -57,7 +57,7 @@ struct PoseView: View {
                 }
                 
                 Button {
-                    print("카카오포즈 api 연결")
+                    viewStore.send(.confirmButtonTapped)
                 } label: {
                     Text("분석하기")
                 }

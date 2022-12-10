@@ -14,7 +14,7 @@ struct PoseCore: ReducerProtocol {
         @BindableState var isImagePickerPresented = false
         var imageData: Data?
         var isPoseRequest = false
-        var tempResult: String
+        var tempResult: String?
     }
 
     enum Action: BindableAction, Equatable {
