@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Pose: Decodable {
+struct Pose: Decodable, Equatable {
     let area: Double
     let bbox: [Double]
     let categoryId: Int

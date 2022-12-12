@@ -9,7 +9,7 @@ import Foundation
 import ComposableArchitecture
 
 struct PoseClient {
-    var fetch: @Sendable (Data) async throws -> String
+    var fetch: @Sendable (Data) async throws -> [Pose]
 }
 
 extension DependencyValues {
@@ -41,7 +41,8 @@ extension PoseClient: DependencyKey {
         request.httpBody = body
         
         let (data, _) = try await URLSession.shared.data(for: request)
+        let parsedData = try JSONDecoder().decode([Pose].self, from: data)
         
-        return String(decoding: data, as: UTF8.self)
+        return parsedData
     })
 }
