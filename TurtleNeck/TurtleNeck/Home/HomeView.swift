@@ -13,10 +13,10 @@ struct HomeView: View {
             Color("BackgroundColor")
                 .ignoresSafeArea()
             
-            VStack() {
+            VStack(spacing: 10) {
                 titleView()
-                EmptyHomeView()
-                    .padding(.top, 150)
+                listView()
+                    .padding(.top, 15)
                 Spacer()
             }
         }
@@ -39,5 +39,33 @@ extension HomeView {
             Spacer()
         }
         .padding(.top, 40)
+    }
+    
+    func listView() -> some View {
+        List {
+            Section {
+                poseItem(image: "Pose3", title: "훌륭해요", star: 5)
+                poseItem(image: "Pose2", title: "좋아요", star: 3)
+                poseItem(image: "Pose4", title: "아쉬워요", star: 1)
+            } header: {
+                Text("Criteria").font(.headline).foregroundColor(.black)
+            }
+        }
+    }
+    
+    func poseItem(image: String, title: String, star: Int) -> some View {
+        HStack {
+            Image(image)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+            
+            Text(title)
+            Spacer()
+            ForEach(0..<star) { _ in
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
+        }
     }
 }
