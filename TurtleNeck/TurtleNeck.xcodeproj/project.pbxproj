@@ -24,6 +24,7 @@
 		3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63985292CA6FE0002A03E /* SettingsCore.swift */; };
 		3BF63988292CB4490002A03E /* PoseCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63987292CB4490002A03E /* PoseCore.swift */; };
 		5386F2DC29476BEC006E1756 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DB29476BEC006E1756 /* Decoder.swift */; };
+		5386F2DF29488187006E1756 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DE29488187006E1756 /* UIImage+Extension.swift */; };
 		53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */; };
 		53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */; };
 		53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */; };
@@ -58,6 +59,7 @@
 		3BF63985292CA6FE0002A03E /* SettingsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCore.swift; sourceTree = "<group>"; };
 		3BF63987292CB4490002A03E /* PoseCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseCore.swift; sourceTree = "<group>"; };
 		5386F2DB29476BEC006E1756 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		5386F2DE29488187006E1756 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = TurtleNeck/SettingsView.swift; sourceTree = SOURCE_ROOT; };
 		53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		5386F2DD29488170006E1756 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5386F2DE29488187006E1756 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		53C338D828B4DB00002D8C77 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 				3B57869028E6E127002327F8 /* Upload */,
 				3B57394028D8ADCF00529A3E /* Settings */,
 				3B57868928E48154002327F8 /* Utility */,
+				5386F2DD29488170006E1756 /* Extension */,
 				53CDEDFB2943408200A4B1EA /* Error */,
 				53C338E828B4DB02002D8C77 /* Assets.xcassets */,
 				53C338EA28B4DB02002D8C77 /* Preview Content */,
@@ -299,6 +310,7 @@
 				3B7DA64E28B8AC2A0078004B /* OnboardingItem.swift in Sources */,
 				53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */,
 				53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */,
+				5386F2DF29488187006E1756 /* UIImage+Extension.swift in Sources */,
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
 				53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */,
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,

@@ -46,7 +46,7 @@ struct PoseView: View {
                     Spacer()
                     Image(uiImage: selectedImage)
                         .resizable()
-                        .frame(width: 200, height: 300)
+                        .frame(width: 180, height: 320)
                     Spacer()
                 } else {
                     Spacer()
