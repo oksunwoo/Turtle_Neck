@@ -19,7 +19,6 @@ struct PoseCore: ReducerProtocol {
 
     enum Action: BindableAction, Equatable {
         case confirmButtonTapped
-        case inputSelectedImage(UIImage?)
         case binding(BindingAction<State>)
         case showImagePicker
         case poseResponse(TaskResult<[Pose]?>)
@@ -41,8 +40,8 @@ struct PoseCore: ReducerProtocol {
                     })
                 }
                 
-            case .inputSelectedImage(let image):
-                state.selectedImage = image
+            case .binding(\.$selectedImage):
+                state.selectedImage = state.selectedImage?.downSample(size: CGSize(width: 100, height: 300))
                 return .none
                 
             case .binding:
