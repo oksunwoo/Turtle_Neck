@@ -37,7 +37,7 @@ struct PoseView: View {
                 } label: {
                     Text("사진 선택하기")
                 }
-                .sheet(isPresented: viewStore.binding(\.$imagePickerPresented),
+                .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
                        content: {
                     ImagePicker(image: viewStore.binding(\.$selectedImage))
                 })
@@ -46,7 +46,7 @@ struct PoseView: View {
                     Spacer()
                     Image(uiImage: selectedImage)
                         .resizable()
-                        .frame(width: 200, height: 300)
+                        .frame(width: 180, height: 320)
                     Spacer()
                 } else {
                     Spacer()
@@ -57,7 +57,7 @@ struct PoseView: View {
                 }
                 
                 Button {
-                    print("카카오포즈 api 연결")
+                    viewStore.send(.confirmButtonTapped)
                 } label: {
                     Text("분석하기")
                 }

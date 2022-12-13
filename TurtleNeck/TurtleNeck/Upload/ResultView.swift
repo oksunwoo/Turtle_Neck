@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ResultView: View {
-    @State private var taskCompleted = false
     
     var body: some View {
         ProgressView("결과 분석중...")
