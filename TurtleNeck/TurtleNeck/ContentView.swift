@@ -24,9 +24,16 @@ struct ContentView: View {
                             Label("Account", systemImage: "person.crop.circle")
                         }
                 }
+                .accentColor(.white)
+                .onAppear {
+                    UITabBar.appearance().backgroundColor = UIColor(named: "MainGreenColor")
+                    UITabBar.appearance().unselectedItemTintColor = .white.withAlphaComponent(0.5)
+                }
                 
-                DeviderView()
-                    .foregroundColor(.gray)
+                BottomCurve()
+                    .frame(maxWidth: .infinity, maxHeight: 100)
+                    .padding(.bottom, -51)
+                    .foregroundColor(Color("BackgroundColor"))
                 
                 PopUpButton() {
                     viewStore.send(.setSheet(isPresented: true))

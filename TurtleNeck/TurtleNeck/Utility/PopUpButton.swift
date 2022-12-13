@@ -14,11 +14,13 @@ struct PopUpButton: View {
         ZStack {
             Circle()
                 .frame(width: 50, height: 50)
-                .foregroundColor(.blue)
-            Text("N")
-                .foregroundColor(.white)
-                .font(.title)
-                .bold()
+                .foregroundColor(Color("MainGreenColor"))
+                .overlay(
+                    Image("scanner")
+                         .resizable()
+                         .frame(width: 30, height: 30)
+                         .foregroundColor(.white)
+                )
         }
         .onTapGesture {
             action()
