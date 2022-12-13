@@ -9,11 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack() {
-            titleView()
-            EmptyHomeView()
-                .padding(.top, 150)
-            Spacer()
+        ZStack {
+            Color("BackgroundColor")
+                .ignoresSafeArea()
+            
+            VStack() {
+                titleView()
+                EmptyHomeView()
+                    .padding(.top, 150)
+                Spacer()
+            }
         }
     }
 }
