@@ -67,3 +67,27 @@ func addDot(on image: UIImage, with pose: [Pose]) -> UIImage {
     
     return image
 }
+
+func makeKeypointsDictionary(keypoints: [Double]) -> [Int: [Double]] {
+    let maxCount = 2
+    var bodyPoints: [Double] = []
+    var resultDictionary: [Int: [Double]] = [:]
+    var keyId = 1
+    
+    for i in 0..<keypoints.count {
+        if i % 3 == 0 {
+            continue
+        }
+        
+        bodyPoints.append(keypoints[i])
+        
+        if bodyPoints.count == maxCount {
+            resultDictionary.updateValue(bodyPoints, forKey: keyId)
+            bodyPoints = []
+            keyId += 1
+        }
+    }
+    
+    return resultDictionary
+}
+
