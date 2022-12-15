@@ -9,14 +9,23 @@ import ComposableArchitecture
 
 struct HomeCore: ReducerProtocol {
     struct State: Equatable {
-        
+        var summary = SummaryCore.State()
     }
     
     enum Action: Equatable {
-        
+        case summary(SummaryCore.Action)
     }
     
-    func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
-        
+    var body: some ReducerProtocol<State, Action> {
+        Reduce { state, action in
+            switch action {
+            default:
+              return .none
+            }
+        }
+        Scope(state: \.summary, action: /Action.summary) {
+          SummaryCore()
+        }
     }
 }
+
