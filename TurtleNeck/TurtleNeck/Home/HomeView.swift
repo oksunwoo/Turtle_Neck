@@ -6,30 +6,43 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct HomeView: View {
+    let store: StoreOf<HomeCore>
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color("BackgroundColor")
-                    .ignoresSafeArea()
-                
-                VStack(spacing: 10) {
-                    titleView()
-                    categoryView()
-                    listView()
-                        .padding(.top, 15)
-                    Spacer()
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            NavigationView {
+                ZStack {
+                    Color("BackgroundColor")
+                        .ignoresSafeArea()
+                    
+                    VStack(spacing: 10) {
+                        titleView()
+                        categoryView()
+                        SummaryView(
+                            store: self.store.scope(
+                                state: \.summary,
+                                action: HomeCore.Action.summary
+                            )
+                        )
+                    }
                 }
             }
+            .accentColor(.blue)
         }
-        .accentColor(.blue)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(
+            store: Store(
+                initialState: HomeCore.State(),
+                reducer: HomeCore()
+            )
+        )
     }
 }
 
@@ -102,26 +115,5 @@ extension HomeView {
             }
         }
         .padding(.leading, 15)
-    }
-    
-    func listView() -> some View {
-        List {
-            Section {
-                NavigationLink(destination: Text("훌륭한 자세 보여주기")) {
-                    PoseRow(image: "Pose3", title: "훌륭해요", star: 5)
-                }
-                
-                NavigationLink(destination: Text("덜 훌륭한 자세 보여주기")) {
-                    PoseRow(image: "Pose2", title: "좋아요", star: 3)
-                }
-                
-                NavigationLink(destination: Text("아쉬운 자세 보여주기")) {
-                    PoseRow(image: "Pose4", title: "아쉬워요", star: 1)
-                }
-            } header: {
-                Text("Criteria").font(.headline).foregroundColor(.black)
-            }
-        }
-        .listStyle(InsetGroupedListStyle())
     }
 }
