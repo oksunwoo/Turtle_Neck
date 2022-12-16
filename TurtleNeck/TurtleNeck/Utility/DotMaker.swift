@@ -93,11 +93,13 @@ func addDot(on image: UIImage, with pose: [Pose]) -> UIImage {
         
         context.addLine(to: CGPoint(x: keypoints[rightShoulder], y: keypoints[rightShoulder + 1]))
         context.addEllipse(in: CGRect(x: keypoints[rightShoulder], y: keypoints[rightShoulder + 1], width: width, height: height))
+        context.move(to: CGPoint(x: keypoints[rightShoulder] + 4, y: keypoints[rightShoulder + 1]))
         
-        context.addLine(to: CGPoint(x: keypoints[rightElbow], y: keypoints[rightElbow + 1]))
+        context.addLine(to: CGPoint(x: keypoints[rightElbow] + 4, y: keypoints[rightElbow + 1]))
         context.addEllipse(in: CGRect(x: keypoints[rightElbow], y: keypoints[rightElbow + 1], width: width, height: height))
+        context.move(to: CGPoint(x: keypoints[rightElbow] + 4, y: keypoints[rightElbow + 1]))
         
-        context.addLine(to: CGPoint(x: keypoints[rightWrist], y: keypoints[rightWrist + 1]))
+        context.addLine(to: CGPoint(x: keypoints[rightWrist] + 4, y: keypoints[rightWrist + 1]))
         context.addEllipse(in: CGRect(x: keypoints[rightWrist], y: keypoints[rightWrist + 1], width: width, height: height))
         
         context.addEllipse(in: CGRect(x: keypoints[rightShoulder], y: keypoints[rightShoulder + 1], width: width, height: height))
