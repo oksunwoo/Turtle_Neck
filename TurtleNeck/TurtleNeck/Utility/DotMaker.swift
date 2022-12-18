@@ -16,9 +16,7 @@ func addDot(on image: UIImage, with pose: [Pose]) -> UIImage {
     UIGraphicsBeginImageContextWithOptions(image.size, true, 0)
     image.draw(at: CGPointMake(0, 0))
     
-    let bbox = pose.bbox
     let keypoints = pose.keypoints
-    
     let nose = 0
     let leftEye = 3
     let rightEye = 6
@@ -51,31 +49,31 @@ func addDot(on image: UIImage, with pose: [Pose]) -> UIImage {
         
         context.addLine(to: CGPoint(x: keypoints[leftEye] + 2, y: keypoints[leftEye + 1]))
         context.addEllipse(in: CGRect(x: keypoints[leftEye], y: keypoints[leftEye + 1], width: width, height: height))
-        context.move(to: CGPoint(x: keypoints[leftEye] + 2, y: keypoints[leftEye + 1]))
+        context.move(to: CGPoint(x: keypoints[leftEye], y: keypoints[leftEye + 1] + 4))
         
-        context.addLine(to: CGPoint(x: keypoints[leftEar] + 2, y: keypoints[leftEar + 1]))
+        context.addLine(to: CGPoint(x: keypoints[leftEar], y: keypoints[leftEar + 1] + 4))
         context.addEllipse(in: CGRect(x: keypoints[leftEar], y: keypoints[leftEar + 1], width: width, height: height))
         context.move(to: CGPoint(x: keypoints[leftEar] + 2, y: keypoints[leftEar + 1]))
         
         context.addLine(to: CGPoint(x: keypoints[leftShoulder] + 2, y: keypoints[leftShoulder + 1]))
         context.addEllipse(in: CGRect(x: keypoints[leftShoulder], y: keypoints[leftShoulder + 1], width: width, height: height))
-        context.move(to: CGPoint(x: keypoints[leftShoulder] + 3, y: keypoints[leftShoulder + 1]))
+        context.move(to: CGPoint(x: keypoints[leftShoulder] + 4, y: keypoints[leftShoulder + 1]))
         
-        context.addLine(to: CGPoint(x: keypoints[leftElbow] + 2, y: keypoints[leftElbow + 1]))
+        context.addLine(to: CGPoint(x: keypoints[leftElbow] + 4, y: keypoints[leftElbow + 1]))
         context.addEllipse(in: CGRect(x: keypoints[leftShoulder], y: keypoints[leftShoulder + 1], width: width, height: height))
-        context.move(to: CGPoint(x: keypoints[leftShoulder] + 2, y: keypoints[leftShoulder + 1]))
+        context.move(to: CGPoint(x: keypoints[leftShoulder] + 4, y: keypoints[leftShoulder + 1]))
         
-        context.addLine(to: CGPoint(x: keypoints[leftHip] + 2, y: keypoints[leftHip + 1]))
+        context.addLine(to: CGPoint(x: keypoints[leftHip] + 4, y: keypoints[leftHip + 1]))
         context.addEllipse(in: CGRect(x: keypoints[leftElbow], y: keypoints[leftElbow + 1], width: width, height: height))
-        context.move(to: CGPoint(x: keypoints[leftElbow] + 2, y: keypoints[leftElbow + 1]))
+        context.move(to: CGPoint(x: keypoints[leftElbow] + 4, y: keypoints[leftElbow + 1] + 4))
         
-        context.addLine(to: CGPoint(x: keypoints[leftWrist] + 2, y: keypoints[leftWrist + 1]))
+        context.addLine(to: CGPoint(x: keypoints[leftWrist] + 4, y: keypoints[leftWrist + 1] + 4))
         context.addEllipse(in: CGRect(x: keypoints[leftWrist], y: keypoints[leftWrist + 1], width: width, height: height))
         
         context.addEllipse(in: CGRect(x: keypoints[leftHip], y: keypoints[leftHip + 1], width: width, height: height))
-        context.move(to: CGPoint(x: keypoints[leftHip] + 3, y: keypoints[leftHip + 1]))
+        context.move(to: CGPoint(x: keypoints[leftHip] + 4, y: keypoints[leftHip + 1]))
         
-        context.addLine(to: CGPoint(x: keypoints[leftKnee] + 2, y: keypoints[leftKnee + 1]))
+        context.addLine(to: CGPoint(x: keypoints[leftKnee] + 4, y: keypoints[leftKnee + 1]))
         context.addEllipse(in: CGRect(x: keypoints[leftKnee], y: keypoints[leftKnee + 1], width: width, height: height))
         context.move(to: CGPoint(x: keypoints[leftKnee] + 2, y: keypoints[leftKnee + 1]))
         
@@ -87,19 +85,21 @@ func addDot(on image: UIImage, with pose: [Pose]) -> UIImage {
         
         context.addLine(to: CGPoint(x: keypoints[rightEye], y: keypoints[rightEye + 1]))
         context.addEllipse(in: CGRect(x: keypoints[rightEye], y: keypoints[rightEye + 1], width: width, height: height))
+        context.move(to: CGPoint(x: keypoints[rightEye], y: keypoints[rightEye + 1] + 2))
         
-        context.addLine(to: CGPoint(x: keypoints[rightEar], y: keypoints[rightEar + 1]))
+        context.addLine(to: CGPoint(x: keypoints[rightEar], y: keypoints[rightEar + 1] + 2))
         context.addEllipse(in: CGRect(x: keypoints[rightEar], y: keypoints[rightEar + 1], width: width, height: height))
+        context.move(to: CGPoint(x: keypoints[rightEar] + 4, y: keypoints[rightEar + 1]))
         
-        context.addLine(to: CGPoint(x: keypoints[rightShoulder], y: keypoints[rightShoulder + 1]))
+        context.addLine(to: CGPoint(x: keypoints[rightShoulder] + 4, y: keypoints[rightShoulder + 1]))
         context.addEllipse(in: CGRect(x: keypoints[rightShoulder], y: keypoints[rightShoulder + 1], width: width, height: height))
         context.move(to: CGPoint(x: keypoints[rightShoulder] + 4, y: keypoints[rightShoulder + 1]))
         
         context.addLine(to: CGPoint(x: keypoints[rightElbow] + 4, y: keypoints[rightElbow + 1]))
         context.addEllipse(in: CGRect(x: keypoints[rightElbow], y: keypoints[rightElbow + 1], width: width, height: height))
-        context.move(to: CGPoint(x: keypoints[rightElbow] + 4, y: keypoints[rightElbow + 1]))
+        context.move(to: CGPoint(x: keypoints[rightElbow] + 4, y: keypoints[rightElbow + 1] + 4))
         
-        context.addLine(to: CGPoint(x: keypoints[rightWrist] + 4, y: keypoints[rightWrist + 1]))
+        context.addLine(to: CGPoint(x: keypoints[rightWrist] + 4, y: keypoints[rightWrist + 1] + 4))
         context.addEllipse(in: CGRect(x: keypoints[rightWrist], y: keypoints[rightWrist + 1], width: width, height: height))
         
         context.addEllipse(in: CGRect(x: keypoints[rightShoulder], y: keypoints[rightShoulder + 1], width: width, height: height))
