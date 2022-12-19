@@ -61,6 +61,14 @@ struct PoseView: View {
                 } label: {
                     Text("분석하기")
                 }
+                
+                Spacer()
+                
+                Button {
+                    viewStore.send(.dot)
+                } label: {
+                    Text("점찍기테스트")
+                }
             }
         }
     }

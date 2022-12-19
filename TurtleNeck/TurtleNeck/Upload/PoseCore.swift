@@ -22,6 +22,7 @@ struct PoseCore: ReducerProtocol {
         case binding(BindingAction<State>)
         case showImagePicker
         case poseResponse(TaskResult<[Pose]?>)
+        case dot
     }
     
     @Dependency (\.poseClient) var poseClient
@@ -58,6 +59,10 @@ struct PoseCore: ReducerProtocol {
                 
             case .poseResponse(.failure):
                 state.isPoseRequest = false
+                return .none
+                
+            case .dot:
+                state.selectedImage = addDot(on: state.selectedImage!, with: state.tempResult!)
                 return .none
             }
         }
