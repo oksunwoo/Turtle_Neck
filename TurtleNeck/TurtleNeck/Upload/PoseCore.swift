@@ -14,7 +14,7 @@ struct PoseCore: ReducerProtocol {
         @BindableState var isImagePickerPresented = false
         var imageData: Data?
         var isPoseRequest = false
-        var tempResult: [Pose]?
+        var tempResult: ResultCore.State?
     }
 
     enum Action: BindableAction, Equatable {
@@ -22,7 +22,7 @@ struct PoseCore: ReducerProtocol {
         case binding(BindingAction<State>)
         case showImagePicker
         case poseResponse(TaskResult<[Pose]?>)
-        case dot
+        case optionalResult(ResultCore.Action)
     }
     
     @Dependency (\.poseClient) var poseClient
@@ -52,17 +52,16 @@ struct PoseCore: ReducerProtocol {
                 state.isImagePickerPresented.toggle()
                 return .none
                 
+            case .optionalResult:
+                return .none
+                
             case .poseResponse(.success(let response)):
                 state.isPoseRequest = false
-                state.tempResult = response
+                state.tempResult = ResultCore.State(resultImage: state.selectedImage!, pose: response!)
                 return .none
                 
             case .poseResponse(.failure):
                 state.isPoseRequest = false
-                return .none
-                
-            case .dot:
-                state.selectedImage = addDot(on: state.selectedImage!, with: state.tempResult!)
                 return .none
             }
         }
