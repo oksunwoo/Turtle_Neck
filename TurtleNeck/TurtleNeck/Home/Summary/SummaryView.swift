@@ -13,33 +13,27 @@ struct SummaryView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            List {
-                Section {
-                    PoseRow(summary: .perfect)
-                    PoseRow(summary: .good)
-                    PoseRow(summary: .bad)
-                } header: {
-                    Text("Criteria").font(.headline).foregroundColor(.black)
+            
+            List(viewStore.rows,
+                 id: \.id,
+                 selection: viewStore.binding(
+                    get: \.selection?.id,
+                    send: SummaryCore.Action.showDetailView(selection:))) { row in
+                    PoseRow(summary: row.summary)
                 }
-                .onTapGesture {
-                    viewStore.send(.setSheet(isPresented: true))
-                }
-            }
-            .listStyle(InsetGroupedListStyle())
-            .sheet(isPresented: viewStore.binding(
-                get: \.isSheetPresented,
-                send: SummaryCore.Action.setSheet
-            )
-            ) {
-                IfLetStore(self.store.scope(
-                    state: \.summaryDetail,
-                    action: SummaryCore.Action.summaryDetail
+                .sheet(isPresented: viewStore.binding(
+                    get: \.isSheetPresented,
+                    send: SummaryCore.Action.setSheet
                 )
-                ) {_ in
-                    CardView(summary: .perfect)
+                ) {
+                    IfLetStore(self.store.scope(
+                        state: \.summaryDetail,
+                        action: SummaryCore.Action.summaryDetail
+                    )
+                    ) {_ in
+                        SummaryDetailView(summary: viewStore.selection!.value!.summary)
+                    }
                 }
-            }
-            .padding(.top, 15)
         }
     }
 }
