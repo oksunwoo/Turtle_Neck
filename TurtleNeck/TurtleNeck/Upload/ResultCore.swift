@@ -10,8 +10,8 @@ import ComposableArchitecture
 
 struct ResultCore: ReducerProtocol {
     struct State: Equatable {
-        var resultImage: UIImage?
-        var pose: [Pose]?
+        var resultImage: UIImage
+        var pose: [Pose]
     }
     
     enum Action: Equatable {
@@ -21,7 +21,7 @@ struct ResultCore: ReducerProtocol {
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
         switch action {
         case .dotButtonTapped:
-            state.resultImage = addDot(on: state.resultImage!, with: state.pose!)
+            state.resultImage = addDot(on: state.resultImage, with: state.pose)
             return .none
         }
     }
