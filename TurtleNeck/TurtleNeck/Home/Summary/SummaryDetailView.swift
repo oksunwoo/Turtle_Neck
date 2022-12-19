@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct CardView: View {
-    
+struct SummaryDetailView: View {
     let summary: Summary
     
     var body: some View {
         VStack {
             HStack {
-                ForEach(0..<5, id: \.self) { _ in
+                ForEach(0..<summary.star, id: \.self) { _ in
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
                 }
@@ -47,6 +46,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(summary: .perfect)
+        SummaryDetailView(summary: .perfect)
     }
 }

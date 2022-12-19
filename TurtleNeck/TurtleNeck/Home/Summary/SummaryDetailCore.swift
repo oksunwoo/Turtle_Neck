@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 struct SummaryDetailCore: ReducerProtocol {
     struct State: Equatable {
-        
+        let summary: Summary
     }
     
     enum Action: Equatable {
