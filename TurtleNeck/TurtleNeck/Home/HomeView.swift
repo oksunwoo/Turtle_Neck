@@ -68,7 +68,7 @@ extension HomeView {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 0) {
                     NavigationLink {
-                        ResultView()
+                        ResultFailView()
                     } label: {
                         VStack(alignment: .center, spacing: 3) {
                             poseItem()
