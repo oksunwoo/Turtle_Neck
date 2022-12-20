@@ -12,6 +12,7 @@ struct PoseCore: ReducerProtocol {
     struct State: Equatable {
         @BindableState var selectedImage: UIImage?
         @BindableState var isImagePickerPresented = false
+        @BindableState var showAlert = false
         var isNavigationActive = false
         var isPoseRequest = false
         var imageData: Data?
@@ -24,6 +25,8 @@ struct PoseCore: ReducerProtocol {
         case showImagePicker
         case poseResponse(TaskResult<[Pose]?>)
         case optionalResult(ResultCore.Action)
+        case showAlert
+        case dismissAlert
     }
     
     @Dependency (\.poseClient) var poseClient
@@ -70,6 +73,15 @@ struct PoseCore: ReducerProtocol {
                 return .none
                 
             case .optionalResult:
+                return .none
+                
+                
+            case .showAlert:
+                state.showAlert.toggle()
+                return .none
+                
+            case .dismissAlert:
+                state.showAlert.toggle()
                 return .none
             }
         }
