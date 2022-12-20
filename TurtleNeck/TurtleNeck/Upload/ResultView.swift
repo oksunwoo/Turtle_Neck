@@ -14,6 +14,8 @@ struct ResultView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack {
                 Image(uiImage: viewStore.resultImage)
+                    .resizable()
+                    .frame(width: 180, height: 320)
                 Button("점찍기") {
                     viewStore.send(.dotButtonTapped)
                 }
@@ -27,11 +29,3 @@ struct ResultView_Previews: PreviewProvider {
         ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!, pose: [Pose]()), reducer: ResultCore()))
     }
 }
-
-//        ProgressView("결과 분석중...")
-//            .tint(.orange)
-//            .padding()
-//            .progressViewStyle(.circular)
-//
-//            .navigationTitle("분석결과")
-//            .navigationBarTitleDisplayMode(.inline)

@@ -15,51 +15,58 @@ struct PoseView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            ZStack {
-                closeButton()
-                Text("자세분석")
-                    .font(.title2)
-                    .bold()
-            }
-            Divider()
-            HStack {
-                Text("주의")
-                    .foregroundColor(.gray)
-                    .padding(.leading, 12)
-                Spacer()
-            }
-            noticeImage()
-            noticeText()
-            
-            VStack {
-                Button {
-                    viewStore.send(.showImagePicker)
-                } label: {
-                    Text("사진 선택하기")
-                }
-                .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
-                       content: {
-                    ImagePicker(image: viewStore.binding(\.$selectedImage))
-                })
-                
-                if let selectedImage = viewStore.selectedImage {
-                    Spacer()
-                    Image(uiImage: selectedImage)
-                        .resizable()
-                        .frame(width: 180, height: 320)
-                    Spacer()
-                } else {
-                    Spacer()
-                    Image("camera")
-                        .resizable()
-                        .frame(width: 150, height: 120)
-                    Spacer()
-                }
-                
-                Button {
-                    viewStore.send(.confirmButtonTapped)
-                } label: {
-                    Text("분석하기")
+            NavigationView {
+                VStack {
+                    ZStack {
+                        closeButton()
+                        Text("자세분석")
+                            .font(.title2)
+                            .bold()
+                    }
+                    Divider()
+                    HStack {
+                        Text("주의")
+                            .foregroundColor(.gray)
+                            .padding(.leading, 12)
+                        Spacer()
+                    }
+                    noticeImage()
+                    noticeText()
+                    
+                    VStack {
+                        Button {
+                            viewStore.send(.showImagePicker)
+                        } label: {
+                            Text("사진 선택하기")
+                        }
+                        .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
+                               content: {
+                            ImagePicker(image: viewStore.binding(\.$selectedImage))
+                        })
+                        
+                        if let selectedImage = viewStore.selectedImage {
+                            Spacer()
+                            Image(uiImage: selectedImage)
+                                .resizable()
+                                .frame(width: 180, height: 320)
+                            Spacer()
+                        } else {
+                            Spacer()
+                            Image("camera")
+                                .resizable()
+                                .frame(width: 150, height: 120)
+                            Spacer()
+                        }
+                        
+                        NavigationLink(destination: IfLetStore(self.store.scope(state: \.optionalResult, action: PoseCore.Action.optionalResult)) {
+                            ResultView(store: $0)
+                        } else: {
+                            ProgressView()
+                        }, isActive: viewStore.binding(get: \.isNavigationActive, send: PoseCore.Action.confirmButtonTapped(isNavigationActive:))
+                        ) {
+                            Text("분석하기")
+                        }
+                    }
                 }
             }
         }
