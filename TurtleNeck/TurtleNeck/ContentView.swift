@@ -15,7 +15,12 @@ struct ContentView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack(alignment: .bottom) {
                 TabView(selection: viewStore.binding(get: { $0.currentTab }, send: Root.Action.selectTab)) {
-                    HomeView()
+                    HomeView(
+                        store: store.scope(
+                            state: \.home,
+                            action: Root.Action.home
+                        )
+                    )
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
                         }
@@ -24,9 +29,16 @@ struct ContentView: View {
                             Label("Account", systemImage: "person.crop.circle")
                         }
                 }
+                .accentColor(.white)
+                .onAppear {
+                    UITabBar.appearance().backgroundColor = UIColor(named: "MainGreenColor")
+                    UITabBar.appearance().unselectedItemTintColor = .white.withAlphaComponent(0.5)
+                }
                 
-                DeviderView()
-                    .foregroundColor(.gray)
+                BottomCurve()
+                    .frame(maxWidth: .infinity, maxHeight: 100)
+                    .padding(.bottom, -51)
+                    .foregroundColor(Color("BackgroundColor"))
                 
                 PopUpButton() {
                     viewStore.send(.setSheet(isPresented: true))
