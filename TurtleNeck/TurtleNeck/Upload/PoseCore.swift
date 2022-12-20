@@ -12,13 +12,14 @@ struct PoseCore: ReducerProtocol {
     struct State: Equatable {
         @BindableState var selectedImage: UIImage?
         @BindableState var isImagePickerPresented = false
-        var imageData: Data?
+        var isNavigationActive = false
         var isPoseRequest = false
-        var tempResult: ResultCore.State?
+        var imageData: Data?
+        var optionalResult: ResultCore.State?
     }
 
     enum Action: BindableAction, Equatable {
-        case confirmButtonTapped
+        case confirmButtonTapped(isNavigationActive: Bool)
         case binding(BindingAction<State>)
         case showImagePicker
         case poseResponse(TaskResult<[Pose]?>)
@@ -26,13 +27,15 @@ struct PoseCore: ReducerProtocol {
     }
     
     @Dependency (\.poseClient) var poseClient
+    private enum CancelID {}
     
     var body: some ReducerProtocol<State, Action> {
         BindingReducer()
         Reduce { state, action in
             switch action {
-            case .confirmButtonTapped:
+            case .confirmButtonTapped(isNavigationActive: true):
                 state.isPoseRequest = true
+                state.isNavigationActive = true
                 state.imageData = state.selectedImage?.jpegData(compressionQuality: 1)
                 
                 return .task { [imageData = state.imageData] in
@@ -40,6 +43,11 @@ struct PoseCore: ReducerProtocol {
                         try await self.poseClient.fetch(imageData ?? Data())
                     })
                 }
+                
+            case .confirmButtonTapped(isNavigationActive: false):
+                state.isNavigationActive = false
+                state.optionalResult = nil
+                return .cancel(id: CancelID.self)
                 
             case .binding(\.$selectedImage):
                 state.selectedImage = state.selectedImage?.downSample(size: CGSize(width: 100, height: 300))
@@ -52,18 +60,21 @@ struct PoseCore: ReducerProtocol {
                 state.isImagePickerPresented.toggle()
                 return .none
                 
-            case .optionalResult:
-                return .none
-                
             case .poseResponse(.success(let response)):
                 state.isPoseRequest = false
-                state.tempResult = ResultCore.State(resultImage: state.selectedImage!, pose: response!)
+                state.optionalResult = ResultCore.State(resultImage: state.selectedImage!, pose: response!)
                 return .none
                 
             case .poseResponse(.failure):
                 state.isPoseRequest = false
                 return .none
+                
+            case .optionalResult:
+                return .none
             }
+        }
+        .ifLet(\.optionalResult, action: /Action.optionalResult) {
+            ResultCore()
         }
     }
 }
