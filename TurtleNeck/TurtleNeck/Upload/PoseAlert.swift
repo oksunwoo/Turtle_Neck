@@ -26,10 +26,10 @@ struct PoseAlert: View {
                 .foregroundColor(.black)
                 
                 HStack {
-                    Image("Pose1")
+                    Image("Pose6")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                    Image("Pose2")
+                    Image("Pose7")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
