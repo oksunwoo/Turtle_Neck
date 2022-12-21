@@ -15,11 +15,12 @@ struct PoseView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationView {
-                VStack {
+                VStack(spacing: 10) {
                     Text("자세를 정확하게 인식 후 측정하도록 사진을 가이드에 맞춰서 촬영 후 업로드해주세요.")
                         .lineLimit(2)
-                        .padding(.horizontal, 50)
-                        .foregroundColor(.black.opacity(0.9))
+                        .padding(.horizontal, 25)
+                        .padding(.vertical, 15)
+                        .foregroundColor(.black.opacity(0.8))
                         .font(.body)
                     
                     Button {
@@ -34,40 +35,62 @@ struct PoseView: View {
                                     .stroke(Color.gray, lineWidth: 1)
                             )
                     }
-                    .alert(isPresented: viewStore.binding(\.$showAlert), alert: PoseAlert { viewStore.send(.dismissAlert) })
+                    .alert(isPresented: viewStore.binding(\.$showAlert),
+                           alert: PoseAlert { viewStore.send(.dismissAlert) })
                     
-                    Button {
-                        viewStore.send(.showImagePicker)
-                    } label: {
-                        Text("사진 선택하기")
+                    VStack(spacing: 20) {
+                        Text("전신사진을 등록해주세요").bold()
+                        Button {
+                            viewStore.send(.showImagePicker)
+                        } label: {
+                            VStack {
+                                if let selectedImage = viewStore.selectedImage {
+                                    Image(uiImage: selectedImage)
+                                        .resizable()
+                                        .frame(width: 220, height: 320)
+                                        .padding(1)
+                                        .overlay(
+                                            Rectangle()
+                                                .stroke(style: StrokeStyle(lineWidth: 2, dash: [4]))
+                                                .foregroundColor(.white)
+                                        )
+                                } else {
+                                    Image("camera")
+                                        .resizable()
+                                        .frame(width: 100, height: 80)
+                                    Text("사진추가")
+                                        .foregroundColor(.black)
+                                        .bold()
+                                }
+                            }
+                        }
+                        .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
+                               content: {
+                            ImagePicker(image: viewStore.binding(\.$selectedImage))
+                        })
+                        
+                        NavigationLink(destination: IfLetStore(self.store.scope(state: \.optionalResult, action: PoseCore.Action.optionalResult)) {
+                            ResultView(store: $0)
+                        } else: {
+                            ProgressView()
+                        }, isActive: viewStore.binding(get: \.isNavigationActive, send: PoseCore.Action.confirmButtonTapped(isNavigationActive:))
+                        ) {
+                            Text("거북목 측정하기")
+                                .foregroundColor(.white)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .frame(width: 300, height: 40)
+                                        .foregroundColor(viewStore.selectedImage == nil ? .gray.opacity(0.7) : Color("DeepBlue"))
+                                )
+                        }
+                        .disabled(viewStore.selectedImage == nil)
+                        .padding(.vertical, 30)
                     }
-                    .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
-                           content: {
-                        ImagePicker(image: viewStore.binding(\.$selectedImage))
-                    })
-                    
-                    if let selectedImage = viewStore.selectedImage {
-                        Spacer()
-                        Image(uiImage: selectedImage)
-                            .resizable()
-                            .frame(width: 180, height: 320)
-                        Spacer()
-                    } else {
-                        Spacer()
-                        Image("camera")
-                            .resizable()
-                            .frame(width: 150, height: 120)
-                        Spacer()
-                    }
-                    
-                    NavigationLink(destination: IfLetStore(self.store.scope(state: \.optionalResult, action: PoseCore.Action.optionalResult)) {
-                        ResultView(store: $0)
-                    } else: {
-                        ProgressView()
-                    }, isActive: viewStore.binding(get: \.isNavigationActive, send: PoseCore.Action.confirmButtonTapped(isNavigationActive:))
-                    ) {
-                        Text("분석하기")
-                    }
+                    .padding(.top, 30)
+                    .frame(maxWidth: .infinity)
+                    .background(.gray.opacity(0.2))
+                    .padding()
+                    Spacer()
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
