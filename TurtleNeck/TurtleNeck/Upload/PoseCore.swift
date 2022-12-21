@@ -75,7 +75,6 @@ struct PoseCore: ReducerProtocol {
             case .optionalResult:
                 return .none
                 
-                
             case .showAlert:
                 state.showAlert.toggle()
                 return .none

@@ -55,7 +55,7 @@ extension HomeView {
                 .frame(width: 250, height: 50)
             Spacer()
         }
-        .padding(.top, 40)
+        .padding([.top, .leading], 20)
     }
     
     func categoryView() -> some View {

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     func alert(isPresented: Binding<Bool>, alert: PoseAlert) -> some View {
-        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        let keyWindow = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
         
         let vc = UIHostingController(rootView: alert)
         vc.modalTransitionStyle = .crossDissolve
