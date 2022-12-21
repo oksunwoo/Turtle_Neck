@@ -13,6 +13,7 @@ struct PoseCore: ReducerProtocol {
         @BindableState var selectedImage: UIImage?
         @BindableState var isImagePickerPresented = false
         @BindableState var showAlert = false
+        var sourceType: UIImagePickerController.SourceType = .camera
         var isNavigationActive = false
         var isPoseRequest = false
         var imageData: Data?
@@ -27,6 +28,8 @@ struct PoseCore: ReducerProtocol {
         case optionalResult(ResultCore.Action)
         case showAlert
         case dismissAlert
+        case showAlbum
+        case showCamera
     }
     
     @Dependency (\.poseClient) var poseClient
@@ -81,6 +84,14 @@ struct PoseCore: ReducerProtocol {
                 
             case .dismissAlert:
                 state.showAlert.toggle()
+                return .none
+                
+            case .showAlbum:
+                state.sourceType = .photoLibrary
+                return .none
+                
+            case .showCamera:
+                state.sourceType = .camera
                 return .none
             }
         }
