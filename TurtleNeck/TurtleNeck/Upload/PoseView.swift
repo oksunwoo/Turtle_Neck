@@ -29,7 +29,6 @@ struct PoseView: View {
                         Text("사진 촬영 가이드 및 유의사항")
                             .foregroundColor(.black.opacity(0.7))
                             .font(.footnote)
-//                            .font(.caption)
                             .frame(width: 200, height: 40)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 30)
@@ -41,8 +40,21 @@ struct PoseView: View {
                     
                     VStack(spacing: 20) {
                         Text("전신사진을 등록해주세요").bold()
-                        Button {
-                            viewStore.send(.showImagePicker)
+                        
+                        Menu {
+                            Button {
+                                viewStore.send(.showAlbum)
+                                viewStore.send(.showImagePicker)
+                            } label: {
+                                Label("사진 보관함", systemImage: "photo.on.rectangle.angled")
+                            }
+                            
+                            Button {
+                                viewStore.send(.showCamera)
+                                viewStore.send(.showImagePicker)
+                            } label: {
+                                Label("사진 찍기", systemImage: "camera")
+                            }
                         } label: {
                             VStack {
                                 if let selectedImage = viewStore.selectedImage {
@@ -66,8 +78,8 @@ struct PoseView: View {
                             }
                         }
                         .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
-                               content: {
-                            ImagePicker(image: viewStore.binding(\.$selectedImage))
+                               content: { ImagePicker(sourceType: viewStore.sourceType,
+                                                      image: viewStore.binding(\.$selectedImage))
                         })
                         
                         NavigationLink(destination: IfLetStore(self.store.scope(state: \.optionalResult, action: PoseCore.Action.optionalResult)) {
