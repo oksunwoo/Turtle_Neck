@@ -22,6 +22,7 @@ struct ResultCore: ReducerProtocol {
         switch action {
         case .dotButtonTapped:
             state.resultImage = addDot(on: state.resultImage, with: state.pose)
+            calculateDegree(pose: state.pose)
             return .none
         }
     }
