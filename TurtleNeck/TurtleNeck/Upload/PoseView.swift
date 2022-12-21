@@ -28,7 +28,8 @@ struct PoseView: View {
                     } label: {
                         Text("사진 촬영 가이드 및 유의사항")
                             .foregroundColor(.black.opacity(0.7))
-                            .font(.caption)
+                            .font(.footnote)
+//                            .font(.caption)
                             .frame(width: 200, height: 40)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 30)
