@@ -7,9 +7,9 @@
 
 import Foundation
 
-func calculateDegree(pose: [Pose]) {
+func calculateDegree(pose: [Pose]) -> Int {
     guard let pose = pose.first else {
-        return
+        return 0
     }
     
     let leftEar = 9
@@ -30,8 +30,10 @@ func calculateDegree(pose: [Pose]) {
         base = abs(keypoints[rightEar + 1] - keypoints[rightShoulder + 1])
         height = abs(keypoints[rightEar] - keypoints[rightShoulder])
     }
-   
+    
     let radian = atan(height/base)
-    let degree = radian * 180/Double.pi
+    let degree = round(radian * 180/Double.pi)
     print("degree: \(degree)")
+    
+    return Int(degree)
 }
