@@ -25,6 +25,7 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
         }
+        .accentColor(.blue)
     }
 }
 

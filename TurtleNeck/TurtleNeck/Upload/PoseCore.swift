@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 import ComposableArchitecture
 
 struct PoseCore: ReducerProtocol {
