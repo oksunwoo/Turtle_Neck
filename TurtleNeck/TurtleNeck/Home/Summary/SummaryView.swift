@@ -19,7 +19,7 @@ struct SummaryView: View {
                  selection: viewStore.binding(
                     get: \.selection?.id,
                     send: SummaryCore.Action.showDetailView(selection:))) { row in
-                    PoseRow(summary: row.summary)
+                        SummaryRow(summary: row.summary)
                 }
                 .sheet(isPresented: viewStore.binding(
                     get: \.isSheetPresented,

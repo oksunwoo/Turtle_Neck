@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PoseRow: View {
+struct SummaryRow: View {
     let summary: Summary
     
     var body: some View {
@@ -27,8 +27,8 @@ struct PoseRow: View {
     }
 }
 
-struct PoseRow_Previews: PreviewProvider {
+struct SummaryRow_Previews: PreviewProvider {
     static var previews: some View {
-        PoseRow(summary: .perfect)
+        SummaryRow(summary: .perfect)
     }
 }
