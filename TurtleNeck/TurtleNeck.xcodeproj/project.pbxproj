@@ -144,6 +144,9 @@
 				537C2959295064A90015A69A /* ResultCore.swift */,
 				3B57868C28E59340002327F8 /* ResultView.swift */,
 				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
+				53CDEDF329421D1D00A4B1EA /* PoseClient.swift */,
+				53CDEE0029436F2D00A4B1EA /* Pose.swift */,
+				537C295D29545AFA0015A69A /* Result */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -173,6 +176,16 @@
 				3B733525294B18F400938B1A /* Result.swift */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		537C295D29545AFA0015A69A /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				537C2959295064A90015A69A /* ResultCore.swift */,
+				3B57868C28E59340002327F8 /* ResultView.swift */,
+				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 		5386F2DD29488170006E1756 /* Extension */ = {
