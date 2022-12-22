@@ -29,6 +29,9 @@
 		3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */; };
 		537C295A295064A90015A69A /* ResultCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C2959295064A90015A69A /* ResultCore.swift */; };
 		537C295C29533ECF0015A69A /* DegreeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C295B29533ECF0015A69A /* DegreeCalculator.swift */; };
+		537C296529546AB20015A69A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296429546AB20015A69A /* ScoreView.swift */; };
+		537C296729546AC20015A69A /* ResultitemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296629546AC20015A69A /* ResultitemView.swift */; };
+		537C296929546ACE0015A69A /* ItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296829546ACE0015A69A /* ItemImageView.swift */; };
 		5386F2DC29476BEC006E1756 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DB29476BEC006E1756 /* Decoder.swift */; };
 		5386F2DF29488187006E1756 /* UIImage+DownSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DE29488187006E1756 /* UIImage+DownSample.swift */; };
 		5386F2E12948B7E3006E1756 /* DotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2E02948B7E3006E1756 /* DotMaker.swift */; };
@@ -71,6 +74,9 @@
 		3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCurve.swift; sourceTree = "<group>"; };
 		537C2959295064A90015A69A /* ResultCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCore.swift; sourceTree = "<group>"; };
 		537C295B29533ECF0015A69A /* DegreeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeCalculator.swift; sourceTree = "<group>"; };
+		537C296429546AB20015A69A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		537C296629546AC20015A69A /* ResultitemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultitemView.swift; sourceTree = "<group>"; };
+		537C296829546ACE0015A69A /* ItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageView.swift; sourceTree = "<group>"; };
 		5386F2DB29476BEC006E1756 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		5386F2DE29488187006E1756 /* UIImage+DownSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownSample.swift"; sourceTree = "<group>"; };
 		5386F2E02948B7E3006E1756 /* DotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotMaker.swift; sourceTree = "<group>"; };
@@ -184,6 +190,9 @@
 				537C2959295064A90015A69A /* ResultCore.swift */,
 				3B57868C28E59340002327F8 /* ResultView.swift */,
 				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
+				537C296429546AB20015A69A /* ScoreView.swift */,
+				537C296629546AC20015A69A /* ResultitemView.swift */,
+				537C296829546ACE0015A69A /* ItemImageView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -330,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537C296929546ACE0015A69A /* ItemImageView.swift in Sources */,
 				3B57868428E1B5FA002327F8 /* OnboardingView.swift in Sources */,
 				3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */,
 				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
@@ -344,6 +354,8 @@
 				53CDEDFD294342A200A4B1EA /* KeychainError.swift in Sources */,
 				53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */,
 				3BF63984292CA6CE0002A03E /* HomeCore.swift in Sources */,
+				537C296729546AC20015A69A /* ResultitemView.swift in Sources */,
+				3B7335222949E65600938B1A /* CardCurve.swift in Sources */,
 				3B57868F28E6E094002327F8 /* ResultFailView.swift in Sources */,
 				3BF63988292CB4490002A03E /* PoseCore.swift in Sources */,
 				3B733526294B18F400938B1A /* Result.swift in Sources */,
@@ -363,6 +375,7 @@
 				5386F2DF29488187006E1756 /* UIImage+DownSample.swift in Sources */,
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
 				53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */,
+				537C296529546AB20015A69A /* ScoreView.swift in Sources */,
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,
 				53CDEE0129436F2D00A4B1EA /* Pose.swift in Sources */,
 				3B57394228D8AE0E00529A3E /* VersionView.swift in Sources */,
