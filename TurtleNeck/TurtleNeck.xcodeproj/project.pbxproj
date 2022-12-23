@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B06B0922951E3A2003B8BC5 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B06B0912951E3A2003B8BC5 /* View+Extension.swift */; };
+		3B06B0962951E3E0003B8BC5 /* PoseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B06B0952951E3E0003B8BC5 /* PoseAlert.swift */; };
 		3B57393E28D882C100529A3E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57393D28D882C100529A3E /* Setting.swift */; };
 		3B57394228D8AE0E00529A3E /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57394128D8AE0E00529A3E /* VersionView.swift */; };
 		3B57394428D9958600529A3E /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57394328D9958600529A3E /* Notice.swift */; };
@@ -16,7 +18,7 @@
 		3B57868D28E59340002327F8 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57868C28E59340002327F8 /* ResultView.swift */; };
 		3B57868F28E6E094002327F8 /* ResultFailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57868E28E6E094002327F8 /* ResultFailView.swift */; };
 		3B57869428ED7BF4002327F8 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57869328ED7BF4002327F8 /* EmptyHomeView.swift */; };
-		3B7335172949AD6E00938B1A /* PoseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7335162949AD6E00938B1A /* PoseRow.swift */; };
+		3B7335172949AD6E00938B1A /* SummaryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7335162949AD6E00938B1A /* SummaryRow.swift */; };
 		3B7335202949E62700938B1A /* SummaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B73351F2949E62700938B1A /* SummaryDetailView.swift */; };
 		3B7335222949E65600938B1A /* CardCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7335212949E65600938B1A /* CardCurve.swift */; };
 		3B7335242949E67600938B1A /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7335232949E67600938B1A /* SummaryView.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B06B0912951E3A2003B8BC5 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		3B06B0952951E3E0003B8BC5 /* PoseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAlert.swift; sourceTree = "<group>"; };
 		3B57393D28D882C100529A3E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = ../Setting.swift; sourceTree = "<group>"; };
 		3B57394128D8AE0E00529A3E /* VersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionView.swift; sourceTree = "<group>"; };
 		3B57394328D9958600529A3E /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
@@ -61,7 +65,7 @@
 		3B57868C28E59340002327F8 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		3B57868E28E6E094002327F8 /* ResultFailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultFailView.swift; sourceTree = "<group>"; };
 		3B57869328ED7BF4002327F8 /* EmptyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
-		3B7335162949AD6E00938B1A /* PoseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseRow.swift; sourceTree = "<group>"; };
+		3B7335162949AD6E00938B1A /* SummaryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRow.swift; sourceTree = "<group>"; };
 		3B73351F2949E62700938B1A /* SummaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDetailView.swift; sourceTree = "<group>"; };
 		3B7335212949E65600938B1A /* CardCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCurve.swift; sourceTree = "<group>"; };
 		3B7335232949E67600938B1A /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
@@ -142,13 +146,14 @@
 		3B57869028E6E127002327F8 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
+				53CDEE0029436F2D00A4B1EA /* Pose.swift */,
 				3BF63987292CB4490002A03E /* PoseCore.swift */,
 				3B57868528E41F65002327F8 /* PoseView.swift */,
+				3B06B0952951E3E0003B8BC5 /* PoseAlert.swift */,
+				53CDEDF329421D1D00A4B1EA /* PoseClient.swift */,
 				537C2959295064A90015A69A /* ResultCore.swift */,
 				3B57868C28E59340002327F8 /* ResultView.swift */,
 				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
-				53CDEDF329421D1D00A4B1EA /* PoseClient.swift */,
-				53CDEE0029436F2D00A4B1EA /* Pose.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -179,7 +184,7 @@
 				3B733525294B18F400938B1A /* Summary.swift */,
 				3B733527294B22AB00938B1A /* SummaryCore.swift */,
 				3B7335232949E67600938B1A /* SummaryView.swift */,
-				3B7335162949AD6E00938B1A /* PoseRow.swift */,
+				3B7335162949AD6E00938B1A /* SummaryRow.swift */,
 				3B73352A294B2EB900938B1A /* SummaryDetailCore.swift */,
 				3B73351F2949E62700938B1A /* SummaryDetailView.swift */,
 			);
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				5386F2DE29488187006E1756 /* UIImage+Extension.swift */,
+				3B06B0912951E3A2003B8BC5 /* View+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -328,9 +334,11 @@
 			files = (
 				3B57868428E1B5FA002327F8 /* OnboardingView.swift in Sources */,
 				3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */,
+				3B06B0922951E3A2003B8BC5 /* View+Extension.swift in Sources */,
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
 				3B57868628E41F65002327F8 /* PoseView.swift in Sources */,
 				5386F2E12948B7E3006E1756 /* DotMaker.swift in Sources */,
+				3B06B0962951E3E0003B8BC5 /* PoseAlert.swift in Sources */,
 				3B57868828E48151002327F8 /* ImagePicker.swift in Sources */,
 				3B57869428ED7BF4002327F8 /* EmptyHomeView.swift in Sources */,
 				53CDEDFD294342A200A4B1EA /* KeychainError.swift in Sources */,
@@ -338,7 +346,7 @@
 				3BF63984292CA6CE0002A03E /* HomeCore.swift in Sources */,
 				3B7335222949E65600938B1A /* CardCurve.swift in Sources */,
 				3B7335202949E62700938B1A /* SummaryDetailView.swift in Sources */,
-				3B7335172949AD6E00938B1A /* PoseRow.swift in Sources */,
+				3B7335172949AD6E00938B1A /* SummaryRow.swift in Sources */,
 				3B57868F28E6E094002327F8 /* ResultFailView.swift in Sources */,
 				3BF63988292CB4490002A03E /* PoseCore.swift in Sources */,
 				3B7335242949E67600938B1A /* SummaryView.swift in Sources */,

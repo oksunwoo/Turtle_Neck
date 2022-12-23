@@ -6,57 +6,99 @@
 //
 
 import SwiftUI
+import Photos
+import AVFoundation
 import ComposableArchitecture
 
 struct PoseView: View {
     let store: StoreOf<PoseCore>
-    
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationView {
-                VStack {
-                    ZStack {
-                        closeButton()
-                        Text("자세분석")
-                            .font(.title2)
-                            .bold()
-                    }
-                    Divider()
-                    HStack {
-                        Text("주의")
-                            .foregroundColor(.gray)
-                            .padding(.leading, 12)
-                        Spacer()
-                    }
-                    noticeImage()
-                    noticeText()
+                VStack(spacing: 10) {
+                    Text("자세를 정확하게 인식 후 측정하도록 사진을 가이드에 맞춰서 촬영 후 업로드해주세요.")
+                        .lineLimit(2)
+                        .padding(.horizontal, 25)
+                        .padding(.vertical, 15)
+                        .foregroundColor(.black.opacity(0.8))
+                        .font(.body)
                     
-                    VStack {
-                        Button {
-                            viewStore.send(.showImagePicker)
+                    Button {
+                        viewStore.send(.showAlert)
+                    } label: {
+                        Text("사진 촬영 가이드 및 유의사항")
+                            .foregroundColor(.black.opacity(0.7))
+                            .font(.footnote)
+                            .frame(width: 200, height: 40)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color.gray, lineWidth: 1)
+                            )
+                    }
+                    .alert(isPresented: viewStore.binding(\.$showAlert),
+                           alert: PoseAlert { viewStore.send(.dismissAlert) })
+                    
+                    VStack(spacing: 20) {
+                        Text("전신사진을 등록해주세요").bold()
+                        
+                        Menu {
+                            Button {
+                                PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+                                    switch status {
+                                    case .authorized:
+                                        DispatchQueue.main.async {
+                                            viewStore.send(.showAlbum)
+                                        }
+                                    default:
+                                        viewStore.send(.alertButtonTapped)
+                                    }
+                                }
+                                
+                            } label: {
+                                Label("사진 보관함", systemImage: "photo.on.rectangle.angled")
+                            }
+                            
+                            Button {
+                                AVCaptureDevice.requestAccess(for: .video) { granted in
+                                    if granted {
+                                        DispatchQueue.main.async {
+                                            viewStore.send(.showCamera)
+                                        }
+                                    } else {
+                                        viewStore.send(.alertButtonTapped)
+                                    }
+                                }
+                            } label: {
+                                Label("사진 찍기", systemImage: "camera")
+                            }
                         } label: {
-                            Text("사진 선택하기")
+                            VStack {
+                                if let selectedImage = viewStore.selectedImage {
+                                    Image(uiImage: selectedImage)
+                                        .resizable()
+                                        .frame(width: 220, height: 320)
+                                        .padding(1)
+                                        .overlay(
+                                            Rectangle()
+                                                .stroke(style: StrokeStyle(lineWidth: 2, dash: [4]))
+                                                .foregroundColor(.white)
+                                        )
+                                } else {
+                                    Image("camera")
+                                        .resizable()
+                                        .frame(width: 100, height: 80)
+                                    Text("사진추가")
+                                        .foregroundColor(.black)
+                                        .bold()
+                                }
+                            }
                         }
                         .sheet(isPresented: viewStore.binding(\.$isImagePickerPresented),
-                               content: {
-                            ImagePicker(image: viewStore.binding(\.$selectedImage))
+                               content: { ImagePicker(sourceType: viewStore.sourceType,
+                                                      image: viewStore.binding(\.$selectedImage))
                         })
-                        
-                        if let selectedImage = viewStore.selectedImage {
-                            Spacer()
-                            Image(uiImage: selectedImage)
-                                .resizable()
-                                .frame(width: 180, height: 320)
-                            Spacer()
-                        } else {
-                            Spacer()
-                            Image("camera")
-                                .resizable()
-                                .frame(width: 150, height: 120)
-                            Spacer()
-                        }
                         
                         NavigationLink(destination: IfLetStore(self.store.scope(state: \.optionalResult, action: PoseCore.Action.optionalResult)) {
                             ResultView(store: $0)
@@ -64,10 +106,31 @@ struct PoseView: View {
                             ProgressView()
                         }, isActive: viewStore.binding(get: \.isNavigationActive, send: PoseCore.Action.confirmButtonTapped(isNavigationActive:))
                         ) {
-                            Text("분석하기")
+                            Text("거북목 측정하기")
+                                .foregroundColor(.white)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .frame(width: 300, height: 40)
+                                        .foregroundColor(viewStore.selectedImage == nil ? .gray.opacity(0.7) : Color("DeepBlue"))
+                                )
                         }
+                        .disabled(viewStore.selectedImage == nil)
+                        .padding(.vertical, 30)
+                    }
+                    .padding(.top, 30)
+                    .frame(maxWidth: .infinity)
+                    .background(.gray.opacity(0.2))
+                    .padding()
+                    Spacer()
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        closeButton()
                     }
                 }
+                .navigationTitle("거북목 측정")
+                .navigationBarTitleDisplayMode(.inline)
+                .alert(self.store.scope(state: \.alert), dismiss: .alertDismissed)
             }
         }
     }
@@ -86,59 +149,12 @@ struct PoseView_Previews: PreviewProvider {
 
 extension PoseView {
     func closeButton() -> some View {
-        HStack {
-            Spacer()
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("x")
-                    .font(.largeTitle)
-                    .foregroundColor(.gray)
-                    .padding(.trailing, 12)
-            }
-        }
-    }
-    
-    func noticeImage() -> some View {
-        HStack {
-            ZStack(alignment: .top) {
-                GroupBox {
-                    Image("Pose1")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                }
-                .padding([.top, .leading])
-                Text("O")
-                    .bold()
-                    .font(.largeTitle)
-                    .foregroundColor(.green)
-            }
-            ZStack(alignment: .top) {
-                GroupBox {
-                    Image("Pose2")
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                }
-                .padding([.top, .trailing])
-                Text("X")
-                    .bold()
-                    .font(.largeTitle)
-                    .foregroundColor(.red)
-            }
-        }
-    }
-    
-    func noticeText() -> some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("* 정확한 자세 분석을 위해 전신을 촬영해주세요")
-                Text("* 코, 눈, 귀, 어깨, 팔꿈치, 손목, 골반, 무릎, 발목이 보이게 찍어주세요")
-                Text("* 또 다른 주의사항")
-            }
-            .padding(.leading, 12)
-            .foregroundColor(.gray)
-            .font(.caption)
-            Spacer()
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Text("x")
+                .font(.largeTitle)
+                .foregroundColor(.black)
         }
     }
 }

@@ -12,18 +12,27 @@ struct PoseCore: ReducerProtocol {
     struct State: Equatable {
         @BindableState var selectedImage: UIImage?
         @BindableState var isImagePickerPresented = false
+        @BindableState var showAlert = false
+        var sourceType: UIImagePickerController.SourceType = .camera
         var isNavigationActive = false
         var isPoseRequest = false
         var imageData: Data?
         var optionalResult: ResultCore.State?
+        var alert: AlertState<Action>?
     }
 
     enum Action: BindableAction, Equatable {
         case confirmButtonTapped(isNavigationActive: Bool)
         case binding(BindingAction<State>)
-        case showImagePicker
         case poseResponse(TaskResult<[Pose]?>)
         case optionalResult(ResultCore.Action)
+        case showAlert
+        case dismissAlert
+        case showAlbum
+        case showCamera
+        case alertButtonTapped
+        case alertDismissed
+        case goToSettings
     }
     
     @Dependency (\.poseClient) var poseClient
@@ -56,10 +65,6 @@ struct PoseCore: ReducerProtocol {
             case .binding:
                 return .none
                 
-            case .showImagePicker:
-                state.isImagePickerPresented.toggle()
-                return .none
-                
             case .poseResponse(.success(let response)):
                 state.isPoseRequest = false
                 state.optionalResult = ResultCore.State(resultImage: state.selectedImage!, pose: response!)
@@ -70,6 +75,47 @@ struct PoseCore: ReducerProtocol {
                 return .none
                 
             case .optionalResult:
+                return .none
+                
+            case .showAlert:
+                state.showAlert.toggle()
+                return .none
+                
+            case .dismissAlert:
+                state.showAlert.toggle()
+                return .none
+                
+            case .showAlbum:
+                state.sourceType = .photoLibrary
+                state.isImagePickerPresented.toggle()
+                return .none
+                
+            case .showCamera:
+                state.sourceType = .camera
+                state.isImagePickerPresented.toggle()
+                return .none
+                
+            case .alertButtonTapped:
+                state.alert = AlertState(
+                    title: TextState("접근권한 확인"),
+                    message: TextState("사진 및 카메라 접근을 허용해주세요"),
+                    buttons: [
+                        .default(TextState("설정으로 이동"), action: .send(.goToSettings)),
+                        .cancel(TextState("확인"))
+                    ]
+                )
+                return .none
+                
+            case .alertDismissed:
+                state.alert = nil
+                return .none
+                
+            case .goToSettings:
+                guard let settingURL = URL(string: UIApplication.openSettingsURLString),
+                      UIApplication.shared.canOpenURL(settingURL) else {
+                    return .none
+                }
+                UIApplication.shared.open(settingURL, options: [:])
                 return .none
             }
         }
