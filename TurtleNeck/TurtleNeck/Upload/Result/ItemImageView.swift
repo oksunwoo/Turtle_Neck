@@ -17,11 +17,6 @@ struct ItemImageView: View {
                 .resizable()
                 .frame(width: 90, height: 160)
                 .cornerRadius(5)
-            Image(uiImage: UIImage(named: "TurtleNeckLogo_bk")!)
-                .renderingMode(.original)
-                .resizable()
-                .frame(width: 65, height: 15)
-                .cornerRadius(5)
         }
         .padding(.leading, 15)
     }
