@@ -32,6 +32,8 @@
 		537C296529546AB20015A69A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296429546AB20015A69A /* ScoreView.swift */; };
 		537C296729546AC20015A69A /* ResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296629546AC20015A69A /* ResultItemView.swift */; };
 		537C296929546ACE0015A69A /* ItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296829546ACE0015A69A /* ItemImageView.swift */; };
+		537C296D29559C290015A69A /* ItemDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296C29559C290015A69A /* ItemDescriptionView.swift */; };
+		537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296E2955A28F0015A69A /* VerticalLine.swift */; };
 		5386F2DC29476BEC006E1756 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DB29476BEC006E1756 /* Decoder.swift */; };
 		5386F2DF29488187006E1756 /* UIImage+DownSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DE29488187006E1756 /* UIImage+DownSample.swift */; };
 		5386F2E12948B7E3006E1756 /* DotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2E02948B7E3006E1756 /* DotMaker.swift */; };
@@ -77,6 +79,8 @@
 		537C296429546AB20015A69A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		537C296629546AC20015A69A /* ResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemView.swift; sourceTree = "<group>"; };
 		537C296829546ACE0015A69A /* ItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageView.swift; sourceTree = "<group>"; };
+		537C296C29559C290015A69A /* ItemDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescriptionView.swift; sourceTree = "<group>"; };
+		537C296E2955A28F0015A69A /* VerticalLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLine.swift; sourceTree = "<group>"; };
 		5386F2DB29476BEC006E1756 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		5386F2DE29488187006E1756 /* UIImage+DownSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownSample.swift"; sourceTree = "<group>"; };
 		5386F2E02948B7E3006E1756 /* DotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotMaker.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */,
 				3B31240B29602C850060B00E /* CollapsibleView.swift */,
 				53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */,
+				537C296E2955A28F0015A69A /* VerticalLine.swift */,
 				3B57868728E48151002327F8 /* ImagePicker.swift */,
 				5386F2DB29476BEC006E1756 /* Decoder.swift */,
 				5386F2E02948B7E3006E1756 /* DotMaker.swift */,
@@ -193,6 +198,7 @@
 				537C296429546AB20015A69A /* ScoreView.swift */,
 				537C296629546AC20015A69A /* ResultItemView.swift */,
 				537C296829546ACE0015A69A /* ItemImageView.swift */,
+				537C296C29559C290015A69A /* ItemDescriptionView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
 				3B57868628E41F65002327F8 /* PoseView.swift in Sources */,
+				537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */,
 				5386F2E12948B7E3006E1756 /* DotMaker.swift in Sources */,
 				3B06B0962951E3E0003B8BC5 /* PoseAlert.swift in Sources */,
 				3B31240C29602C850060B00E /* CollapsibleView.swift in Sources */,
@@ -365,6 +372,7 @@
 				53CDEDF429421D1D00A4B1EA /* PoseClient.swift in Sources */,
 				3BF63982292CA6290002A03E /* Root.swift in Sources */,
 				537C295A295064A90015A69A /* ResultCore.swift in Sources */,
+				537C296D29559C290015A69A /* ItemDescriptionView.swift in Sources */,
 				3BF63982292CA6290002A03E /* Root.swift in Sources */,
 				53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */,
 				3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */,
