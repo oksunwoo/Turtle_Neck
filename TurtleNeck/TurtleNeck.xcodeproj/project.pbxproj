@@ -34,6 +34,7 @@
 		537C296929546ACE0015A69A /* ItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296829546ACE0015A69A /* ItemImageView.swift */; };
 		537C296D29559C290015A69A /* ItemDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296C29559C290015A69A /* ItemDescriptionView.swift */; };
 		537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296E2955A28F0015A69A /* VerticalLine.swift */; };
+		537C29712955C0A40015A69A /* ResultProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C29702955C0A40015A69A /* ResultProgressStyle.swift */; };
 		5386F2DC29476BEC006E1756 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DB29476BEC006E1756 /* Decoder.swift */; };
 		5386F2DF29488187006E1756 /* UIImage+DownSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DE29488187006E1756 /* UIImage+DownSample.swift */; };
 		5386F2E12948B7E3006E1756 /* DotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2E02948B7E3006E1756 /* DotMaker.swift */; };
@@ -81,6 +82,7 @@
 		537C296829546ACE0015A69A /* ItemImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageView.swift; sourceTree = "<group>"; };
 		537C296C29559C290015A69A /* ItemDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescriptionView.swift; sourceTree = "<group>"; };
 		537C296E2955A28F0015A69A /* VerticalLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLine.swift; sourceTree = "<group>"; };
+		537C29702955C0A40015A69A /* ResultProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProgressStyle.swift; sourceTree = "<group>"; };
 		5386F2DB29476BEC006E1756 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		5386F2DE29488187006E1756 /* UIImage+DownSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownSample.swift"; sourceTree = "<group>"; };
 		5386F2E02948B7E3006E1756 /* DotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotMaker.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				5386F2DB29476BEC006E1756 /* Decoder.swift */,
 				5386F2E02948B7E3006E1756 /* DotMaker.swift */,
 				537C295B29533ECF0015A69A /* DegreeCalculator.swift */,
+				537C29702955C0A40015A69A /* ResultProgressStyle.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -349,6 +352,8 @@
 				3B57868428E1B5FA002327F8 /* OnboardingView.swift in Sources */,
 				3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */,
 				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
+				3B06B0922951E3A2003B8BC5 /* View+Extension.swift in Sources */,
+				537C29712955C0A40015A69A /* ResultProgressStyle.swift in Sources */,
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
 				3B57868628E41F65002327F8 /* PoseView.swift in Sources */,
 				537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */,

@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct ScoreView: View {
+    let score: Double
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ProgressView(value: score, total: 100)
+            .progressViewStyle(ResultProgressStyle())
+            .frame(width: 200, height: 200)
+            .contentShape(Rectangle())
     }
 }
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreView()
+        ScoreView(score: 50)
     }
 }
