@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Photos
+import AVFoundation
 import ComposableArchitecture
 
 struct PoseView: View {
@@ -43,15 +45,31 @@ struct PoseView: View {
                         
                         Menu {
                             Button {
-                                viewStore.send(.showAlbum)
-                                viewStore.send(.showImagePicker)
+                                PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+                                    switch status {
+                                    case .authorized:
+                                        DispatchQueue.main.async {
+                                            viewStore.send(.showAlbum)
+                                        }
+                                    default:
+                                        viewStore.send(.alertButtonTapped)
+                                    }
+                                }
+                                
                             } label: {
                                 Label("사진 보관함", systemImage: "photo.on.rectangle.angled")
                             }
                             
                             Button {
-                                viewStore.send(.showCamera)
-                                viewStore.send(.showImagePicker)
+                                AVCaptureDevice.requestAccess(for: .video) { granted in
+                                    if granted {
+                                        DispatchQueue.main.async {
+                                            viewStore.send(.showCamera)
+                                        }
+                                    } else {
+                                        viewStore.send(.alertButtonTapped)
+                                    }
+                                }
                             } label: {
                                 Label("사진 찍기", systemImage: "camera")
                             }
@@ -112,6 +130,7 @@ struct PoseView: View {
                 }
                 .navigationTitle("거북목 측정")
                 .navigationBarTitleDisplayMode(.inline)
+                .alert(self.store.scope(state: \.alert), dismiss: .alertDismissed)
             }
         }
     }
