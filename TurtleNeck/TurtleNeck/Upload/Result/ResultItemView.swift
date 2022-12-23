@@ -18,6 +18,7 @@ struct ResultItemView: View {
                 .frame(width: CGFloat(50), height: CGFloat(100))
             ItemDescriptionView()
         }
+        .background(Color.white)
     }
 }
 
