@@ -13,10 +13,10 @@ struct ResultItemView: View {
     var body: some View {
         HStack {
             ItemImageView(resultImage: resultImage)
-            ForEach(0..<5, id: \.self) { _ in
-                Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
-            }
+            VerticalLine()
+                .stroke(Color(uiColor: .systemGray5), lineWidth: 2)
+                .frame(width: CGFloat(50), height: CGFloat(100))
+            ItemDescriptionView()
         }
     }
 }
