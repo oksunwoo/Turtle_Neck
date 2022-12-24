@@ -14,13 +14,18 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent: ImagePicker
+        let sourceType: UIImagePickerController.SourceType
         
-        init(_ parent: ImagePicker) {
+        init(_ parent: ImagePicker, sourceType: UIImagePickerController.SourceType) {
             self.parent = parent
+            self.sourceType = sourceType
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             guard let image = info[.originalImage] as? UIImage else { return }
+            if sourceType == .camera {
+                UIImageWriteToSavedPhotosAlbum(image, self, nil, nil)
+            }
             self.parent.image = image
             self.parent.presentationMode.wrappedValue.dismiss()
         }
@@ -34,7 +39,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
+        return Coordinator(self, sourceType: sourceType)
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
