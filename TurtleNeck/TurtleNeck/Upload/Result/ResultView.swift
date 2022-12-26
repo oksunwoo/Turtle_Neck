@@ -10,12 +10,12 @@ import ComposableArchitecture
 
 struct ResultView: View {
     let store: StoreOf<ResultCore>
+    
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack {
-                Image(uiImage: viewStore.resultImage)
-                    .resizable()
-                    .frame(width: 180, height: 320)
+                ScoreView(score: viewStore.score ?? 0)
+                ResultItemView(resultImage: viewStore.resultImage)
                 Button("점찍기") {
                     viewStore.send(.dotButtonTapped)
                 }
