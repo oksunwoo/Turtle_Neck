@@ -150,14 +150,9 @@
 		3B57869028E6E127002327F8 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
-				53CDEE0029436F2D00A4B1EA /* Pose.swift */,
 				3BF63987292CB4490002A03E /* PoseCore.swift */,
 				3B57868528E41F65002327F8 /* PoseView.swift */,
 				3B06B0952951E3E0003B8BC5 /* PoseAlert.swift */,
-				53CDEDF329421D1D00A4B1EA /* PoseClient.swift */,
-				537C2959295064A90015A69A /* ResultCore.swift */,
-				3B57868C28E59340002327F8 /* ResultView.swift */,
-				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
 				53CDEDF329421D1D00A4B1EA /* PoseClient.swift */,
 				53CDEE0029436F2D00A4B1EA /* Pose.swift */,
 				537C295D29545AFA0015A69A /* Result */,
