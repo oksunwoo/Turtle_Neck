@@ -11,10 +11,14 @@ struct ScoreView: View {
     let score: Double
     
     var body: some View {
-        ProgressView(value: score, total: 100)
-            .progressViewStyle(ResultProgressStyle())
-            .frame(width: 200, height: 200)
-            .contentShape(Rectangle())
+        ZStack {
+            ProgressView(value: score, total: 100)
+                .progressViewStyle(ResultProgressStyle())
+                .frame(width: 200, height: 200)
+                .contentShape(Rectangle())
+            Text(String(Int(score)))
+                .font(.system(size: 40))
+        }
     }
 }
 
