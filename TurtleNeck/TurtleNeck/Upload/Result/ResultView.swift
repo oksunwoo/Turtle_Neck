@@ -17,12 +17,9 @@ struct ResultView: View {
                 Color("BackgroundColor")
                     .ignoresSafeArea()
                 VStack {
-                    ScoreView(score: viewStore.score ?? 0)
-                    ResultItemView(resultImage: viewStore.resultImage)
+                    ScoreView(score: viewStore.score)
+                    ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose))
                         .cornerRadius(30)
-                    Button("점찍기") {
-                        viewStore.send(.dotButtonTapped)
-                    }
                 }
             }
         }
@@ -31,6 +28,6 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!, pose: [Pose]()), reducer: ResultCore()))
+        ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!,degree: 0, score: 100, pose: [Pose]()), reducer: ResultCore()))
     }
 }
