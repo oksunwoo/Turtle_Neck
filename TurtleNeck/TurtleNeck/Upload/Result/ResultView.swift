@@ -13,11 +13,16 @@ struct ResultView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            VStack {
-                ScoreView(score: viewStore.score ?? 0)
-                ResultItemView(resultImage: viewStore.resultImage)
-                Button("점찍기") {
-                    viewStore.send(.dotButtonTapped)
+            ZStack {
+                Color("BackgroundColor")
+                    .ignoresSafeArea()
+                VStack {
+                    ScoreView(score: viewStore.score ?? 0)
+                    ResultItemView(resultImage: viewStore.resultImage)
+                        .cornerRadius(30)
+                    Button("점찍기") {
+                        viewStore.send(.dotButtonTapped)
+                    }
                 }
             }
         }
