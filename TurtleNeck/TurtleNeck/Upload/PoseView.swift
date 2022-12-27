@@ -45,17 +45,9 @@ struct PoseView: View {
                         
                         Menu {
                             Button {
-                                PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
-                                    switch status {
-                                    case .authorized:
-                                        DispatchQueue.main.async {
-                                            viewStore.send(.showAlbum)
-                                        }
-                                    default:
-                                        viewStore.send(.alertButtonTapped)
-                                    }
+                                DispatchQueue.main.async {
+                                    viewStore.send(.showAlbum)
                                 }
-                                
                             } label: {
                                 Label("사진 보관함", systemImage: "photo.on.rectangle.angled")
                             }
@@ -63,29 +55,39 @@ struct PoseView: View {
                             Button {
                                 AVCaptureDevice.requestAccess(for: .video) { granted in
                                     if granted {
-                                        DispatchQueue.main.async {
-                                            viewStore.send(.showCamera)
+                                        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+                                            switch status {
+                                            case .authorized:
+                                                DispatchQueue.main.async {
+                                                    viewStore.send(.showCamera)
+                                                }
+                                            default:
+                                                DispatchQueue.main.async {
+                                                    viewStore.send(.alertButtonTapped)
+                                                }
+                                            }
                                         }
                                     } else {
-                                        viewStore.send(.alertButtonTapped)
+                                        DispatchQueue.main.async {
+                                            viewStore.send(.alertButtonTapped)
+                                        }
                                     }
                                 }
                             } label: {
                                 Label("사진 찍기", systemImage: "camera")
                             }
                         } label: {
-                            VStack {
-                                if let selectedImage = viewStore.selectedImage {
-                                    Image(uiImage: selectedImage)
-                                        .resizable()
-                                        .frame(width: 220, height: 320)
-                                        .padding(1)
-                                        .overlay(
-                                            Rectangle()
-                                                .stroke(style: StrokeStyle(lineWidth: 2, dash: [4]))
-                                                .foregroundColor(.white)
-                                        )
-                                } else {
+                            if let selectedImage = viewStore.selectedImage {
+                                Image(uiImage: selectedImage)
+                                    .resizable()
+                                    .frame(width: 220, height: 320)
+                                    .padding(1)
+                                    .overlay(
+                                        Rectangle()
+                                            .stroke(style: StrokeStyle(lineWidth: 2, dash: [4]))
+                                            .foregroundColor(.white))
+                            } else {
+                                VStack {
                                     Image("camera")
                                         .resizable()
                                         .frame(width: 100, height: 80)
@@ -111,7 +113,7 @@ struct PoseView: View {
                                 .background(
                                     RoundedRectangle(cornerRadius: 20)
                                         .frame(width: 300, height: 40)
-                                        .foregroundColor(viewStore.selectedImage == nil ? .gray.opacity(0.7) : Color("DeepBlue"))
+                                        .foregroundColor(viewStore.selectedImage == nil ? .gray.opacity(0.7) : Color("DarkBlue"))
                                 )
                         }
                         .disabled(viewStore.selectedImage == nil)
