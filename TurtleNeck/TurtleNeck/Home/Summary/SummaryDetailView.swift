@@ -28,7 +28,7 @@ struct SummaryDetailView: View {
          
             ZStack {
                 CardCurve()
-                    .foregroundColor(Color("MainGreenColor").opacity(0.8))
+                    .foregroundColor(Color("DeepBlue").opacity(0.9))
                     .frame(height: 300)
                 
                 VStack(spacing: 10) {

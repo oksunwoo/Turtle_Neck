@@ -12,37 +12,46 @@ struct OnboardingView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VStack() {
-            HStack(alignment: .center) {
-                Image("LaunchScreenLogo")
+        ZStack {
+            Color("DeepBlue").ignoresSafeArea()
+            
+            VStack {
+                Image("TurtleNeck")
                     .resizable()
-                    .frame(width: 300, height: 50)
-                    .padding(.top, 60)
-            }
-            
-            TabView {
-                OnboardingItem(image: "tortoise.fill", title: "당신은 거북이")
-                OnboardingItem(image: "person.fill.questionmark", title: "인가요?")
-                OnboardingItem(image: "hand.point.right.fill", title: "알아보러 갑시다")
-            }
-            .tabViewStyle(.page)
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
-            
-            HStack {
-                Spacer()
-                Button {
-                    isFirstLaunching = false
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Text("둘러보기")
+                    .frame(width: 200, height: 200)
+                
+                VStack(alignment: .center, spacing: 20) {
+                    Text("거북목측정하세요")
+                        .bold()
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("사진인식 후 귀, 어깨, 허리, 엉덩이 등 \n총 17개의 키포인트를 추출하여 자세를 분석해드립니다")
                         .font(.body)
                         .foregroundColor(.white)
-                        .underline()
+                        .foregroundColor(.black.opacity(0.5))
+                        .multilineTextAlignment(.center)
+                    
+                    Button {
+                        isFirstLaunching = false
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("시작하기")
+                            .bold()
+                            .frame(width: 200, height: 40)
+                            .foregroundColor(Color("DeepBlue"))
+                            .background(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .foregroundColor(.white)
+                            )
+                    }
+                    .padding(.top, 30)
                 }
+                .offset(y: -27)
                 .padding()
             }
         }
-        .background(Color("MainGreenColor"))
     }
 }
 

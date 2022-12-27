@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
                 .accentColor(.white)
                 .onAppear {
-                    UITabBar.appearance().backgroundColor = UIColor(named: "MainGreenColor")
+                    UITabBar.appearance().backgroundColor = UIColor(named: "DeepBlue")
                     UITabBar.appearance().unselectedItemTintColor = .white.withAlphaComponent(0.5)
                 }
                 
