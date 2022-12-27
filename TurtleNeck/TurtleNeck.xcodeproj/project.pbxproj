@@ -27,6 +27,7 @@
 		3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63985292CA6FE0002A03E /* SettingsCore.swift */; };
 		3BF63988292CB4490002A03E /* PoseCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63987292CB4490002A03E /* PoseCore.swift */; };
 		3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */; };
+		534CF491295B08B800C5EACF /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CF490295B08B800C5EACF /* ScoreCalculator.swift */; };
 		537C295A295064A90015A69A /* ResultCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C2959295064A90015A69A /* ResultCore.swift */; };
 		537C295C29533ECF0015A69A /* DegreeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C295B29533ECF0015A69A /* DegreeCalculator.swift */; };
 		537C296529546AB20015A69A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296429546AB20015A69A /* ScoreView.swift */; };
@@ -76,6 +77,7 @@
 		3BF63985292CA6FE0002A03E /* SettingsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCore.swift; sourceTree = "<group>"; };
 		3BF63987292CB4490002A03E /* PoseCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseCore.swift; sourceTree = "<group>"; };
 		3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCurve.swift; sourceTree = "<group>"; };
+		534CF490295B08B800C5EACF /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculator.swift; sourceTree = "<group>"; };
 		537C2959295064A90015A69A /* ResultCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCore.swift; sourceTree = "<group>"; };
 		537C295B29533ECF0015A69A /* DegreeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeCalculator.swift; sourceTree = "<group>"; };
 		537C296429546AB20015A69A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				3B57868728E48151002327F8 /* ImagePicker.swift */,
 				5386F2DB29476BEC006E1756 /* Decoder.swift */,
 				537C295B29533ECF0015A69A /* DegreeCalculator.swift */,
+				534CF490295B08B800C5EACF /* ScoreCalculator.swift */,
 				537C29702955C0A40015A69A /* ResultProgressStyle.swift */,
 			);
 			path = Utility;
@@ -351,6 +354,7 @@
 				3B06B0922951E3A2003B8BC5 /* View+Extension.swift in Sources */,
 				537C29712955C0A40015A69A /* ResultProgressStyle.swift in Sources */,
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
+				534CF491295B08B800C5EACF /* ScoreCalculator.swift in Sources */,
 				3B57868628E41F65002327F8 /* PoseView.swift in Sources */,
 				537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */,
 				3B06B0962951E3E0003B8BC5 /* PoseAlert.swift in Sources */,
