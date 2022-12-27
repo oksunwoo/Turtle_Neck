@@ -47,8 +47,7 @@ struct ContentView: View {
                 .fullScreenCover(
                     isPresented: viewStore.binding(
                         get: { $0.optionalPose != nil },
-                        send: Root.Action.setSheet(isPresented:)
-                    )
+                        send: Root.Action.setSheet(isPresented:))
                 ) {
                     IfLetStore(self.store.scope(state: \.optionalPose,
                                                 action: Root.Action.optionalPose)) {
