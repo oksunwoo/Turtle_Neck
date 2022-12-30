@@ -16,8 +16,9 @@ struct ResultItemView: View {
             ResultImageView(resultImage: resultImage)
             VerticalLine()
                 .stroke(Color(uiColor: .systemGray5), lineWidth: 2)
-                .frame(width: CGFloat(50), height: CGFloat(100))
+                .frame(width: 1, height: 100)
             ResultDescriptionView(degree: degree)
+                .frame(minWidth: 0, maxWidth: .infinity)
         }
         .background(Color.white)
     }

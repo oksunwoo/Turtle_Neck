@@ -20,11 +20,16 @@ struct ResultView: View {
                     VStack {
                         ScoreView(score: viewStore.score)
                             .padding(.bottom, 50)
-                        ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), degree: viewStore.degree)
-                            .cornerRadius(30)
-                            .padding(.bottom, 10)
-                        SummaryItemView()
-                            .cornerRadius(30)
+                        VStack {
+                            ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), degree: viewStore.degree)
+                                .cornerRadius(30)
+                                .padding(.bottom, 10)
+                            
+                            SummaryItemView(score: viewStore.score)
+                                .cornerRadius(30)
+                        }
+                        .frame(width: 350)
+                        .fixedSize(horizontal: true, vertical: true)
                     }
                 }
             }

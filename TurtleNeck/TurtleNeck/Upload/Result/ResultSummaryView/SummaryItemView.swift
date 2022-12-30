@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct SummaryItemView: View {
+    let score: Double
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            SummaryImageView(summary: .bad)
+            VerticalLine()
+                .stroke(Color(uiColor: .systemGray5), lineWidth: 2)
+                .frame(width: 1, height: 100)
+            SummaryDescriptionView(summary: .bad)
+                .frame(minWidth: 0, maxWidth: .infinity)
+        }
+        .background(Color.white)
     }
 }
 
 struct SummaryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryItemView()
+        SummaryItemView(score: 30)
     }
 }
