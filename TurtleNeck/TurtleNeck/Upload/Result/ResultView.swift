@@ -23,7 +23,7 @@ struct ResultView: View {
                         ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), degree: viewStore.degree)
                             .cornerRadius(30)
                             .padding(.bottom, 10)
-                        ResultItemView(score: viewStore.score)
+                        SummaryItemView()
                             .cornerRadius(30)
                     }
                 }
@@ -37,7 +37,7 @@ struct ResultView: View {
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!,degree: 0, score: 100, pose: [Pose]()), reducer: ResultCore()))
+            ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!, degree: 0, score: 100, pose: [Pose]()), reducer: ResultCore()))
         }
     }
 }

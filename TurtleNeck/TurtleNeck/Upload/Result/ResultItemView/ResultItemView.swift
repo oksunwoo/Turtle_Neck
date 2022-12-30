@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ResultItemView: View {
-    var resultImage: UIImage?
-    var degree: Double?
-    var score: Double?
+    var resultImage: UIImage
+    var degree: Double
     
     var body: some View {
         HStack {
-            ItemImageView(resultImage: resultImage ?? UIImage())
+            ResultImageView(resultImage: resultImage)
             VerticalLine()
                 .stroke(Color(uiColor: .systemGray5), lineWidth: 2)
                 .frame(width: CGFloat(50), height: CGFloat(100))
-            ItemDescriptionView(degree: 30)
+            ResultDescriptionView()
         }
         .background(Color.white)
     }
