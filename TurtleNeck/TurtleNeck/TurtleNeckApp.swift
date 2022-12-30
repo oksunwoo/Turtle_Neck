@@ -16,9 +16,9 @@ struct TurtleNeckApp: App {
         WindowGroup {
             ContentView(store: Store(initialState: Root.State(),
                                      reducer: Root()))
-                .fullScreenCover(isPresented: $isFirstLaunching) {
-                    OnboardingView(isFirstLaunching: $isFirstLaunching)
-                }
+            .fullScreenCover(isPresented: $isFirstLaunching) {
+                OnboardingView(isFirstLaunching: $isFirstLaunching)
+            }
         }
     }
 }
