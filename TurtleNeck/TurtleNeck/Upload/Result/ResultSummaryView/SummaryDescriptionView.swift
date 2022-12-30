@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SummaryDescriptionView: View {
     let summary: Summary
-    let score: Double
     
     var body: some View {
         VStack {
@@ -20,14 +19,14 @@ struct SummaryDescriptionView: View {
                 }
             }
             .padding()
-            Text(summary.shortDescription)
-                .bold()
+            Text(summary.shortDescription).bold()
         }
+        .frame(minWidth: 0, maxWidth: .infinity)
     }
 }
 
 struct SummaryDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryDescriptionView(summary: Summary.perfect, score: 30)
+        SummaryDescriptionView(summary: Summary.perfect)
     }
 }

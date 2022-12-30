@@ -15,10 +15,10 @@ struct ResultImageView: View {
             Image(uiImage: resultImage)
                 .renderingMode(.original)
                 .resizable()
+                .cornerRadius(15)
                 .frame(width: 90, height: 160)
-                .cornerRadius(5)
+                .padding(.all, 10)
         }
-        .padding(.leading, 15)
     }
 }
 

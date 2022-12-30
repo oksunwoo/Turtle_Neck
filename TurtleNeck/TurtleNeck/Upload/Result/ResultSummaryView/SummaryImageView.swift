@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct SummaryImageView: View {
+    let summary: Summary
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack (alignment: .leading) {
+            Image("Result-Worst")
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 90, height: 160)
+                .cornerRadius(5)
+                .padding(.all, 10)
+        }
     }
 }
 
 struct SummaryImageView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryImageView()
+        SummaryImageView(summary: .perfect)
     }
 }
