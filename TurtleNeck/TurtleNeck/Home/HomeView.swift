@@ -21,12 +21,7 @@ struct HomeView: View {
                     VStack(spacing: 10) {
                         titleView()
                         categoryView()
-                        SummaryView(
-                            store: self.store.scope(
-                                state: \.summary,
-                                action: HomeCore.Action.summary
-                            )
-                        )
+                        Spacer()
                     }
                 }
             }

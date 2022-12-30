@@ -9,11 +9,11 @@ import ComposableArchitecture
 
 struct HomeCore: ReducerProtocol {
     struct State: Equatable {
-        var summary = SummaryCore.State()
+        
     }
     
     enum Action: Equatable {
-        case summary(SummaryCore.Action)
+        
     }
     
     var body: some ReducerProtocol<State, Action> {
@@ -22,9 +22,6 @@ struct HomeCore: ReducerProtocol {
             default:
               return .none
             }
-        }
-        Scope(state: \.summary, action: /Action.summary) {
-          SummaryCore()
         }
     }
 }
