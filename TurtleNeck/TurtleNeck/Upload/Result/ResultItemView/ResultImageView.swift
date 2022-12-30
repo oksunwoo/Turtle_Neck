@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultImageView: View {
-    var resultImage: UIImage
+    let resultImage: UIImage
     
     var body: some View {
         VStack (alignment: .leading) {
