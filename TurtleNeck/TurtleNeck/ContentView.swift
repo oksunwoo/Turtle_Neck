@@ -44,6 +44,7 @@ struct ContentView: View {
                     viewStore.send(.setSheet(isPresented: true))
                 }
                 .padding(.bottom, 30)
+                .shadow(radius: 3)
                 .fullScreenCover(
                     isPresented: viewStore.binding(
                         get: { $0.optionalPose != nil },
