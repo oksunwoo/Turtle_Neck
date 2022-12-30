@@ -8,9 +8,11 @@
 import Foundation
 
 func calculateScore(with degree: Double) -> Double {
-    if degree >= 0 {
-       return  100 - round(degree / 0.33)
+    var score = 100 - round(degree / 0.33)
+    
+    if score <= 0 {
+        return 0
     }
     
-    return 0
+    return score
 }
