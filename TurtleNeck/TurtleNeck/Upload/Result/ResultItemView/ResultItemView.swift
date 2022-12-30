@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ResultItemView: View {
-    var resultImage: UIImage
-    var degree: Double
+    let resultImage: UIImage
+    let degree: Double
     
     var body: some View {
         HStack {
@@ -17,7 +17,7 @@ struct ResultItemView: View {
             VerticalLine()
                 .stroke(Color(uiColor: .systemGray5), lineWidth: 2)
                 .frame(width: CGFloat(50), height: CGFloat(100))
-            ResultDescriptionView()
+            ResultDescriptionView(degree: degree)
         }
         .background(Color.white)
     }

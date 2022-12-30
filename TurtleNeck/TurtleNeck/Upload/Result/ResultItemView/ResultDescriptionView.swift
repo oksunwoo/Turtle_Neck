@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ResultDescriptionView: View {
+    let degree: Double
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("측정 결과 목의 각도가 \n\(Int(round(degree)))º 기울어져 있습니다.")
     }
 }
 
 struct ResultDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultDescriptionView()
+        ResultDescriptionView(degree: 30)
     }
 }
