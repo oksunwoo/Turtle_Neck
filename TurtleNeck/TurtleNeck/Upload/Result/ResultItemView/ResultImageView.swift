@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemImageView: View {
+struct ResultImageView: View {
     var resultImage: UIImage
     
     var body: some View {
@@ -22,8 +22,8 @@ struct ItemImageView: View {
     }
 }
 
-struct ItemImageView_Previews: PreviewProvider {
+struct ResultImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemImageView(resultImage: UIImage(named: "Pose1")!)
+        ResultImageView(resultImage: UIImage(named: "Pose1")!)
     }
 }
