@@ -13,21 +13,28 @@ struct ResultView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            ZStack {
-                Color("BackgroundColor")
-                    .ignoresSafeArea()
-                VStack {
-                    ScoreView(score: viewStore.score)
-                    ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose))
-                        .cornerRadius(30)
+            NavigationView {
+                ZStack {
+                    Color("BackgroundColor")
+                        .ignoresSafeArea()
+                    VStack {
+                        ScoreView(score: viewStore.score)
+                            .padding(.bottom, 50)
+                        ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose))
+                            .cornerRadius(30)
+                    }
                 }
             }
+            .navigationTitle("분석 결과")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!,degree: 0, score: 100, pose: [Pose]()), reducer: ResultCore()))
+        NavigationView {
+            ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!,degree: 0, score: 100, pose: [Pose]()), reducer: ResultCore()))
+        }
     }
 }
