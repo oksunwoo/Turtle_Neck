@@ -60,7 +60,7 @@ extension UIImage {
         let height = 7.0
         let context = UIGraphicsGetCurrentContext()!
         
-        context.setLineWidth(4.0)
+        context.setLineWidth(10.0)
         context.setStrokeColor(UIColor.systemYellow.cgColor)
         
         if leftSide {
