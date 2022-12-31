@@ -11,7 +11,8 @@ struct ResultDescriptionView: View {
     let degree: Double
     
     var body: some View {
-        Text("측정 결과 목의 각도가 \n\(Int(round(degree)))º 기울어져 있습니다.")
+        Text("목의 각도가 \(Int(round(degree)))º 기울었어요.")
+            .bold()
             .padding()
             .frame(minWidth: 0, maxWidth: .infinity)
     }

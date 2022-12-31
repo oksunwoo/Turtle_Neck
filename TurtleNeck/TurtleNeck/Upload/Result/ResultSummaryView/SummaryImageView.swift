@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct SummaryImageView: View {
-    let summary: Summary
+    let summary: Result
     
     var body: some View {
         VStack (alignment: .leading) {
-            Image("Result-Worst")
+            Image(summary.imageString)
                 .renderingMode(.original)
                 .resizable()
                 .frame(width: 90, height: 160)
@@ -24,6 +24,6 @@ struct SummaryImageView: View {
 
 struct SummaryImageView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryImageView(summary: .perfect)
+        SummaryImageView(summary: .veryGood)
     }
 }

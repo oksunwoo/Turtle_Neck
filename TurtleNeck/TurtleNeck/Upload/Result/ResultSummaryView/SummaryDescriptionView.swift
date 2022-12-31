@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SummaryDescriptionView: View {
-    let summary: Summary
+    let summary: Result
     
     var body: some View {
         VStack {
@@ -19,7 +19,9 @@ struct SummaryDescriptionView: View {
                 }
             }
             .padding()
-            Text(summary.shortDescription).bold()
+            Text(summary.shortDescription)
+                .bold()
+                .padding(.bottom, 50)
         }
         .frame(minWidth: 0, maxWidth: .infinity)
     }
@@ -27,6 +29,6 @@ struct SummaryDescriptionView: View {
 
 struct SummaryDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryDescriptionView(summary: Summary.perfect)
+        SummaryDescriptionView(summary: .veryGood)
     }
 }
