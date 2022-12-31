@@ -31,7 +31,7 @@ struct ContentView: View {
                 }
                 .accentColor(.white)
                 .onAppear {
-                    UITabBar.appearance().backgroundColor = UIColor(named: "MainGreenColor")
+                    UITabBar.appearance().backgroundColor = UIColor(named: "DeepBlue")
                     UITabBar.appearance().unselectedItemTintColor = .white.withAlphaComponent(0.5)
                 }
                 
@@ -44,11 +44,11 @@ struct ContentView: View {
                     viewStore.send(.setSheet(isPresented: true))
                 }
                 .padding(.bottom, 30)
+                .shadow(radius: 3)
                 .fullScreenCover(
                     isPresented: viewStore.binding(
                         get: { $0.optionalPose != nil },
-                        send: Root.Action.setSheet(isPresented:)
-                    )
+                        send: Root.Action.setSheet(isPresented:))
                 ) {
                     IfLetStore(self.store.scope(state: \.optionalPose,
                                                 action: Root.Action.optionalPose)) {

@@ -45,7 +45,7 @@ struct PoseAlert: View {
                         .foregroundColor(.white)
                         .font(.body)
                         .frame(height: 35)
-                        .frame(width: 320)
+                        .frame(minWidth: 0, maxWidth: .infinity)
                         .background(
                             RoundedRectangle(cornerRadius: 30).fill(.black).opacity(0.8)
                         )

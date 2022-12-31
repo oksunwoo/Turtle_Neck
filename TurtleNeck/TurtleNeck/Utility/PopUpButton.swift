@@ -14,7 +14,7 @@ struct PopUpButton: View {
         ZStack {
             Circle()
                 .frame(width: 50, height: 50)
-                .foregroundColor(Color("MainGreenColor"))
+                .foregroundColor(Color("DeepBlue"))
                 .overlay(
                     Image("scanner")
                          .resizable()
