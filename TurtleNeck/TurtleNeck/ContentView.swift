@@ -33,6 +33,8 @@ struct ContentView: View {
                 .onAppear {
                     UITabBar.appearance().backgroundColor = UIColor(named: "DeepBlue")
                     UITabBar.appearance().unselectedItemTintColor = .white.withAlphaComponent(0.5)
+                    UITabBar.appearance().backgroundImage = UIImage()
+                    UITabBar.appearance().isTranslucent = true
                 }
                 
                 BottomCurve()

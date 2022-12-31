@@ -18,9 +18,10 @@ struct CollapsibleView<Content: View>: View {
             Button {
                 collapsed.toggle()
             } label: {
-                HStack {
-                    label().font(.body.weight(.medium))
-                    Spacer()
+                HStack() {
+                    label()
+                        .font(.body.weight(.medium))
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Image(systemName: collapsed ? "chevron.down" : "chevron.up")
                 }
             }
