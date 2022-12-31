@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct SummaryItemView: View {
-    let score: Double
+    let summary: Result
     
     var body: some View {
         HStack {
-            SummaryImageView(summary: .bad)
+            SummaryImageView(summary: summary)
             VerticalLine()
                 .stroke(Color(uiColor: .systemGray5), lineWidth: 2)
                 .frame(width: 1, height: 100)
-            SummaryDescriptionView(summary: .bad)
+            SummaryDescriptionView(summary: summary)
                 .frame(minWidth: 0, maxWidth: .infinity)
         }
         .background(Color.white)
@@ -25,6 +25,6 @@ struct SummaryItemView: View {
 
 struct SummaryItemView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryItemView(score: 30)
+        SummaryItemView(summary: .dangerous)
     }
 }
