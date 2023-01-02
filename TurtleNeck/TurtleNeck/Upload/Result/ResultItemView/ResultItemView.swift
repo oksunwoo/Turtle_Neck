@@ -25,7 +25,7 @@ struct ResultItemView: View {
                 VerticalLine()
                     .stroke(Color("BackgroundColor"), lineWidth: 2)
                     .frame(width: 1, height: 140)
-                ResultDescriptionView(score: score, degree: degree)
+                ResultDescriptionView(score: score, degree: degree, result: Result(score: score))
                     .frame(minWidth: 0, maxWidth: .infinity)
             }
         }
