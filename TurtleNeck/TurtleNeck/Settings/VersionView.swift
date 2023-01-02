@@ -16,8 +16,7 @@ struct VersionView: View {
     
     var body: some View {
         ZStack {
-            Color("BackgroundColor")
-                .ignoresSafeArea()
+            Color.background.ignoresSafeArea()
             
             VStack {
                 Image("TurtleNeckLogo_bk")

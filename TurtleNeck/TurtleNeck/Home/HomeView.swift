@@ -15,8 +15,7 @@ struct HomeView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationView {
                 ZStack {
-                    Color("BackgroundColor")
-                        .ignoresSafeArea()
+                    Color.background.ignoresSafeArea()
                     
                     ScrollView {
                         VStack(spacing: 10) {

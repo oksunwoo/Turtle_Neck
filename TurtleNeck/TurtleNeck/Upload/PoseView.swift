@@ -113,7 +113,7 @@ struct PoseView: View {
                                 .background(
                                     RoundedRectangle(cornerRadius: 20)
                                         .frame(width: 300, height: 40)
-                                        .foregroundColor(viewStore.selectedImage == nil ? .gray.opacity(0.7) : Color("DarkBlue"))
+                                        .foregroundColor(viewStore.selectedImage == nil ? .gray.opacity(0.7) : .darkBlue)
                                 )
                         }
                         .disabled(viewStore.selectedImage == nil)

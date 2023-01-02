@@ -37,7 +37,7 @@ struct PoseAlert: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text("* 정확하게 보이도록 밝고 선명하게 촬영해주세요.")
                     Text("* 자세를 정확하게 분석하기 위해 좌측 혹은 우측을 보고 촬영해주세요.")
-                    Text("요구 사항에 충족하지 않는 사진은 정확성에 영향을 미칠 수도 있습니다.")
+                    Text("요구 사항에 충족하지 않는 사진은 정확성에 영향을 미칠 수 있습니다.")
                         .foregroundColor(.red)
                 }
                 .font(.caption)
