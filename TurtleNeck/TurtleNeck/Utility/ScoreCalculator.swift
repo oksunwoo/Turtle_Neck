@@ -7,12 +7,12 @@
 
 import Foundation
 
-func calculateScore(with degree: Double) -> Double {
-    var score = 100 - round(degree / 0.33)
+func calculateScore(with degree: Double) -> Int {
+    let score = 100 - degree / 0.33
     
     if score <= 0 {
         return 0
     }
     
-    return score
+    return Int(round(score))
 }

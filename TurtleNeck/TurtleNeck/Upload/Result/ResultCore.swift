@@ -12,7 +12,7 @@ struct ResultCore: ReducerProtocol {
     struct State: Equatable {
         var resultImage: UIImage
         var degree: Double
-        var score: Double
+        var score: Int
         var pose: [Pose]
     }
     

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ScoreView: View {
-    let score: Double
+    let score: Int
     
     var body: some View {
         ZStack {
-            ProgressView(value: score, total: 100)
+            ProgressView(value: Double(score), total: 100)
                 .progressViewStyle(ResultProgressStyle())
                 .frame(width: 200, height: 200)
                 .contentShape(Rectangle())

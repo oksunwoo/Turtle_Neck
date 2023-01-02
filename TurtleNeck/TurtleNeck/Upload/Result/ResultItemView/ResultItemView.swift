@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ResultItemView: View {
     let resultImage: UIImage
+    let score: Int
     let degree: Double
     
     var body: some View {
@@ -24,7 +25,7 @@ struct ResultItemView: View {
                 VerticalLine()
                     .stroke(Color("BackgroundColor"), lineWidth: 2)
                     .frame(width: 1, height: 140)
-                ResultDescriptionView(degree: degree)
+                ResultDescriptionView(score: score, degree: degree)
                     .frame(minWidth: 0, maxWidth: .infinity)
             }
         }
@@ -35,6 +36,6 @@ struct ResultItemView: View {
 
 struct ResultItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultItemView(resultImage: UIImage(named: "Pose1")!, degree: 30)
+        ResultItemView(resultImage: UIImage(named: "Pose1")!, score: 50, degree: 30)
     }
 }

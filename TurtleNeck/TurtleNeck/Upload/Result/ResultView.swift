@@ -21,10 +21,10 @@ struct ResultView: View {
                         ScoreView(score: viewStore.score)
                             .padding(.bottom, 50)
                         VStack {
-                            ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), degree: viewStore.degree)
+                            ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), score: viewStore.score, degree: viewStore.degree)
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
-                            SolutionView(result: Result(score: Int(viewStore.score)))
+                            SolutionView(result: Result(score: viewStore.score))
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)
