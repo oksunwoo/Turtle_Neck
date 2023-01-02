@@ -11,36 +11,15 @@ struct SummaryDescriptionView: View {
     let summary: Result
     
     var body: some View {
-        VStack (spacing: 10){
-            HStack {
-                Text("Date")
-                    .foregroundColor(Color(.systemGray4))
-                Spacer()
-                Text(Date(), style: .date)
-                    .foregroundColor(Color("DeepBlue"))
-                    .bold()
-            }
-            
-            HStack {
-                Text("Data Validity")
-                    .foregroundColor(Color(.systemGray4))
-                Spacer()
-                Text(summary.shortDescription)
-                    .foregroundColor(Color("DeepBlue"))
-                    .bold()
-            }
-          
-            HStack {
-                Text("Provided by")
-                    .foregroundColor(Color(.systemGray4))
-                Spacer()
-                Text("Turtle Neck")
-                    .foregroundColor(Color("DeepBlue"))
-                    .bold()
-            }
+        VStack (spacing: 10) {
+            Text(summary.longDescription)
+                .fontWeight(.semibold)
+                .lineSpacing(5)
+                .foregroundColor(Color("DeepBlue"))
         }
         .font(.footnote)
-        .padding()
+        .padding(.bottom)
+        .padding(.horizontal, 14)
     }
 }
 
