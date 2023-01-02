@@ -11,7 +11,12 @@ struct SummaryItemView: View {
     let summary: Result
     
     var body: some View {
-        HStack {
+        VStack (alignment: .leading, spacing: 15) {
+            Text("Solution")
+                .font(.headline)
+                .padding(.top, 8)
+                .padding(.leading, 15)
+                .foregroundColor(Color(.systemGray4))
             SummaryDescriptionView(summary: summary)
                 .frame(minWidth: 0, maxWidth: .infinity)
         }

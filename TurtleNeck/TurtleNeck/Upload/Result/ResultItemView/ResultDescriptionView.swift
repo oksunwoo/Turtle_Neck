@@ -20,7 +20,14 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color("DeepBlue"))
                     .bold()
             }
-            
+            HStack {
+                Text("Grade")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text("B")
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
             HStack {
                 Text("Data Validity")
                     .foregroundColor(Color(.systemGray4))
@@ -29,7 +36,22 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color("DeepBlue"))
                     .bold()
             }
-          
+            HStack {
+                Text("Degree")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text("\(String(Int(degree)))º")
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
+            HStack {
+                Text("Total Score")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text("78")
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
             HStack {
                 Text("Provided by")
                     .foregroundColor(Color(.systemGray4))
@@ -38,11 +60,9 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color("DeepBlue"))
                     .bold()
             }
-           
         }
         .font(.footnote)
-        .padding(.trailing)
-        
+        .padding()
     }
 }
 

@@ -11,14 +11,12 @@ struct ResultImageView: View {
     let resultImage: UIImage
     
     var body: some View {
-        VStack (alignment: .leading) {
-            Image(uiImage: resultImage)
-                .renderingMode(.original)
-                .resizable()
-                .cornerRadius(15)
-                .frame(width: 90, height: 160)
-                .padding(.all, 10)
-        }
+        Image(uiImage: resultImage)
+            .renderingMode(.original)
+            .resizable()
+            .cornerRadius(10)
+            .frame(width: 90, height: 160)
+            .padding(.all, 10)
     }
 }
 
