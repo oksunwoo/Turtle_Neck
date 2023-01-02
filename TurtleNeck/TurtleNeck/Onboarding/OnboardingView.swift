@@ -14,7 +14,7 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            Color("DeepBlue").ignoresSafeArea()
+            Color.deepBlue.ignoresSafeArea()
             
             VStack(spacing: 20) {
                 Image("TurtleNeck")
@@ -48,7 +48,7 @@ struct OnboardingView: View {
                     Text("시작하기")
                         .bold()
                         .frame(width: 200, height: 40)
-                        .foregroundColor(Color("DeepBlue"))
+                        .foregroundColor(.deepBlue)
                         .background(
                             RoundedRectangle(cornerRadius: 40)
                                 .foregroundColor(.white)
