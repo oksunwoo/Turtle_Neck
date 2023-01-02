@@ -11,19 +11,36 @@ struct SummaryDescriptionView: View {
     let summary: Result
     
     var body: some View {
-        VStack {
+        VStack (spacing: 10){
             HStack {
-                ForEach(0..<summary.star, id: \.self) { _ in
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow)
-                }
+                Text("Date")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text(Date(), style: .date)
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
             }
-            .padding()
-            Text(summary.shortDescription)
-                .bold()
-                .padding(.bottom, 50)
+            
+            HStack {
+                Text("Data Validity")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text(summary.shortDescription)
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
+          
+            HStack {
+                Text("Provided by")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text("Turtle Neck")
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
         }
-        .frame(minWidth: 0, maxWidth: .infinity)
+        .font(.footnote)
+        .padding()
     }
 }
 

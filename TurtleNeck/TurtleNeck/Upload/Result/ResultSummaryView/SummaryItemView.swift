@@ -12,10 +12,6 @@ struct SummaryItemView: View {
     
     var body: some View {
         HStack {
-            SummaryImageView(summary: summary)
-            VerticalLine()
-                .stroke(Color(uiColor: .systemGray5), lineWidth: 2)
-                .frame(width: 1, height: 100)
             SummaryDescriptionView(summary: summary)
                 .frame(minWidth: 0, maxWidth: .infinity)
         }

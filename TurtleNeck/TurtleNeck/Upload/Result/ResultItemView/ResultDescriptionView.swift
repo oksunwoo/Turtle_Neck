@@ -11,10 +11,38 @@ struct ResultDescriptionView: View {
     let degree: Double
     
     var body: some View {
-        Text("목의 각도가 \(Int(round(degree)))º 기울었어요.")
-            .bold()
-            .padding()
-            .frame(minWidth: 0, maxWidth: .infinity)
+        VStack (spacing: 10){
+            HStack {
+                Text("Date")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text(Date(), style: .date)
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
+            
+            HStack {
+                Text("Data Validity")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text("\(String(degree))%")
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
+          
+            HStack {
+                Text("Provided by")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text("Turtle Neck")
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
+           
+        }
+        .font(.footnote)
+        .padding(.trailing)
+        
     }
 }
 
