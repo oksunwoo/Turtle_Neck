@@ -24,7 +24,7 @@ struct ResultView: View {
                             ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), degree: viewStore.degree)
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
-                            SummaryItemView(summary: Result(score: Int(viewStore.score)))
+                            SolutionView(result: Result(score: Int(viewStore.score)))
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)
