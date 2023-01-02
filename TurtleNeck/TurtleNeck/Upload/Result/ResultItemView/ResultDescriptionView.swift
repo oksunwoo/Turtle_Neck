@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultDescriptionView: View {
     let score: Int
     let degree: Double
+    let result: Result
     
     var body: some View {
         VStack (spacing: 10){
@@ -25,7 +26,7 @@ struct ResultDescriptionView: View {
                 Text("Grade")
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
-                Text("B")
+                Text("\(result.star)")
                     .foregroundColor(Color("DeepBlue"))
                     .bold()
             }
@@ -69,6 +70,6 @@ struct ResultDescriptionView: View {
 
 struct ResultDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultDescriptionView(score: 50, degree: 30)
+        ResultDescriptionView(score: 50, degree: 30, result: .veryGood)
     }
 }
