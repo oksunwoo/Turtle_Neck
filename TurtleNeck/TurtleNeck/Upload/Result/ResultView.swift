@@ -15,7 +15,7 @@ struct ResultView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationView {
                 ZStack {
-                    Color("BackgroundColor")
+                    Color.background
                         .ignoresSafeArea()
                     VStack {
                         ScoreView(score: viewStore.score)

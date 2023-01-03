@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultProgressStyle: ProgressViewStyle {
-    var strokeColor = Color("DeepBlue")
+    var strokeColor = Color.deepBlue
     var strokeWidth = 25.0
     
     func makeBody(configuration: Configuration) -> some View {
