@@ -10,7 +10,7 @@ import SwiftUI
 struct ResultDescriptionView: View {
     let score: Int
     let degree: Double
-    let result: Result
+    let grade: Grade
     let validity: Double
     
     var body: some View {
@@ -27,7 +27,7 @@ struct ResultDescriptionView: View {
                 Text("Grade")
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
-                Text("\(result.star)")
+                Text("\(grade.rawValue)")
                     .foregroundColor(.deepBlue)
                     .bold()
             }
@@ -71,6 +71,6 @@ struct ResultDescriptionView: View {
 
 struct ResultDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultDescriptionView(score: 50, degree: 30, result: .veryGood, validity: 66.6)
+        ResultDescriptionView(score: 50, degree: 30, grade: .veryGood, validity: 66.6)
     }
 }
