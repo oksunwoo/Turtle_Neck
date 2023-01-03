@@ -31,14 +31,16 @@ struct ContentView: View {
                 }
                 .accentColor(.white)
                 .onAppear {
-                    UITabBar.appearance().backgroundColor = UIColor(named: "DeepBlue")
+                    UITabBar.appearance().backgroundColor = UIColor(.deepBlue)
                     UITabBar.appearance().unselectedItemTintColor = .white.withAlphaComponent(0.5)
+                    UITabBar.appearance().backgroundImage = UIImage()
+                    UITabBar.appearance().isTranslucent = true
                 }
                 
                 BottomCurve()
                     .frame(maxWidth: .infinity, maxHeight: 100)
                     .padding(.bottom, -51)
-                    .foregroundColor(Color("BackgroundColor"))
+                    .foregroundColor(.background)
                 
                 PopUpButton() {
                     viewStore.send(.setSheet(isPresented: true))
