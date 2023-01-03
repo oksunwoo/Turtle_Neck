@@ -20,7 +20,7 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
                 Text(Date(), style: .date)
-                    .foregroundColor(Color("DeepBlue"))
+                    .foregroundColor(.deepBlue)
                     .bold()
             }
             HStack {
@@ -28,7 +28,7 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
                 Text("\(result.star)")
-                    .foregroundColor(Color("DeepBlue"))
+                    .foregroundColor(.deepBlue)
                     .bold()
             }
             HStack {
@@ -36,7 +36,7 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
                 Text("\(String(Int(degree)))º")
-                    .foregroundColor(Color("DeepBlue"))
+                    .foregroundColor(.deepBlue)
                     .bold()
             }
             HStack {
@@ -44,7 +44,7 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
                 Text("\(String(validity))%")
-                    .foregroundColor(Color("DeepBlue"))
+                    .foregroundColor(.deepBlue)
                     .bold()
             }
             HStack {
@@ -52,7 +52,7 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
                 Text("\(score)")
-                    .foregroundColor(Color("DeepBlue"))
+                    .foregroundColor(.deepBlue)
                     .bold()
             }
             HStack {
@@ -60,7 +60,7 @@ struct ResultDescriptionView: View {
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
                 Text("Turtle Neck")
-                    .foregroundColor(Color("DeepBlue"))
+                    .foregroundColor(.deepBlue)
                     .bold()
             }
         }

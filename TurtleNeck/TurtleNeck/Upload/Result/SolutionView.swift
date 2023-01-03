@@ -21,7 +21,7 @@ struct SolutionView: View {
                 Text(result.longDescription)
                     .fontWeight(.semibold)
                     .lineSpacing(5)
-                    .foregroundColor(Color("DeepBlue"))
+                    .foregroundColor(Color.deepBlue)
             }
             .font(.footnote)
             .padding(.bottom)

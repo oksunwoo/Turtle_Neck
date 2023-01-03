@@ -24,7 +24,7 @@ struct ResultItemView: View {
             HStack {
                 ResultImageView(resultImage: resultImage)
                 VerticalLine()
-                    .stroke(Color("BackgroundColor"), lineWidth: 2)
+                    .stroke(Color.background, lineWidth: 2)
                     .frame(width: 1, height: 140)
                 ResultDescriptionView(score: score, degree: degree, result: Result(score: score), validity: validity)
                     .frame(minWidth: 0, maxWidth: .infinity)
