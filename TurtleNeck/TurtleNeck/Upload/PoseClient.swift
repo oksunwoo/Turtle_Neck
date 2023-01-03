@@ -42,7 +42,7 @@ extension PoseClient: DependencyKey {
         
         let (data, _) = try await URLSession.shared.data(for: request)
         let parsedData = try JSONDecoder().decode([Pose].self, from: data)
-        print(parsedData)
+
         return parsedData
     })
 }

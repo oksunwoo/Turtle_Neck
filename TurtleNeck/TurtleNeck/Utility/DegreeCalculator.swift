@@ -33,7 +33,6 @@ func calculateDegree(pose: [Pose]) -> Double {
     
     let radian = atan(height/base)
     let degree = round((radian * 180/Double.pi) * 100) / 100
-    print("degree: \(degree)")
     
     return degree
 }
