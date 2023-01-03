@@ -16,9 +16,12 @@ struct ResultProgressStyle: ProgressViewStyle {
         
         return ZStack {
             Circle()
+                .stroke(Color.gray.opacity(0.1), style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
+            Circle()
                 .trim(from: 0, to: fractionCompleted)
                 .stroke(strokeColor, style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
                 .rotationEffect(.degrees(-90))
+                .shadow(radius: 3, y: 3)
         }
     }
 }

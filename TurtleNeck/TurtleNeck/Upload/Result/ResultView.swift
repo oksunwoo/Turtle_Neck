@@ -42,7 +42,7 @@ struct ResultView: View {
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!, degree: 0, score: 100, validity: 66.6, pose: [Pose]()), reducer: ResultCore()))
+            ResultView(store: Store(initialState: ResultCore.State(resultImage: UIImage(named: "Pose1")!, degree: 0, score: 70, validity: 66.6, pose: [Pose]()), reducer: ResultCore()))
         }
     }
 }
