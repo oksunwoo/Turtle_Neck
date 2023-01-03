@@ -32,18 +32,18 @@ struct ResultDescriptionView: View {
                     .bold()
             }
             HStack {
-                Text("Data Validity")
-                    .foregroundColor(Color(.systemGray4))
-                Spacer()
-                Text("\(String(validity))%")
-                    .foregroundColor(Color("DeepBlue"))
-                    .bold()
-            }
-            HStack {
                 Text("Degree")
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
                 Text("\(String(Int(degree)))º")
+                    .foregroundColor(Color("DeepBlue"))
+                    .bold()
+            }
+            HStack {
+                Text("Data Validity")
+                    .foregroundColor(Color(.systemGray4))
+                Spacer()
+                Text("\(String(validity))%")
                     .foregroundColor(Color("DeepBlue"))
                     .bold()
             }
