@@ -66,11 +66,11 @@ enum Result {
         case .excellent:
             return "Result-Excellent"
         case .veryGood:
-            return ""
+            return "Result-Good"
         case .good:
             return "Result-Good"
         case .dangerous:
-            return ""
+            return "Result-Terrible"
         case .terrible:
             return "Result-Terrible"
         }

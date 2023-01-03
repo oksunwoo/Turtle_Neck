@@ -27,14 +27,21 @@
 		3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63985292CA6FE0002A03E /* SettingsCore.swift */; };
 		3BF63988292CB4490002A03E /* PoseCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63987292CB4490002A03E /* PoseCore.swift */; };
 		3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */; };
+		534CF491295B08B800C5EACF /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CF490295B08B800C5EACF /* ScoreCalculator.swift */; };
 		537C295A295064A90015A69A /* ResultCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C2959295064A90015A69A /* ResultCore.swift */; };
 		537C295C29533ECF0015A69A /* DegreeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C295B29533ECF0015A69A /* DegreeCalculator.swift */; };
+		537C296529546AB20015A69A /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296429546AB20015A69A /* ScoreView.swift */; };
+		537C296729546AC20015A69A /* ResultItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296629546AC20015A69A /* ResultItemView.swift */; };
+		537C296929546ACE0015A69A /* ResultImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296829546ACE0015A69A /* ResultImageView.swift */; };
+		537C296D29559C290015A69A /* SolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296C29559C290015A69A /* SolutionView.swift */; };
+		537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C296E2955A28F0015A69A /* VerticalLine.swift */; };
+		537C29712955C0A40015A69A /* ResultProgressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C29702955C0A40015A69A /* ResultProgressStyle.swift */; };
 		5386F2DC29476BEC006E1756 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DB29476BEC006E1756 /* Decoder.swift */; };
 		5386F2DF29488187006E1756 /* UIImage+DownSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2DE29488187006E1756 /* UIImage+DownSample.swift */; };
-		5386F2E12948B7E3006E1756 /* DotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5386F2E02948B7E3006E1756 /* DotMaker.swift */; };
 		53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */; };
 		53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */; };
 		53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */; };
+		53B541EA2964103D0064713E /* ValidityCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B541E92964103D0064713E /* ValidityCalculator.swift */; };
 		53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */; };
 		53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E628B4DB00002D8C77 /* ContentView.swift */; };
 		53C338E928B4DB02002D8C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338E828B4DB02002D8C77 /* Assets.xcassets */; };
@@ -45,6 +52,7 @@
 		53CDEDFD294342A200A4B1EA /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEDFC294342A200A4B1EA /* KeychainError.swift */; };
 		53CDEDFF2943438500A4B1EA /* DecodingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEDFE2943438500A4B1EA /* DecodingError.swift */; };
 		53CDEE0129436F2D00A4B1EA /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEE0029436F2D00A4B1EA /* Pose.swift */; };
+		53CFB181295EF0FF001F648D /* ResultDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB180295EF0FF001F648D /* ResultDescriptionView.swift */; };
 		53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A0C28C880A800F3128A /* SettingsRow.swift */; };
 		53D65A1528C8907600F3128A /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A1428C8907600F3128A /* NoticeView.swift */; };
 /* End PBXBuildFile section */
@@ -69,14 +77,21 @@
 		3BF63985292CA6FE0002A03E /* SettingsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCore.swift; sourceTree = "<group>"; };
 		3BF63987292CB4490002A03E /* PoseCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseCore.swift; sourceTree = "<group>"; };
 		3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCurve.swift; sourceTree = "<group>"; };
+		534CF490295B08B800C5EACF /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculator.swift; sourceTree = "<group>"; };
 		537C2959295064A90015A69A /* ResultCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCore.swift; sourceTree = "<group>"; };
 		537C295B29533ECF0015A69A /* DegreeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeCalculator.swift; sourceTree = "<group>"; };
+		537C296429546AB20015A69A /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		537C296629546AC20015A69A /* ResultItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItemView.swift; sourceTree = "<group>"; };
+		537C296829546ACE0015A69A /* ResultImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultImageView.swift; sourceTree = "<group>"; };
+		537C296C29559C290015A69A /* SolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionView.swift; sourceTree = "<group>"; };
+		537C296E2955A28F0015A69A /* VerticalLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLine.swift; sourceTree = "<group>"; };
+		537C29702955C0A40015A69A /* ResultProgressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProgressStyle.swift; sourceTree = "<group>"; };
 		5386F2DB29476BEC006E1756 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		5386F2DE29488187006E1756 /* UIImage+DownSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+DownSample.swift"; sourceTree = "<group>"; };
-		5386F2E02948B7E3006E1756 /* DotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotMaker.swift; sourceTree = "<group>"; };
 		53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = TurtleNeck/SettingsView.swift; sourceTree = SOURCE_ROOT; };
 		53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
+		53B541E92964103D0064713E /* ValidityCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidityCalculator.swift; sourceTree = "<group>"; };
 		53C338E128B4DB00002D8C77 /* TurtleNeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurtleNeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleNeckApp.swift; sourceTree = "<group>"; };
 		53C338E628B4DB00002D8C77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +104,7 @@
 		53CDEDFC294342A200A4B1EA /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		53CDEDFE2943438500A4B1EA /* DecodingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingError.swift; sourceTree = "<group>"; };
 		53CDEE0029436F2D00A4B1EA /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
+		53CFB180295EF0FF001F648D /* ResultDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDescriptionView.swift; sourceTree = "<group>"; };
 		53D65A0C28C880A800F3128A /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsRow.swift; path = TurtleNeck/SettingsRow.swift; sourceTree = SOURCE_ROOT; };
 		53D65A1428C8907600F3128A /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = ../NoticeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,10 +141,13 @@
 				3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */,
 				3B31240B29602C850060B00E /* CollapsibleView.swift */,
 				53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */,
+				537C296E2955A28F0015A69A /* VerticalLine.swift */,
 				3B57868728E48151002327F8 /* ImagePicker.swift */,
 				5386F2DB29476BEC006E1756 /* Decoder.swift */,
-				5386F2E02948B7E3006E1756 /* DotMaker.swift */,
 				537C295B29533ECF0015A69A /* DegreeCalculator.swift */,
+				534CF490295B08B800C5EACF /* ScoreCalculator.swift */,
+				53B541E92964103D0064713E /* ValidityCalculator.swift */,
+				537C29702955C0A40015A69A /* ResultProgressStyle.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -136,14 +155,12 @@
 		3B57869028E6E127002327F8 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
-				53CDEE0029436F2D00A4B1EA /* Pose.swift */,
 				3BF63987292CB4490002A03E /* PoseCore.swift */,
 				3B57868528E41F65002327F8 /* PoseView.swift */,
 				3B06B0952951E3E0003B8BC5 /* PoseAlert.swift */,
 				53CDEDF329421D1D00A4B1EA /* PoseClient.swift */,
-				537C2959295064A90015A69A /* ResultCore.swift */,
-				3B57868C28E59340002327F8 /* ResultView.swift */,
-				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
+				53CDEE0029436F2D00A4B1EA /* Pose.swift */,
+				537C295D29545AFA0015A69A /* Result */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -162,17 +179,22 @@
 				3BF63983292CA6CE0002A03E /* HomeCore.swift */,
 				53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */,
 				3B57869328ED7BF4002327F8 /* EmptyHomeView.swift */,
-				3B733529294B22BA00938B1A /* Summary */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		3B733529294B22BA00938B1A /* Summary */ = {
+		537C295D29545AFA0015A69A /* Result */ = {
 			isa = PBXGroup;
 			children = (
 				3B733525294B18F400938B1A /* Result.swift */,
+				537C2959295064A90015A69A /* ResultCore.swift */,
+				3B57868C28E59340002327F8 /* ResultView.swift */,
+				3B57868E28E6E094002327F8 /* ResultFailView.swift */,
+				537C296429546AB20015A69A /* ScoreView.swift */,
+				537C296C29559C290015A69A /* SolutionView.swift */,
+				53CFB17F295EF0A3001F648D /* ResultItemView */,
 			);
-			path = Summary;
+			path = Result;
 			sourceTree = "<group>";
 		};
 		5386F2DD29488170006E1756 /* Extension */ = {
@@ -238,6 +260,16 @@
 				53CDEDFE2943438500A4B1EA /* DecodingError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		53CFB17F295EF0A3001F648D /* ResultItemView */ = {
+			isa = PBXGroup;
+			children = (
+				537C296629546AC20015A69A /* ResultItemView.swift */,
+				537C296829546ACE0015A69A /* ResultImageView.swift */,
+				53CFB180295EF0FF001F648D /* ResultDescriptionView.swift */,
+			);
+			path = ResultItemView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,12 +349,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53CFB181295EF0FF001F648D /* ResultDescriptionView.swift in Sources */,
+				537C296929546ACE0015A69A /* ResultImageView.swift in Sources */,
 				3B57868428E1B5FA002327F8 /* OnboardingView.swift in Sources */,
 				3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */,
 				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
+				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
+				537C29712955C0A40015A69A /* ResultProgressStyle.swift in Sources */,
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
+				534CF491295B08B800C5EACF /* ScoreCalculator.swift in Sources */,
 				3B57868628E41F65002327F8 /* PoseView.swift in Sources */,
-				5386F2E12948B7E3006E1756 /* DotMaker.swift in Sources */,
+				537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */,
 				3B06B0962951E3E0003B8BC5 /* PoseAlert.swift in Sources */,
 				3B31240C29602C850060B00E /* CollapsibleView.swift in Sources */,
 				3B57868828E48151002327F8 /* ImagePicker.swift in Sources */,
@@ -331,7 +368,9 @@
 				53CDEDFD294342A200A4B1EA /* KeychainError.swift in Sources */,
 				53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */,
 				3BF63984292CA6CE0002A03E /* HomeCore.swift in Sources */,
+				537C296729546AC20015A69A /* ResultItemView.swift in Sources */,
 				3B57868F28E6E094002327F8 /* ResultFailView.swift in Sources */,
+				53B541EA2964103D0064713E /* ValidityCalculator.swift in Sources */,
 				3BF63988292CB4490002A03E /* PoseCore.swift in Sources */,
 				3B733526294B18F400938B1A /* Result.swift in Sources */,
 				537C295C29533ECF0015A69A /* DegreeCalculator.swift in Sources */,
@@ -340,6 +379,7 @@
 				53CDEDF429421D1D00A4B1EA /* PoseClient.swift in Sources */,
 				3BF63982292CA6290002A03E /* Root.swift in Sources */,
 				537C295A295064A90015A69A /* ResultCore.swift in Sources */,
+				537C296D29559C290015A69A /* SolutionView.swift in Sources */,
 				3BF63982292CA6290002A03E /* Root.swift in Sources */,
 				53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */,
 				3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */,
@@ -350,6 +390,7 @@
 				5386F2DF29488187006E1756 /* UIImage+DownSample.swift in Sources */,
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
 				53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */,
+				537C296529546AB20015A69A /* ScoreView.swift in Sources */,
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,
 				53CDEE0129436F2D00A4B1EA /* Pose.swift in Sources */,
 				3B57394228D8AE0E00529A3E /* VersionView.swift in Sources */,
