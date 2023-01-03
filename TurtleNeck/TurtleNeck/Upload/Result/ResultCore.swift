@@ -13,6 +13,7 @@ struct ResultCore: ReducerProtocol {
         var resultImage: UIImage
         var degree: Double
         var score: Int
+        var validity: Double
         var pose: [Pose]
     }
     

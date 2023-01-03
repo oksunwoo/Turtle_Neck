@@ -43,6 +43,7 @@
 		53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */; };
 		53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */; };
 		53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */; };
+		53B541EA2964103D0064713E /* ValidityCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B541E92964103D0064713E /* ValidityCalculator.swift */; };
 		53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */; };
 		53C338E728B4DB00002D8C77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E628B4DB00002D8C77 /* ContentView.swift */; };
 		53C338E928B4DB02002D8C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338E828B4DB02002D8C77 /* Assets.xcassets */; };
@@ -94,6 +95,7 @@
 		53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = TurtleNeck/SettingsView.swift; sourceTree = SOURCE_ROOT; };
 		53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
+		53B541E92964103D0064713E /* ValidityCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidityCalculator.swift; sourceTree = "<group>"; };
 		53C338E128B4DB00002D8C77 /* TurtleNeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurtleNeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleNeckApp.swift; sourceTree = "<group>"; };
 		53C338E628B4DB00002D8C77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				5386F2DB29476BEC006E1756 /* Decoder.swift */,
 				537C295B29533ECF0015A69A /* DegreeCalculator.swift */,
 				534CF490295B08B800C5EACF /* ScoreCalculator.swift */,
+				53B541E92964103D0064713E /* ValidityCalculator.swift */,
 				537C29702955C0A40015A69A /* ResultProgressStyle.swift */,
 			);
 			path = Utility;
@@ -372,6 +375,7 @@
 				537C296729546AC20015A69A /* ResultItemView.swift in Sources */,
 				3B7335222949E65600938B1A /* CardCurve.swift in Sources */,
 				3B57868F28E6E094002327F8 /* ResultFailView.swift in Sources */,
+				53B541EA2964103D0064713E /* ValidityCalculator.swift in Sources */,
 				3BF63988292CB4490002A03E /* PoseCore.swift in Sources */,
 				3B733526294B18F400938B1A /* Result.swift in Sources */,
 				537C295C29533ECF0015A69A /* DegreeCalculator.swift in Sources */,
