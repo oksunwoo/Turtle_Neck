@@ -13,28 +13,32 @@ struct ResultView: View {
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
-            NavigationView {
-                ZStack {
-                    Color.background
-                        .ignoresSafeArea()
-                    VStack {
-                        ScoreView(score: viewStore.score)
-                            .padding(.bottom, 50)
+            if viewStore.pose.count == 0 {
+                ResultFailView()
+            } else {
+                NavigationView {
+                    ZStack {
+                        Color.background
+                            .ignoresSafeArea()
                         VStack {
-                            ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), score: viewStore.score, degree: viewStore.degree, validity: viewStore.validity)
-                                .cornerRadius(10)
-                                .padding(.bottom, 10)
-                            SolutionView(result: Result(score: viewStore.score))
-                                .cornerRadius(10)
+                            ScoreView(score: viewStore.score)
+                                .padding(.bottom, 50)
+                            VStack {
+                                ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), score: viewStore.score, degree: viewStore.degree, validity: viewStore.validity)
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
+                                SolutionView(result: Result(score: viewStore.score))
+                                    .cornerRadius(10)
+                            }
+                            .frame(width: 350)
+                            .fixedSize(horizontal: true, vertical: true)
+                            .shadow(radius: 3, y: 3)
                         }
-                        .frame(width: 350)
-                        .fixedSize(horizontal: true, vertical: true)
-                        .shadow(radius: 3, y: 3)
                     }
                 }
+                .navigationTitle("분석 결과")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("분석 결과")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
