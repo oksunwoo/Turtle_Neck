@@ -71,12 +71,7 @@ struct PoseCore: ReducerProtocol {
                 let validity = calculateValidity(pose: response!)
                 
                 state.isPoseRequest = false
-                
-                if response == [] {
-                    state.optionalResult = nil
-                } else {
-                    state.optionalResult = ResultCore.State(resultImage: state.selectedImage!, degree: degree, score: score, validity: validity, pose: response!)
-                }
+                state.optionalResult = ResultCore.State(resultImage: state.selectedImage!, degree: degree, score: score, validity: validity, pose: response!)
                 
                 return .none
                 
