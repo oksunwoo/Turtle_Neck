@@ -17,8 +17,8 @@ extension User {
     }
 
     @NSManaged public var image: Data?
-    @NSManaged public var score: Int16
-    @NSManaged public var degree: Int16
+    @NSManaged public var score: Int32
+    @NSManaged public var degree: Double
     @NSManaged public var date: Date?
     @NSManaged public var validity: Double
 
