@@ -16,24 +16,22 @@ struct ResultView: View {
             if viewStore.pose.count == 0 {
                 ResultFailView()
             } else {
-                NavigationView {
-                    ZStack {
-                        Color.background
-                            .ignoresSafeArea()
+                ZStack {
+                    Color.background
+                        .ignoresSafeArea()
+                    VStack {
+                        ScoreView(score: viewStore.score)
+                            .padding(.bottom, 50)
                         VStack {
-                            ScoreView(score: viewStore.score)
-                                .padding(.bottom, 50)
-                            VStack {
-                                ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), score: viewStore.score, degree: viewStore.degree, validity: viewStore.validity)
-                                    .cornerRadius(10)
-                                    .padding(.bottom, 10)
-                                SolutionView(grade: Grade(score: viewStore.score))
-                                    .cornerRadius(10)
-                            }
-                            .frame(width: 350)
-                            .fixedSize(horizontal: true, vertical: true)
-                            .shadow(radius: 3, y: 3)
+                            ResultItemView(resultImage: viewStore.resultImage.addDot(with: viewStore.pose), score: viewStore.score, degree: viewStore.degree, validity: viewStore.validity)
+                                .cornerRadius(10)
+                                .padding(.bottom, 10)
+                            SolutionView(grade: Grade(score: viewStore.score))
+                                .cornerRadius(10)
                         }
+                        .frame(width: 350)
+                        .fixedSize(horizontal: true, vertical: true)
+                        .shadow(radius: 3, y: 3)
                     }
                 }
                 .navigationTitle("분석 결과")
