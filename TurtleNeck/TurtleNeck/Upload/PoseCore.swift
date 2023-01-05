@@ -72,6 +72,7 @@ struct PoseCore: ReducerProtocol {
                 
                 state.isPoseRequest = false
                 state.optionalResult = ResultCore.State(resultImage: state.selectedImage!, degree: degree, score: score, validity: validity, pose: response!)
+                
                 return .none
                 
             case .poseResponse(.failure):
