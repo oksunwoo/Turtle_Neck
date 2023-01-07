@@ -14,7 +14,7 @@ struct ResultCore: ReducerProtocol {
         var degree: Double
         var score: Int
         var validity: Double
-        var pose: [Pose]
+        var isPoseNil = true
     }
     
     enum Action: Equatable {
