@@ -75,14 +75,16 @@ struct PoseCore: ReducerProtocol {
                 state.isPoseRequest = false
                 state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, score: score, validity: validity, isPoseNil: response!.count == 0)
                 
-                let user = User(context: context)
-                user.score = Int32(score)
-                user.image = resultImage.pngData()
-                user.degree = degree
-                user.validity = validity
-                user.date = Date()
-                
-                DataManager.shared.saveContext()
+                if response!.count != 0 {
+                    let user = User(context: context)
+                    user.score = Int32(score)
+                    user.image = resultImage.pngData()
+                    user.degree = degree
+                    user.validity = validity
+                    user.date = Date()
+                    
+                    DataManager.shared.saveContext()
+                }
                 
                 return .none
                 
