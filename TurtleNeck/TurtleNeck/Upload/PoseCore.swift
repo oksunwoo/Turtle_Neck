@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 import ComposableArchitecture
 
 struct PoseCore: ReducerProtocol {
@@ -22,9 +23,9 @@ struct PoseCore: ReducerProtocol {
     }
 
     enum Action: BindableAction, Equatable {
-        case confirmButtonTapped(isNavigationActive: Bool)
+        case confirmButtonTapped(isNavigationActive: Bool, in: NSManagedObjectContext)
         case binding(BindingAction<State>)
-        case poseResponse(TaskResult<[Pose]?>)
+        case poseResponse(TaskResult<[Pose]?>, in: NSManagedObjectContext)
         case optionalResult(ResultCore.Action)
         case showAlert
         case dismissAlert
@@ -42,7 +43,7 @@ struct PoseCore: ReducerProtocol {
         BindingReducer()
         Reduce { state, action in
             switch action {
-            case .confirmButtonTapped(isNavigationActive: true):
+            case .confirmButtonTapped(isNavigationActive: true, let context):
                 state.isPoseRequest = true
                 state.isNavigationActive = true
                 state.imageData = state.selectedImage?.jpegData(compressionQuality: 1)
@@ -50,10 +51,10 @@ struct PoseCore: ReducerProtocol {
                 return .task { [imageData = state.imageData] in
                     await .poseResponse(TaskResult {
                         try await self.poseClient.fetch(imageData ?? Data())
-                    })
+                    }, in: context)
                 }
                 
-            case .confirmButtonTapped(isNavigationActive: false):
+            case .confirmButtonTapped(isNavigationActive: false, _):
                 state.isNavigationActive = false
                 state.optionalResult = nil
                 return .cancel(id: CancelID.self)
@@ -65,17 +66,27 @@ struct PoseCore: ReducerProtocol {
             case .binding:
                 return .none
                 
-            case .poseResponse(.success(let response)):
+            case .poseResponse(.success(let response), let context):
                 let degree = calculateDegree(pose: response!)
                 let score = calculateScore(with: degree)
                 let validity = calculateValidity(pose: response!)
+                let resultImage = state.selectedImage!.addDot(with: response!)
                 
                 state.isPoseRequest = false
-                state.optionalResult = ResultCore.State(resultImage: state.selectedImage!, degree: degree, score: score, validity: validity, isPoseNil: response!.count == 0)
+                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, score: score, validity: validity, isPoseNil: response!.count == 0)
+                
+                let user = User(context: context)
+                user.score = Int32(score)
+                user.image = resultImage.pngData()
+                user.degree = degree
+                user.validity = validity
+                user.date = Date()
+                
+                DataManager.shared.saveContext()
                 
                 return .none
                 
-            case .poseResponse(.failure):
+            case .poseResponse(.failure, _):
                 state.isPoseRequest = false
                 return .none
                 

@@ -12,6 +12,7 @@ import ComposableArchitecture
 
 struct PoseView: View {
     let store: StoreOf<PoseCore>
+    @Environment(\.managedObjectContext) var context
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
@@ -106,7 +107,7 @@ struct PoseView: View {
                             ResultView(store: $0)
                         } else: {
                             ProgressView()
-                        }, isActive: viewStore.binding(get: \.isNavigationActive, send: PoseCore.Action.confirmButtonTapped(isNavigationActive:))
+                        }, isActive: viewStore.binding(get: \.isNavigationActive, send: PoseCore.Action.confirmButtonTapped(isNavigationActive: true, in: context))
                         ) {
                             Text("거북목 측정하기")
                                 .foregroundColor(.white)
