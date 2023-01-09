@@ -16,8 +16,7 @@ struct ScoreView: View {
                 .progressViewStyle(ResultProgressStyle())
                 .frame(width: 200, height: 200)
                 .contentShape(Rectangle())
-            Text(String(Int(score)))
-                .font(.system(size: 40))
+            RollingText(value: score)
         }
     }
 }
