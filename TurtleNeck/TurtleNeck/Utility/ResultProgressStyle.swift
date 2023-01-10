@@ -10,10 +10,10 @@ import SwiftUI
 struct ResultProgressStyle: ProgressViewStyle {
     var strokeColor = Color.deepBlue
     var strokeWidth = 25.0
+    var score: Double
+    @State var fractionCompleted = 0.0
     
     func makeBody(configuration: Configuration) -> some View {
-        let fractionCompleted = configuration.fractionCompleted ?? 0
-        
         return ZStack {
             Circle()
                 .stroke(Color.gray.opacity(0.1), style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
@@ -22,6 +22,10 @@ struct ResultProgressStyle: ProgressViewStyle {
                 .stroke(strokeColor, style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
                 .rotationEffect(.degrees(-90))
                 .shadow(radius: 3, y: 3)
+                .animation(.linear(duration: 1.5), value: fractionCompleted)
+                .onAppear {
+                    fractionCompleted += (score/100)
+                }
         }
     }
 }
@@ -29,6 +33,6 @@ struct ResultProgressStyle: ProgressViewStyle {
 struct ResultProgressStyle_Previews: PreviewProvider {
     static var previews: some View {
         ProgressView()
-            .progressViewStyle(ResultProgressStyle())
+            .progressViewStyle(ResultProgressStyle(score: 30))
     }
 }

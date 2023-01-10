@@ -13,7 +13,7 @@ struct ScoreView: View {
     var body: some View {
         ZStack {
             ProgressView(value: Double(score), total: 100)
-                .progressViewStyle(ResultProgressStyle())
+                .progressViewStyle(ResultProgressStyle(score: Double(score)))
                 .frame(width: 200, height: 200)
                 .contentShape(Rectangle())
             RollingText(value: score)
