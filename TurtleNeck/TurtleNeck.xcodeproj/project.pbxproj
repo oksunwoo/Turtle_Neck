@@ -55,6 +55,7 @@
 		53CFB181295EF0FF001F648D /* ResultDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CFB180295EF0FF001F648D /* ResultDescriptionView.swift */; };
 		53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A0C28C880A800F3128A /* SettingsRow.swift */; };
 		53D65A1528C8907600F3128A /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A1428C8907600F3128A /* NoticeView.swift */; };
+		53E92340296C558B008D7794 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9233F296C558B008D7794 /* RollingText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		53CFB180295EF0FF001F648D /* ResultDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDescriptionView.swift; sourceTree = "<group>"; };
 		53D65A0C28C880A800F3128A /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsRow.swift; path = TurtleNeck/SettingsRow.swift; sourceTree = SOURCE_ROOT; };
 		53D65A1428C8907600F3128A /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeView.swift; path = ../NoticeView.swift; sourceTree = "<group>"; };
+		53E9233F296C558B008D7794 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				534CF490295B08B800C5EACF /* ScoreCalculator.swift */,
 				53B541E92964103D0064713E /* ValidityCalculator.swift */,
 				537C29702955C0A40015A69A /* ResultProgressStyle.swift */,
+				53E9233F296C558B008D7794 /* RollingText.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
 				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
 				537C29712955C0A40015A69A /* ResultProgressStyle.swift in Sources */,
+				53E92340296C558B008D7794 /* RollingText.swift in Sources */,
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
 				534CF491295B08B800C5EACF /* ScoreCalculator.swift in Sources */,
 				3B57868628E41F65002327F8 /* PoseView.swift in Sources */,
