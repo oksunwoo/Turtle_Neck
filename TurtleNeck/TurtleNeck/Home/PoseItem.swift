@@ -26,7 +26,7 @@ struct PoseItem: View {
                     .frame(width: 100, height: 155)
                     .cornerRadius(30)
                 
-                Text("\(score)")
+                Text("\(score) 점")
                     .foregroundColor(.primary)
                     .font(.caption)
                     .padding(.top, 5)
