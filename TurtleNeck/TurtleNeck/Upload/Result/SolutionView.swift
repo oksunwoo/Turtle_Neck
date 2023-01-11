@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SolutionView: View {
-    let result: Result
+    let grade: Grade
     
     var body: some View {
         VStack (alignment: .leading, spacing: 15) {
@@ -18,7 +18,7 @@ struct SolutionView: View {
                 .padding(.leading, 15)
                 .foregroundColor(Color(.systemGray4))
             VStack (spacing: 10) {
-                Text(result.longDescription)
+                Text(grade.longDescription)
                     .fontWeight(.semibold)
                     .lineSpacing(5)
                     .foregroundColor(Color.deepBlue)
@@ -34,6 +34,6 @@ struct SolutionView: View {
 
 struct SolutionView_Previews: PreviewProvider {
     static var previews: some View {
-        SolutionView(result: .veryGood)
+        SolutionView(grade: .veryGood)
     }
 }

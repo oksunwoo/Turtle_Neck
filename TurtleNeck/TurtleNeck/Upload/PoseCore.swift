@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 import ComposableArchitecture
 
 struct PoseCore: ReducerProtocol {
@@ -69,10 +70,10 @@ struct PoseCore: ReducerProtocol {
                 let degree = calculateDegree(pose: response!)
                 let score = calculateScore(with: degree)
                 let validity = calculateValidity(pose: response!)
+                let resultImage = state.selectedImage!.addDot(with: response!)
                 
                 state.isPoseRequest = false
-                state.optionalResult = ResultCore.State(resultImage: state.selectedImage!, degree: degree, score: score, validity: validity, pose: response!)
-                
+                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, score: score, validity: validity, isPoseNil: response!.count == 0)
                 return .none
                 
             case .poseResponse(.failure):
