@@ -9,6 +9,8 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ResultView: View {
+    @Environment(\.managedObjectContext) var context
+    
     let store: StoreOf<ResultCore>
     
     var body: some View {
@@ -33,6 +35,9 @@ struct ResultView: View {
                         .fixedSize(horizontal: true, vertical: true)
                         .shadow(radius: 3, y: 3)
                     }
+                }
+                .onAppear {
+                    viewStore.send(.saveData(in: context))
                 }
                 .navigationTitle("분석 결과")
                 .navigationBarTitleDisplayMode(.inline)

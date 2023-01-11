@@ -23,9 +23,9 @@ struct PoseCore: ReducerProtocol {
     }
 
     enum Action: BindableAction, Equatable {
-        case confirmButtonTapped(isNavigationActive: Bool, in: NSManagedObjectContext)
+        case confirmButtonTapped(isNavigationActive: Bool)
         case binding(BindingAction<State>)
-        case poseResponse(TaskResult<[Pose]?>, in: NSManagedObjectContext)
+        case poseResponse(TaskResult<[Pose]?>)
         case optionalResult(ResultCore.Action)
         case showAlert
         case dismissAlert
@@ -43,7 +43,7 @@ struct PoseCore: ReducerProtocol {
         BindingReducer()
         Reduce { state, action in
             switch action {
-            case .confirmButtonTapped(isNavigationActive: true, let context):
+            case .confirmButtonTapped(isNavigationActive: true):
                 state.isPoseRequest = true
                 state.isNavigationActive = true
                 state.imageData = state.selectedImage?.jpegData(compressionQuality: 1)
@@ -51,10 +51,10 @@ struct PoseCore: ReducerProtocol {
                 return .task { [imageData = state.imageData] in
                     await .poseResponse(TaskResult {
                         try await self.poseClient.fetch(imageData ?? Data())
-                    }, in: context)
+                    })
                 }
                 
-            case .confirmButtonTapped(isNavigationActive: false, _):
+            case .confirmButtonTapped(isNavigationActive: false):
                 state.isNavigationActive = false
                 state.optionalResult = nil
                 return .cancel(id: CancelID.self)
@@ -66,7 +66,7 @@ struct PoseCore: ReducerProtocol {
             case .binding:
                 return .none
                 
-            case .poseResponse(.success(let response), let context):
+            case .poseResponse(.success(let response)):
                 let degree = calculateDegree(pose: response!)
                 let score = calculateScore(with: degree)
                 let validity = calculateValidity(pose: response!)
@@ -74,21 +74,9 @@ struct PoseCore: ReducerProtocol {
                 
                 state.isPoseRequest = false
                 state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, score: score, validity: validity, isPoseNil: response!.count == 0)
-                
-                if response!.count != 0 {
-                    let user = User(context: context)
-                    user.score = Int32(score)
-                    user.image = resultImage.pngData()
-                    user.degree = degree
-                    user.validity = validity
-                    user.date = Date()
-                    
-                    DataManager.shared.saveContext()
-                }
-                
                 return .none
                 
-            case .poseResponse(.failure, _):
+            case .poseResponse(.failure):
                 state.isPoseRequest = false
                 return .none
                 

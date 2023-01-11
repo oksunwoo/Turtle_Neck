@@ -18,7 +18,7 @@ struct ResultDetailView: View {
             VStack {
                 if let data = data {
                     ScoreView(score: Int(data.score))
-                        .padding(.bottom, 50)
+                        .padding(.bottom, 30)
                     VStack {
                         ResultItemView(resultImage: UIImage(data: data.image!)!, score: Int(data.score), degree: data.degree, validity: data.validity)
                             .cornerRadius(10)
@@ -47,8 +47,6 @@ struct ResultDetailView: View {
                 }
                 .padding(.top, 20)
             }
-//            .frame(minHeight: 0, maxHeight: .infinity)
-//            .fixedSize(horizontal: false, vertical: true)
             .padding()
         }
     }
