@@ -21,7 +21,7 @@ struct ContentView: View {
                         }
                     SettingsView()
                         .tabItem {
-                            Label("Account", systemImage: "person.crop.circle")
+                            Label("Settings", systemImage: "gear")
                         }
                 }
                 .accentColor(.white)
