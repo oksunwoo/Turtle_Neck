@@ -6,11 +6,8 @@
 //
 
 import SwiftUI
-import ComposableArchitecture
 
 struct HomeView: View {
-    let store: StoreOf<HomeCore>
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -19,7 +16,7 @@ struct HomeView: View {
                 ScrollView {
                     VStack(spacing: 10) {
                         titleView()
-                        PoseList(store: store)
+                        PoseList(selected: nil)
                         
                         CollapsibleView {
                             Text("✓ 거북목 증후군은 왜 발생하나요?")
@@ -63,12 +60,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(
-            store: Store(
-                initialState: HomeCore.State(),
-                reducer: HomeCore()
-            )
-        )
+        HomeView()
     }
 }
 
