@@ -15,12 +15,7 @@ struct ContentView: View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack(alignment: .bottom) {
                 TabView(selection: viewStore.binding(get: { $0.currentTab }, send: Root.Action.selectTab)) {
-                    HomeView(
-                        store: store.scope(
-                            state: \.home,
-                            action: Root.Action.home
-                        )
-                    )
+                    HomeView()
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
                         }
