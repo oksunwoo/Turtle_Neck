@@ -70,9 +70,7 @@ extension HomeView {
             Image("TurtleNeckLogo_bk")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 250, height: 50)
-            Spacer()
+                .frame(width: 100, height: 75)
         }
-        .padding([.top, .leading], 20)
     }
 }
