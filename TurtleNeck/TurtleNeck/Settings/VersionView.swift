@@ -19,7 +19,7 @@ struct VersionView: View {
             Color.background.ignoresSafeArea()
             
             VStack {
-                Image("TurtleNeckLogo_bk")
+                Image("TurtleNeckLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 300, height: 80)
