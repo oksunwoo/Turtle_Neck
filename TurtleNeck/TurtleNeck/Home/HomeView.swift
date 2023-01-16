@@ -67,7 +67,7 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView {
     func titleView() -> some View {
         HStack {
-            Image("TurtleNeckLogo_bk")
+            Image("TurtleNeckLogo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 75)
