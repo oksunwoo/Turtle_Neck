@@ -31,7 +31,7 @@ struct ResultItemView: View {
             }
         }
         .padding(.bottom, 10)
-        .background(Color.white)
+        .background(.white)
     }
 }
 
