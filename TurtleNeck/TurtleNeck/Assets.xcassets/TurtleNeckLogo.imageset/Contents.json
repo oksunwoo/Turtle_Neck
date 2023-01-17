@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "제목을 입력해주세요_-002.png",
+      "filename" : "TurtleNeckLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "제목을 입력해주세요_-002 1.png",
+      "filename" : "TurtleNeckLogo 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "제목을 입력해주세요_-002 2.png",
+      "filename" : "TurtleNeckLogo 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
