@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B06B0912951E3A2003B8BC5 /* View+Alert.swift */; };
 		3B06B0962951E3E0003B8BC5 /* PoseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B06B0952951E3E0003B8BC5 /* PoseAlert.swift */; };
+		3B1CB2792976DF760021B13C /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1CB2782976DF760021B13C /* View+Alert.swift */; };
+		3B1CB27A2976DFF30021B13C /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63981292CA6290002A03E /* Root.swift */; };
 		3B22F0C9296419A200E3F93A /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B22F0C7296419A200E3F93A /* User.xcdatamodeld */; };
 		3B22F0CD296422A900E3F93A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B22F0CB296422A900E3F93A /* User+CoreDataClass.swift */; };
 		3B22F0CE296422A900E3F93A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B22F0CC296422A900E3F93A /* User+CoreDataProperties.swift */; };
@@ -29,7 +30,6 @@
 		3BD0CB6329695D4800F06968 /* PoseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6229695D4800F06968 /* PoseList.swift */; };
 		3BD0CB6529695D5200F06968 /* PoseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6429695D5200F06968 /* PoseItem.swift */; };
 		3BF63980292B84460002A03E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3BF6397F292B84460002A03E /* ComposableArchitecture */; };
-		3BF63982292CA6290002A03E /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63981292CA6290002A03E /* Root.swift */; };
 		3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63985292CA6FE0002A03E /* SettingsCore.swift */; };
 		3BF63988292CB4490002A03E /* PoseCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63987292CB4490002A03E /* PoseCore.swift */; };
 		3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */; };
@@ -63,8 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B06B0912951E3A2003B8BC5 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
 		3B06B0952951E3E0003B8BC5 /* PoseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseAlert.swift; sourceTree = "<group>"; };
+		3B1CB2782976DF760021B13C /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "View+Alert.swift"; path = "../Settings/View+Alert.swift"; sourceTree = "<group>"; };
 		3B22F0C8296419A200E3F93A /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		3B22F0CB296422A900E3F93A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B22F0CC296422A900E3F93A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				5386F2DE29488187006E1756 /* UIImage+DownSample.swift */,
-				3B06B0912951E3A2003B8BC5 /* View+Alert.swift */,
+				3B1CB2782976DF760021B13C /* View+Alert.swift */,
 				3BA1BB322962D45600683BCF /* Color+CustomColor.swift */,
 			);
 			path = Extension;
@@ -372,12 +372,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1CB27A2976DFF30021B13C /* Root.swift in Sources */,
+				3B1CB2792976DF760021B13C /* View+Alert.swift in Sources */,
 				53CFB181295EF0FF001F648D /* ResultDescriptionView.swift in Sources */,
 				537C296929546ACE0015A69A /* ResultImageView.swift in Sources */,
 				3B57868428E1B5FA002327F8 /* OnboardingView.swift in Sources */,
 				3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */,
-				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
-				3B06B0922951E3A2003B8BC5 /* View+Alert.swift in Sources */,
 				537C29712955C0A40015A69A /* ResultProgressStyle.swift in Sources */,
 				53E92340296C558B008D7794 /* RollingText.swift in Sources */,
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
@@ -403,11 +403,9 @@
 				537C295C29533ECF0015A69A /* DegreeCalculator.swift in Sources */,
 				3B57868D28E59340002327F8 /* ResultView.swift in Sources */,
 				53CDEDF429421D1D00A4B1EA /* PoseClient.swift in Sources */,
-				3BF63982292CA6290002A03E /* Root.swift in Sources */,
 				537C295A295064A90015A69A /* ResultCore.swift in Sources */,
 				3BC69301296D62FC006DB8B6 /* ResultDetailView.swift in Sources */,
 				537C296D29559C290015A69A /* SolutionView.swift in Sources */,
-				3BF63982292CA6290002A03E /* Root.swift in Sources */,
 				53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */,
 				3BF63986292CA6FE0002A03E /* SettingsCore.swift in Sources */,
 				53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */,

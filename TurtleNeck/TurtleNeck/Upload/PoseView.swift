@@ -41,7 +41,7 @@ struct PoseView: View {
                            alert: PoseAlert { viewStore.send(.dismissAlert) })
                     
                     VStack(spacing: 20) {
-                        Text("전신사진을 등록해주세요").bold()
+                        Text("좌측 혹은 우측을 보고 촬영해주세요").bold()
                         
                         Menu {
                             Button {
