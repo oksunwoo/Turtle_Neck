@@ -59,9 +59,3 @@ struct ResultDetailView: View {
         .background(Color.background)
     }
 }
-
-//struct ResultDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultDetailView(show: .constant(true), data: nil)
-//    }
-//}
