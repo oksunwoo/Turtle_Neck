@@ -105,7 +105,7 @@
 		53C338E628B4DB00002D8C77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53C338E828B4DB02002D8C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		53C338F228B4DCA5002D8C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		53C338F228B4DCA5002D8C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53CDEDF329421D1D00A4B1EA /* PoseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseClient.swift; sourceTree = "<group>"; };
 		53CDEDF5294325D600A4B1EA /* PoseInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PoseInfo.plist; sourceTree = "<group>"; };
 		53CDEDF729432FD300A4B1EA /* TurtleNeck++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TurtleNeck++Bundle.swift"; sourceTree = "<group>"; };
@@ -300,20 +300,8 @@
 			children = (
 				53E9236E29781E5E008D7794 /* TurtleNeck */,
 				53E923722978243D008D7794 /* Module */,
-				53C338F228B4DCA5002D8C77 /* Info.plist */,
-				53CDEDF5294325D600A4B1EA /* PoseInfo.plist */,
-				53C338E628B4DB00002D8C77 /* ContentView.swift */,
-				53C338EA28B4DB02002D8C77 /* Preview Content */,
 			);
 			path = TurtleNeck;
-			sourceTree = "<group>";
-		};
-		53C338EA28B4DB02002D8C77 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		53CFB17F295EF0A3001F648D /* ResultItemView */ = {
@@ -347,7 +335,10 @@
 		53E9237029782173008D7794 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				53C338F228B4DCA5002D8C77 /* Info.plist */,
+				53CDEDF5294325D600A4B1EA /* PoseInfo.plist */,
 				53C338E828B4DB02002D8C77 /* Assets.xcassets */,
+				53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */,
 				53CDEDF729432FD300A4B1EA /* TurtleNeck++Bundle.swift */,
 			);
 			path = Resource;
@@ -356,6 +347,7 @@
 		53E923712978217A008D7794 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				53C338E628B4DB00002D8C77 /* ContentView.swift */,
 				3BF63981292CA6290002A03E /* Root.swift */,
 				53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */,
 			);
@@ -738,6 +730,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -793,6 +786,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -810,11 +804,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/TurtleNeck/App/Resource\"";
 				DEVELOPMENT_TEAM = 79WK37N5M5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TurtleNeck/Info.plist;
+				INFOPLIST_FILE = TurtleNeck/TurtleNeck/App/Resource/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -845,11 +839,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/TurtleNeck/App/Resource\"";
 				DEVELOPMENT_TEAM = 79WK37N5M5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TurtleNeck/Info.plist;
+				INFOPLIST_FILE = TurtleNeck/TurtleNeck/App/Resource/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
