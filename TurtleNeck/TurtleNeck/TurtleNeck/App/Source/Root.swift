@@ -9,7 +9,6 @@ import ComposableArchitecture
 
 struct Root: ReducerProtocol {
     struct State: Equatable {
-        var settings = SettingsCore.State()
         var currentTab: Tab = .home
         var optionalPose: PoseCore.State?
         
@@ -20,7 +19,6 @@ struct Root: ReducerProtocol {
     
     enum Action: Equatable {
         case onAppear
-        case settings(SettingsCore.Action)
         case selectTab(State.Tab)
         case optionalPose(PoseCore.Action)
         case setSheet(isPresented: Bool)
@@ -49,11 +47,6 @@ struct Root: ReducerProtocol {
                 return .none
             }
         }
-        
-        Scope(state: \.settings, action: /Action.settings) {
-            SettingsCore()
-        }
-        
         .ifLet(\.optionalPose, action: /Action.optionalPose) {
             PoseCore()
         }
