@@ -14,7 +14,7 @@ struct TurtleNeckApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(
+            AppView(
                 store: Store(
                     initialState: AppCore.State(),
                     reducer: AppCore())
