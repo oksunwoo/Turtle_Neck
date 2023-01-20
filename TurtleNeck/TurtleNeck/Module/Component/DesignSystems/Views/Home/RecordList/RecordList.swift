@@ -1,5 +1,5 @@
 //
-//  PoseList.swift
+//  RecordList.swift
 //  TurtleNeck
 //
 //  Created by 권나영 on 2023/01/07.
@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct PoseList: View {
+struct RecordList: View {
     @FetchRequest(
         entity: User.entity(),
         sortDescriptors: [
@@ -44,7 +44,7 @@ struct PoseList: View {
                                 show.toggle()
                                 selected = data
                             } label: {
-                                PoseItem(
+                                RecordItem(
                                     image: UIImage(data: data.image!) ?? UIImage(),
                                     score: data.score,
                                     grade: Grade(score: Int(data.score))
@@ -64,6 +64,6 @@ struct PoseList: View {
 
 struct PoseList_Previews: PreviewProvider {
     static var previews: some View {
-        PoseList()
+        RecordList()
     }
 }

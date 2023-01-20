@@ -26,8 +26,8 @@
 		3BA1BB332962D45600683BCF /* Color+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1BB322962D45600683BCF /* Color+CustomColor.swift */; };
 		3BC527CF29659FED003174B7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC527CE29659FED003174B7 /* DataManager.swift */; };
 		3BC69301296D62FC006DB8B6 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC69300296D62FC006DB8B6 /* RecordView.swift */; };
-		3BD0CB6329695D4800F06968 /* PoseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6229695D4800F06968 /* PoseList.swift */; };
-		3BD0CB6529695D5200F06968 /* PoseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6429695D5200F06968 /* PoseItem.swift */; };
+		3BD0CB6329695D4800F06968 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6229695D4800F06968 /* RecordList.swift */; };
+		3BD0CB6529695D5200F06968 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6429695D5200F06968 /* RecordItem.swift */; };
 		3BF63980292B84460002A03E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3BF6397F292B84460002A03E /* ComposableArchitecture */; };
 		3BF63988292CB4490002A03E /* UploadCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63987292CB4490002A03E /* UploadCore.swift */; };
 		3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */; };
@@ -79,8 +79,8 @@
 		3BA1BB322962D45600683BCF /* Color+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CustomColor.swift"; sourceTree = "<group>"; };
 		3BC527CE29659FED003174B7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3BC69300296D62FC006DB8B6 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
-		3BD0CB6229695D4800F06968 /* PoseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseList.swift; sourceTree = "<group>"; };
-		3BD0CB6429695D5200F06968 /* PoseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseItem.swift; sourceTree = "<group>"; };
+		3BD0CB6229695D4800F06968 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
+		3BD0CB6429695D5200F06968 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
 		3BF63981292CA6290002A03E /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		3BF63987292CB4490002A03E /* UploadCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCore.swift; sourceTree = "<group>"; };
 		3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCurve.swift; sourceTree = "<group>"; };
@@ -456,13 +456,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		53E9237D29782B23008D7794 /* PoseList */ = {
+		53E9237D29782B23008D7794 /* RecordList */ = {
 			isa = PBXGroup;
 			children = (
-				3BD0CB6229695D4800F06968 /* PoseList.swift */,
-				3BD0CB6429695D5200F06968 /* PoseItem.swift */,
+				3BD0CB6229695D4800F06968 /* RecordList.swift */,
+				3BD0CB6429695D5200F06968 /* RecordItem.swift */,
 			);
-			path = PoseList;
+			path = RecordList;
 			sourceTree = "<group>";
 		};
 		53E9237E29782D44008D7794 /* Network */ = {
@@ -487,7 +487,7 @@
 		53E92380297830B3008D7794 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				53E9237D29782B23008D7794 /* PoseList */,
+				53E9237D29782B23008D7794 /* RecordList */,
 				3B31240B29602C850060B00E /* CollapsibleView.swift */,
 			);
 			path = Home;
@@ -638,7 +638,7 @@
 				3B31240C29602C850060B00E /* CollapsibleView.swift in Sources */,
 				3B57868828E48151002327F8 /* ImagePicker.swift in Sources */,
 				3BA1BB332962D45600683BCF /* Color+CustomColor.swift in Sources */,
-				3BD0CB6529695D5200F06968 /* PoseItem.swift in Sources */,
+				3BD0CB6529695D5200F06968 /* RecordItem.swift in Sources */,
 				53CDEDFD294342A200A4B1EA /* KeychainError.swift in Sources */,
 				53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */,
 				537C296729546AC20015A69A /* ResultItemView.swift in Sources */,
@@ -664,7 +664,7 @@
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
 				53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */,
 				537C296529546AB20015A69A /* ScoreView.swift in Sources */,
-				3BD0CB6329695D4800F06968 /* PoseList.swift in Sources */,
+				3BD0CB6329695D4800F06968 /* RecordList.swift in Sources */,
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,
 				53CDEE0129436F2D00A4B1EA /* Pose.swift in Sources */,
 				3B57394228D8AE0E00529A3E /* VersionView.swift in Sources */,
