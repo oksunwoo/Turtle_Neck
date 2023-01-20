@@ -16,8 +16,8 @@ struct TurtleNeckApp: App {
         WindowGroup {
             ContentView(
                 store: Store(
-                    initialState: Root.State(),
-                    reducer: Root())
+                    initialState: AppCore.State(),
+                    reducer: AppCore())
             )
             .environment(\.managedObjectContext, DataManager.shared.container.viewContext)
             .fullScreenCover(isPresented: $isFirstLaunching) {

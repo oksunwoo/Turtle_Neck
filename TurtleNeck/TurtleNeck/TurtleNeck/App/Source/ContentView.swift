@@ -9,12 +9,12 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ContentView: View {
-    let store: StoreOf<Root>
+    let store: StoreOf<AppCore>
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             ZStack(alignment: .bottom) {
-                TabView(selection: viewStore.binding(get: { $0.currentTab }, send: Root.Action.selectTab)) {
+                TabView(selection: viewStore.binding(get: { $0.currentTab }, send: AppCore.Action.selectTab)) {
                     HomeView()
                         .tabItem {
                             Label("Home", systemImage: "house.fill")
@@ -45,11 +45,11 @@ struct ContentView: View {
                 .fullScreenCover(
                     isPresented: viewStore.binding(
                         get: { $0.optionalPose != nil },
-                        send: Root.Action.setSheet(isPresented:))
+                        send: AppCore.Action.setSheet(isPresented:))
                 ) {
                     IfLetStore(self.store.scope(state: \.optionalPose,
-                                                action: Root.Action.optionalPose)) {
-                        PoseView(store: $0)
+                                                action: AppCore.Action.optionalPose)) {
+                        UploadView(store: $0)
                     }
                 }
             }
@@ -61,8 +61,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
             store: Store(
-                initialState: Root.State(),
-                reducer: Root()
+                initialState: AppCore.State(),
+                reducer: AppCore()
             )
         )
     }

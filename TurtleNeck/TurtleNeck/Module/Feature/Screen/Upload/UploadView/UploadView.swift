@@ -10,8 +10,8 @@ import Photos
 import AVFoundation
 import ComposableArchitecture
 
-struct PoseView: View {
-    let store: StoreOf<PoseCore>
+struct UploadView: View {
+    let store: StoreOf<UploadCore>
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
@@ -38,7 +38,7 @@ struct PoseView: View {
                             )
                     }
                     .alert(isPresented: viewStore.binding(\.$showAlert),
-                           alert: PoseAlert { viewStore.send(.dismissAlert) })
+                           alert: PhotoGuideView { viewStore.send(.dismissAlert) })
                     
                     VStack(spacing: 20) {
                         Text("좌측 혹은 우측을 보고 촬영해주세요").bold()
@@ -102,11 +102,11 @@ struct PoseView: View {
                                                       image: viewStore.binding(\.$selectedImage))
                         })
                         
-                        NavigationLink(destination: IfLetStore(self.store.scope(state: \.optionalResult, action: PoseCore.Action.optionalResult)) {
+                        NavigationLink(destination: IfLetStore(self.store.scope(state: \.optionalResult, action: UploadCore.Action.optionalResult)) {
                             ResultView(store: $0)
                         } else: {
                             ProgressView()
-                        }, isActive: viewStore.binding(get: \.isNavigationActive, send: PoseCore.Action.confirmButtonTapped(isNavigationActive:))
+                        }, isActive: viewStore.binding(get: \.isNavigationActive, send: UploadCore.Action.confirmButtonTapped(isNavigationActive:))
                         ) {
                             Text("거북목 측정하기")
                                 .foregroundColor(.white)
@@ -138,18 +138,18 @@ struct PoseView: View {
     }
 }
 
-struct PoseView_Previews: PreviewProvider {
+struct Upload_Previews: PreviewProvider {
     static var previews: some View {
-        PoseView(
+        UploadView(
             store: Store(
-                initialState: PoseCore.State(),
-                reducer: PoseCore()
+                initialState: UploadCore.State(),
+                reducer: UploadCore()
             )
         )
     }
 }
 
-extension PoseView {
+extension UploadView {
     func closeButton() -> some View {
         Button {
             presentationMode.wrappedValue.dismiss()

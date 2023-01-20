@@ -51,7 +51,7 @@ struct PoseList: View {
                                 )
                             }
                             .fullScreenCover(isPresented: $show) {
-                                ResultDetailView(show: $show, data: $selected)
+                                RecordView(show: $show, data: $selected)
                             }
                         }
                     }
