@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NoticeView: View {
-    let sampleNotice = [Notice(title: "눈 떠보니 벌써 9월, 1.1.0 업데이트 안내",
-                               noticeItems: [Notice(title: "원하는 나이, 성별끼리 모이고 싶은데 번거로운 절차를 만들고 확인하느라 불편하셨죠? \n 이제 그룹채팅방 만들기에서 채팅방 입장 조건을 선택해서 원하는 성별과 출생년도를 설정해보세요", noticeItems: nil)])]
+    let sampleNotice = [Notice(title: "터틀넥 신규 앱 런칭 안내",
+                               noticeItems: [Notice(title: "운전을 오래하느라, 스마트폰을 많이 사용하느라, 책상 앞에 오래 앉아있느라 뻐근한 목. \n내가 거북목일까 아닐까 검사하기 불편하셨죠? \n이제 사진 한장으로 간편하게 검사해보세요.", noticeItems: nil)])]
     
     var body: some View {
         List(sampleNotice, children: \.noticeItems) { item in
