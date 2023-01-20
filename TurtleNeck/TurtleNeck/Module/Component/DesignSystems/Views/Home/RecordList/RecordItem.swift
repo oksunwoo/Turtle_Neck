@@ -1,5 +1,5 @@
 //
-//  PoseItem.swift
+//  RecordItem.swift
 //  TurtleNeck
 //
 //  Created by 권나영 on 2023/01/07.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PoseItem: View {
+struct RecordItem: View {
     let image: UIImage
     let score: Int32
     let grade: Grade
@@ -42,7 +42,7 @@ struct PoseItem: View {
 
 struct PoseItem_Previews: PreviewProvider {
     static var previews: some View {
-        PoseItem(
+        RecordItem(
             image: UIImage(imageLiteralResourceName: "Pose1"),
             score: 32,
             grade: .dangerous

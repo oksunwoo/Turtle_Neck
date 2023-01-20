@@ -16,7 +16,7 @@ struct HomeView: View {
                 ScrollView {
                     VStack(spacing: 10) {
                         titleView()
-                        PoseList(selected: nil)
+                        RecordList(selected: nil)
                         
                         CollapsibleView {
                             Text("✓ 거북목 증후군은 왜 발생하나요?")
