@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  AppView.swift
 //  TurtleNeck
 //
 //  Created by Sunwoo on 2022/08/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ContentView: View {
+struct AppView: View {
     let store: StoreOf<AppCore>
     
     var body: some View {
@@ -57,9 +57,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(
+        AppView(
             store: Store(
                 initialState: AppCore.State(),
                 reducer: AppCore()
