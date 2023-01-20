@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ResultDetailView: View {
+struct RecordView: View {
     @Binding var show: Bool
     @Binding var data: FetchedResults<User>.Element?
             

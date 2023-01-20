@@ -1,5 +1,5 @@
 //
-//  PoseAlert.swift
+//  PhotoGuideView.swift
 //  TurtleNeck
 //
 //  Created by 권나영 on 2022/12/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PoseAlert: View {
+struct PhotoGuideView: View {
     let action: () -> Void
     
     var body: some View {
@@ -62,8 +62,8 @@ struct PoseAlert: View {
     }
 }
 
-struct PoseAlert_Previews: PreviewProvider {
+struct PhotoGuideView_Previews: PreviewProvider {
     static var previews: some View {
-        PoseAlert { }
+        PhotoGuideView { }
     }
 }

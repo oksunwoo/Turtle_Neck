@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-    func alert(isPresented: Binding<Bool>, alert: PoseAlert) -> some View {
+    func alert(isPresented: Binding<Bool>, alert: PhotoGuideView) -> some View {
         let keyWindow = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
         
         let vc = UIHostingController(rootView: alert)
