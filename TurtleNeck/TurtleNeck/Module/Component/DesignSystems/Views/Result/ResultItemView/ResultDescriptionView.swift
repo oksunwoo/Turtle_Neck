@@ -11,7 +11,6 @@ struct ResultDescriptionView: View {
     let score: Int
     let degree: Double
     let grade: Grade
-    let validity: Double
     
     var body: some View {
         VStack (spacing: 10){
@@ -40,14 +39,6 @@ struct ResultDescriptionView: View {
                     .bold()
             }
             HStack {
-                Text("Data Validity")
-                    .foregroundColor(Color(.systemGray4))
-                Spacer()
-                Text("\(String(validity))%")
-                    .foregroundColor(.deepBlue)
-                    .bold()
-            }
-            HStack {
                 Text("Total Score")
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
@@ -71,6 +62,6 @@ struct ResultDescriptionView: View {
 
 struct ResultDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultDescriptionView(score: 50, degree: 30, grade: .veryGood, validity: 66.6)
+        ResultDescriptionView(score: 50, degree: 30, grade: .veryGood)
     }
 }

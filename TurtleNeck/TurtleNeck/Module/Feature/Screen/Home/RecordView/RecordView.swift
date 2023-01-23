@@ -23,7 +23,7 @@ struct RecordView: View {
                                 .frame(width:300, height: 400)
                                 .cornerRadius(10)
                             
-                            ResultDescriptionView(score: Int(data.score), degree: data.degree, grade: Grade(score: Int(data.score)), validity: data.validity)
+                            ResultDescriptionView(score: Int(data.score), degree: data.degree, grade: Grade(score: Int(data.score)))
                                 .frame(minWidth: 0, maxWidth: .infinity)
                                 .background(.white)
                                 .cornerRadius(10)
