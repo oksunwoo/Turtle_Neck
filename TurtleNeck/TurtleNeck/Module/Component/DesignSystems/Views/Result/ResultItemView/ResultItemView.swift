@@ -11,7 +11,6 @@ struct ResultItemView: View {
     let resultImage: UIImage
     let score: Int
     let degree: Double
-    let validity: Double
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,7 +25,7 @@ struct ResultItemView: View {
                 VerticalLine()
                     .stroke(Color.background, lineWidth: 2)
                     .frame(width: 1, height: 140)
-                ResultDescriptionView(score: score, degree: degree, grade: Grade(score: score), validity: validity)
+                ResultDescriptionView(score: score, degree: degree, grade: Grade(score: score))
                     .frame(minWidth: 0, maxWidth: .infinity)
             }
         }
@@ -37,6 +36,6 @@ struct ResultItemView: View {
 
 struct ResultItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultItemView(resultImage: UIImage(named: "Pose1")!, score: 50, degree: 30, validity: 66.6)
+        ResultItemView(resultImage: UIImage(named: "Pose1")!, score: 50, degree: 30)
     }
 }
