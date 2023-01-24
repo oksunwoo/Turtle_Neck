@@ -69,11 +69,10 @@ struct UploadCore: ReducerProtocol {
             case .poseResponse(.success(let response)):
                 let degree = calculateDegree(pose: response!)
                 let score = calculateScore(with: degree)
-                let validity = calculateValidity(pose: response!)
                 let resultImage = state.selectedImage!.addDot(with: response!)
                 
                 state.isPoseRequest = false
-                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, score: score, validity: validity, isPoseNil: response!.count == 0)
+                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, score: score, isPoseNil: response!.count == 0)
                 return .none
                 
             case .poseResponse(.failure):

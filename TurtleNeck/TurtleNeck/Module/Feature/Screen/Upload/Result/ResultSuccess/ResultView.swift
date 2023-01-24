@@ -53,8 +53,7 @@ struct ResultView_Previews: PreviewProvider {
                 store: Store(
                     initialState: ResultCore.State(
                         resultImage: UIImage(named: "Pose1")!,
-                        degree: 0, score: 70,
-                        validity: 66.6),
+                        degree: 0, score: 70),
                     reducer: ResultCore()
                 )
             )

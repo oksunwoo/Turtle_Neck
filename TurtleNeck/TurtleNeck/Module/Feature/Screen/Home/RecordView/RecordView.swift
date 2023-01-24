@@ -20,8 +20,9 @@ struct RecordView: View {
                         VStack {
                             Image(uiImage: UIImage(data: data.image!)!)
                                 .resizable()
-                                .frame(width:300, height: 400)
+                                .frame(width: 300, height: 400)
                                 .cornerRadius(10)
+                                .padding(.top, 50)
                             
                             ResultDescriptionView(score: Int(data.score), degree: data.degree, grade: Grade(score: Int(data.score)))
                                 .frame(minWidth: 0, maxWidth: .infinity)

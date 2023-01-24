@@ -19,7 +19,6 @@ extension User {
     @NSManaged public var score: Int32
     @NSManaged public var degree: Double
     @NSManaged public var date: Date?
-    @NSManaged public var validity: Double
 
 }
 
