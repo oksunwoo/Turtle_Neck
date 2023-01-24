@@ -14,7 +14,6 @@ struct ResultCore: ReducerProtocol {
         var resultImage: UIImage
         var degree: Double
         var score: Int
-        var validity: Double
         var isPoseNil = true
     }
     
@@ -30,7 +29,6 @@ struct ResultCore: ReducerProtocol {
                 user.score = Int32(state.score)
                 user.image = state.resultImage.pngData()
                 user.degree = state.degree
-                user.validity = state.validity
                 user.date = Date()
                 
                 DataManager.shared.saveContext()
