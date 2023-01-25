@@ -9,7 +9,8 @@ import SwiftUI
 
 extension View {
     func alert(isPresented: Binding<Bool>, alert: PhotoGuideView) -> some View {
-        let keyWindow = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
         
         let vc = UIHostingController(rootView: alert)
         vc.modalTransitionStyle = .crossDissolve
@@ -18,7 +19,7 @@ extension View {
         vc.definesPresentationContext = true
         
         return self.onChange(of: isPresented.wrappedValue, perform: {
-            if var topController = keyWindow?.rootViewController {
+            if var topController = window?.rootViewController {
                 while let presentedViewController = topController.presentedViewController {
                     topController = presentedViewController
                 }
