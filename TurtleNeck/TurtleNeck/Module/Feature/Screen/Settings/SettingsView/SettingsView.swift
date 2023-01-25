@@ -54,13 +54,17 @@ extension SettingsView {
             case .failed:
                 // 메일 발송 실패(오류 발생)
                 print("오류 발생")
+            @unknown default:
+                print("오류 발생")
             }
             controller.dismiss(animated: true)
         }
     }
     
     private func presentMailCompose() {
-        let rootVC = UIApplication.shared.keyWindow?.rootViewController
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        let rootVC = window?.rootViewController
         
         guard MFMailComposeViewController.canSendMail() else {
             // Mail 앱을 사용할 수 없는 경우
