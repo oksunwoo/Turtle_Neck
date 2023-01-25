@@ -801,7 +801,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/TurtleNeck/App/Resource\"";
-				DEVELOPMENT_TEAM = UKU2UB96JP;
+				DEVELOPMENT_TEAM = 79WK37N5M5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TurtleNeck/TurtleNeck/App/Resource/Info.plist;
@@ -836,7 +836,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/TurtleNeck/App/Resource\"";
-				DEVELOPMENT_TEAM = UKU2UB96JP;
+				DEVELOPMENT_TEAM = 79WK37N5M5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TurtleNeck/TurtleNeck/App/Resource/Info.plist;
