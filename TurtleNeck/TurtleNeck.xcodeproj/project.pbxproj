@@ -32,7 +32,6 @@
 		3BF63988292CB4490002A03E /* UploadCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF63987292CB4490002A03E /* UploadCore.swift */; };
 		3BFB72A12948B6ED0012E7F0 /* BottomCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB72A02948B6ED0012E7F0 /* BottomCurve.swift */; };
 		533C28762981550C0077323F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338E828B4DB02002D8C77 /* Assets.xcassets */; };
-		533C2877298155190077323F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53C338F228B4DCA5002D8C77 /* Info.plist */; };
 		534CF491295B08B800C5EACF /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CF490295B08B800C5EACF /* ScoreCalculator.swift */; };
 		537C295A295064A90015A69A /* ResultCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C2959295064A90015A69A /* ResultCore.swift */; };
 		537C295C29533ECF0015A69A /* DegreeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537C295B29533ECF0015A69A /* DegreeCalculator.swift */; };
@@ -610,7 +609,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				533C2877298155190077323F /* Info.plist in Resources */,
 				53CDEDF6294325D600A4B1EA /* PoseInfo.plist in Resources */,
 				533C28762981550C0077323F /* Assets.xcassets in Resources */,
 				53C338EC28B4DB02002D8C77 /* Preview Assets.xcassets in Resources */,
@@ -807,12 +805,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/TurtleNeck/App/Resource\"";
-				DEVELOPMENT_TEAM = 79WK37N5M5;
+				DEVELOPMENT_TEAM = UKU2UB96JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TurtleNeck/TurtleNeck/App/Resource/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "자세 분석을 위해 앨범 사용 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "자세 분석을 위해 카메라 사용 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -825,7 +823,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TurtleNeck.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TurtleNeck.app1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -842,12 +840,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TurtleNeck/TurtleNeck/App/Resource\"";
-				DEVELOPMENT_TEAM = 79WK37N5M5;
+				DEVELOPMENT_TEAM = UKU2UB96JP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TurtleNeck/TurtleNeck/App/Resource/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "자세 분석을 위해 앨범 사용 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "자세 분석을 위해 카메라 사용 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -860,7 +858,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TurtleNeck.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TurtleNeck.app1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
