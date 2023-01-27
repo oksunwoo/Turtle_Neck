@@ -47,7 +47,12 @@ struct HomeView: View {
                                 .foregroundColor(.red)
                         }
                     }
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 10)
+                    
+                    Text("데이터 결과는 참조용으로 의료기기의 데이터 기반이 될 수 없습니다. 진단 및 치료에 대한 결정은 의사 및 기타 의료 전문가의 조언을 구하세요.")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                        .padding(.horizontal, 10)
                     Spacer()
                 }
             }
