@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    let urlString = "https://www.amc.seoul.kr/asan/healthinfo/disease/diseaseDetail.do?contentId=31866"
+    @State var showSafari = false
+    
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
@@ -49,10 +52,31 @@ struct HomeView: View {
                     }
                     .padding(.bottom, 10)
                     
-                    Text("데이터 결과는 참조용으로 의료기기의 데이터 기반이 될 수 없습니다. 진단 및 치료에 대한 결정은 의사 및 기타 의료 전문가의 조언을 구하세요.")
+                    VStack(alignment: .leading, spacing: 7) {
+                        Text("데이터 결과는 참조용으로 의료기기의 데이터 기반이 될 수 없습니다. 진단 및 치료에 대한 결정은 의사 및 기타 의료 전문가의 조언을 구하세요.")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                        
+                        HStack {
+                            Text("자세한 사항은")
+                                .foregroundColor(.gray)
+                            Button {
+                                self.showSafari = true
+                            } label: {
+                                Text("여기를")
+                                    .underline()
+                                    .foregroundColor(.blue)
+                            }
+                            .sheet(isPresented: $showSafari) {
+                                SafariView(url: URL(string: urlString)!)
+                            }
+                            Text("클릭하여 확인할 수 있습니다.")
+                                .foregroundColor(.gray)
+                        }
                         .font(.caption)
-                        .foregroundColor(.gray)
-                        .padding(.horizontal, 10)
+                    }
+                    .padding(.horizontal, 10)
+                    
                     Spacer()
                 }
             }
@@ -76,3 +100,6 @@ extension HomeView {
         }
     }
 }
+
+
+
