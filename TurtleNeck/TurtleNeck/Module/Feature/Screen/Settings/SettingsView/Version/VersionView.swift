@@ -32,6 +32,8 @@ struct VersionView: View {
                 }
             }
         }
+        .navigationTitle("버전 정보")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
