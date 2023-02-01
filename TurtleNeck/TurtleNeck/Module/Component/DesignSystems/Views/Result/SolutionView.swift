@@ -12,7 +12,7 @@ struct SolutionView: View {
     
     var body: some View {
         VStack (alignment: .leading, spacing: 15) {
-            Text("Solution")
+            Text("Result")
                 .font(.headline)
                 .padding(.top, 8)
                 .padding(.leading, 15)

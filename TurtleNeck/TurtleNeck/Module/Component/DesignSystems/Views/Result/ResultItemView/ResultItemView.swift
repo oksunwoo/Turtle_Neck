@@ -25,7 +25,7 @@ struct ResultItemView: View {
                 VerticalLine()
                     .stroke(Color.background, lineWidth: 2)
                     .frame(width: 1, height: 140)
-                ResultDescriptionView(kilogram: kilogram, degree: degree, grade: Grade(score: kilogram))
+                ResultDescriptionView(kilogram: kilogram, degree: degree, grade: Grade(kilogram: kilogram))
                     .frame(minWidth: 0, maxWidth: .infinity)
             }
         }

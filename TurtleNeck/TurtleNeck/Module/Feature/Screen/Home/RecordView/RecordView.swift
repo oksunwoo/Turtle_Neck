@@ -22,15 +22,15 @@ struct RecordView: View {
                                 .resizable()
                                 .frame(width: 300, height: 400)
                                 .cornerRadius(10)
-                                .padding(.top, 50)
+                                .padding(.top, 30)
                             
-                            ResultDescriptionView(kilogram: Int(data.kilogram), degree: Int(data.degree), grade: Grade(score: Int(data.kilogram)))
+                            ResultDescriptionView(kilogram: Int(data.kilogram), degree: Int(data.degree), grade: Grade(kilogram: Int(data.kilogram)))
                                 .frame(minWidth: 0, maxWidth: .infinity)
                                 .background(.white)
                                 .cornerRadius(10)
                                 .padding(.vertical, 20)
                             
-                            SolutionView(grade: Grade(score: Int(data.kilogram)))
+                            SolutionView(grade: Grade(kilogram: Int(data.kilogram)))
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)

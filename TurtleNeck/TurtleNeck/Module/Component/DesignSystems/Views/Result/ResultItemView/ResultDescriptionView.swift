@@ -22,14 +22,6 @@ struct ResultDescriptionView: View {
                     .foregroundColor(.deepBlue)
                     .bold()
             }
-//            HStack {
-//                Text("Grade")
-//                    .foregroundColor(Color(.systemGray4))
-//                Spacer()
-//                Text("\(grade.rawValue)")
-//                    .foregroundColor(.deepBlue)
-//                    .bold()
-//            }
             HStack {
                 Text("Degree")
                     .foregroundColor(Color(.systemGray4))
@@ -42,7 +34,7 @@ struct ResultDescriptionView: View {
                 Text("Pressure")
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
-                Text("\(kilogram)")
+                Text("\(kilogram)kg")
                     .foregroundColor(.deepBlue)
                     .bold()
             }

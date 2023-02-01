@@ -9,13 +9,14 @@ import SwiftUI
 
 struct RecordItem: View {
     let image: UIImage
-    let score: Int32
+    let kilogram: Int32
     let grade: Grade
+    let date: Date
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 30)
-                .frame(width: 130, height: 220)
+                .frame(width: 130, height: 200)
                 .foregroundColor(.white)
             
             
@@ -26,14 +27,10 @@ struct RecordItem: View {
                     .frame(width: 100, height: 155)
                     .cornerRadius(30)
                 
-                Text("\(score) 점")
-                    .foregroundColor(.primary)
+                Text(Date(), style: .date)
                     .font(.caption)
-                    .padding(.top, 5)
-                
-                Text(grade.shortDescription)
                     .foregroundColor(.secondary)
-                    .font(.caption)
+                    .padding(.top, 8)
             }
         }
         .padding(.leading, 15)
@@ -44,8 +41,9 @@ struct PoseItem_Previews: PreviewProvider {
     static var previews: some View {
         RecordItem(
             image: UIImage(imageLiteralResourceName: "Pose1"),
-            score: 32,
-            grade: .dangerous
+            kilogram: 32,
+            grade: .dangerous,
+            date: Date()
         )
     }
 }

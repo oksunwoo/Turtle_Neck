@@ -28,7 +28,7 @@ struct ResultView: View {
                             ResultItemView(resultImage: viewStore.resultImage, kilogram: viewStore.kilogram, degree: viewStore.degree)
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
-                            SolutionView(grade: Grade(score: viewStore.kilogram))
+                            SolutionView(grade: Grade(kilogram: viewStore.kilogram))
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)
@@ -53,7 +53,7 @@ struct ResultView_Previews: PreviewProvider {
                 store: Store(
                     initialState: ResultCore.State(
                         resultImage: UIImage(named: "Pose1")!,
-                        degree: 0, kilogram: 5),
+                        degree: 0, kilogram: 5, date: Date()),
                     reducer: ResultCore()
                 )
             )
