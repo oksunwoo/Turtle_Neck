@@ -7,7 +7,7 @@
 
 import Foundation
 
-func calculateDegree(pose: [Pose]) -> Double {
+func calculateDegree(pose: [Pose]) -> Int {
     guard let pose = pose.first else {
         return 0
     }
@@ -34,5 +34,5 @@ func calculateDegree(pose: [Pose]) -> Double {
     let radian = atan(height/base)
     let degree = round((radian * 180/Double.pi) * 100) / 100
     
-    return degree
+    return Int(degree)
 }

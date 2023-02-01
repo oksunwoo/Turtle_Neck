@@ -24,13 +24,13 @@ struct RecordView: View {
                                 .cornerRadius(10)
                                 .padding(.top, 50)
                             
-                            ResultDescriptionView(score: Int(data.score), degree: data.degree, grade: Grade(score: Int(data.score)))
+                            ResultDescriptionView(kilogram: Int(data.kilogram), degree: Int(data.degree), grade: Grade(score: Int(data.kilogram)))
                                 .frame(minWidth: 0, maxWidth: .infinity)
                                 .background(.white)
                                 .cornerRadius(10)
                                 .padding(.vertical, 20)
                             
-                            SolutionView(grade: Grade(score: Int(data.score)))
+                            SolutionView(grade: Grade(score: Int(data.kilogram)))
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)

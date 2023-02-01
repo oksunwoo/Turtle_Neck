@@ -10,7 +10,7 @@ import SwiftUI
 struct ResultProgressStyle: ProgressViewStyle {
     var strokeColor = Color.deepBlue
     var strokeWidth = 25.0
-    var score: Double
+    var kilogram: Double
     @State var fractionCompleted = 0.0
     
     func makeBody(configuration: Configuration) -> some View {
@@ -24,7 +24,7 @@ struct ResultProgressStyle: ProgressViewStyle {
                 .shadow(radius: 3, y: 3)
                 .animation(.linear(duration: 1.5), value: fractionCompleted)
                 .onAppear {
-                    fractionCompleted += (score/100)
+                    fractionCompleted += (kilogram/27)
                 }
         }
     }
@@ -33,6 +33,6 @@ struct ResultProgressStyle: ProgressViewStyle {
 struct ResultProgressStyle_Previews: PreviewProvider {
     static var previews: some View {
         ProgressView()
-            .progressViewStyle(ResultProgressStyle(score: 30))
+            .progressViewStyle(ResultProgressStyle(kilogram: 27))
     }
 }

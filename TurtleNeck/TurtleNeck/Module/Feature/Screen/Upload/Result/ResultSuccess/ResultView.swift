@@ -22,13 +22,13 @@ struct ResultView: View {
                     Color.background
                         .ignoresSafeArea()
                     VStack {
-                        ScoreView(score: viewStore.score)
+                        ScoreView(kilogram: viewStore.kilogram)
                             .padding(.bottom, 50)
                         VStack {
-                            ResultItemView(resultImage: viewStore.resultImage, score: viewStore.score, degree: viewStore.degree)
+                            ResultItemView(resultImage: viewStore.resultImage, kilogram: viewStore.kilogram, degree: viewStore.degree)
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
-                            SolutionView(grade: Grade(score: viewStore.score))
+                            SolutionView(grade: Grade(score: viewStore.kilogram))
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)
@@ -53,7 +53,7 @@ struct ResultView_Previews: PreviewProvider {
                 store: Store(
                     initialState: ResultCore.State(
                         resultImage: UIImage(named: "Pose1")!,
-                        degree: 0, score: 70),
+                        degree: 0, kilogram: 5),
                     reducer: ResultCore()
                 )
             )
