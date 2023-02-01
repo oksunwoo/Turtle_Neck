@@ -15,6 +15,7 @@ struct ResultCore: ReducerProtocol {
         var degree: Int
         var kilogram: Int
         var isPoseNil = true
+        var date: Date
     }
     
     enum Action: Equatable {
@@ -29,7 +30,7 @@ struct ResultCore: ReducerProtocol {
                 user.kilogram = Int32(state.kilogram)
                 user.image = state.resultImage.pngData()
                 user.degree = Int32(state.degree)
-                user.date = Date()
+                user.date = state.date
                 
                 DataManager.shared.saveContext()
                 return .none

@@ -46,8 +46,9 @@ struct RecordList: View {
                             } label: {
                                 RecordItem(
                                     image: UIImage(data: data.image!) ?? UIImage(),
-                                    score: data.kilogram,
-                                    grade: Grade(score: Int(data.kilogram))
+                                    kilogram: data.kilogram,
+                                    grade: Grade(kilogram: Int(data.kilogram)),
+                                    date: data.date!
                                 )
                             }
                             .fullScreenCover(isPresented: $show) {

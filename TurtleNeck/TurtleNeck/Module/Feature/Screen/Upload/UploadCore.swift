@@ -72,7 +72,7 @@ struct UploadCore: ReducerProtocol {
                 let resultImage = state.selectedImage!.addDot(with: response!)
                 
                 state.isPoseRequest = false
-                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response!.count == 0)
+                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response!.count == 0, date: Date())
                 return .none
                 
             case .poseResponse(.failure):

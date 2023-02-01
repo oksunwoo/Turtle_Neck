@@ -26,6 +26,7 @@
 		3BA1BB332962D45600683BCF /* Color+CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA1BB322962D45600683BCF /* Color+CustomColor.swift */; };
 		3BC527CF29659FED003174B7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC527CE29659FED003174B7 /* DataManager.swift */; };
 		3BC69301296D62FC006DB8B6 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC69300296D62FC006DB8B6 /* RecordView.swift */; };
+		3BCDB62E298AA4F700B1327A /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCDB62D298AA4F700B1327A /* DateFormatter.swift */; };
 		3BD0CB6329695D4800F06968 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6229695D4800F06968 /* RecordList.swift */; };
 		3BD0CB6529695D5200F06968 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0CB6429695D5200F06968 /* RecordItem.swift */; };
 		3BF63980292B84460002A03E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3BF6397F292B84460002A03E /* ComposableArchitecture */; };
@@ -80,6 +81,7 @@
 		3BA1BB322962D45600683BCF /* Color+CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CustomColor.swift"; sourceTree = "<group>"; };
 		3BC527CE29659FED003174B7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3BC69300296D62FC006DB8B6 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		3BCDB62D298AA4F700B1327A /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		3BD0CB6229695D4800F06968 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
 		3BD0CB6429695D5200F06968 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
 		3BF63981292CA6290002A03E /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			children = (
 				5386F2DE29488187006E1756 /* UIImage+DownSample.swift */,
 				3B1CB2782976DF760021B13C /* View+Alert.swift */,
+				3BCDB62D298AA4F700B1327A /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */,
 				3B06B0962951E3E0003B8BC5 /* PhotoGuideView.swift in Sources */,
 				3B31240C29602C850060B00E /* CollapsibleView.swift in Sources */,
+				3BCDB62E298AA4F700B1327A /* DateFormatter.swift in Sources */,
 				3B57868828E48151002327F8 /* ImagePicker.swift in Sources */,
 				3BA1BB332962D45600683BCF /* Color+CustomColor.swift in Sources */,
 				3BD0CB6529695D5200F06968 /* RecordItem.swift in Sources */,
