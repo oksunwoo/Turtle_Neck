@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    let urlString = "https://www.amc.seoul.kr/asan/healthinfo/disease/diseaseDetail.do?contentId=31866"
+    let urlString = "https://health.kdca.go.kr/healthinfo/biz/health/ntcnInfo/healthSourc/thtimtCntnts/thtimtCntntsView.do?thtimt_cntnts_sn=33"
     @State var showSafari = false
     
     var body: some View {
@@ -21,13 +21,25 @@ struct HomeView: View {
                     RecordList(selected: nil)
                     
                     CollapsibleView {
-                        Text("✓ 거북목 증후군은 왜 발생하나요?")
+                        Text("✓ 거북목 증후군의 원인은 무엇인가요?")
                     } content: {
-                        HStack(alignment: .bottom) {
-                            Text("거북목증후군의 원인으로는 좋지 않은 자세를 장시간 유지하거나 반복적으로 안 좋은 자세를 취하는 행동에서 유발 됩니다. \n\n작업을 할 때 부족한 휴식 시간 등은 목뼈나 어깨 주위의 근육을 불필요하게 긴장시켜 근육 내의 압력을 증가시키고 통증을 유발합니다.")
-                            Image("doctor")
-                                .resizable()
-                                .frame(width: 90, height: 90)
+                        VStack() {
+                            HStack(spacing: 30) {
+                                VStack {
+                                    Text("정상자세")
+                                    Image("Good")
+                                        .resizable()
+                                        .frame(width: 100, height: 90)
+                                }
+                                Text("VS")
+                                VStack {
+                                    Text("거북목 자세")
+                                    Image("Bad")
+                                        .resizable()
+                                        .frame(width: 100, height: 90)
+                                }
+                            }
+                            Text("스마트폰이나 컴퓨터의 과사용이 1차 원인이 되고 있습니다. 바르지 못한 자세로 오랫동안 앉아 있거나 생활하는 것이 제일 큰 원인입니다.")
                         }
                     }
                     .padding(.top, 40)
@@ -35,24 +47,27 @@ struct HomeView: View {
                     CollapsibleView {
                         Text("✓ 어떤 증상이 발생하나요?")
                     } content: {
-                        HStack {
-                            Text("* 두통과 허리통증이 있습니다. \n* 어깨와 목 주위가 자주 뻐근합니다.  \n* 수면을 방해하며 만성피로를 느끼게 됩니다. \n* 머리 무게 중심이 앞으로 쏠리며 목과 어깨에 지속적인 통증이 있습니다.")
-                            Spacer()
+                        VStack(spacing: 6) {
+                            HStack {
+                                Text("* 목덜미와 어깻죽지가 뻐근합니다. \n* 팔도 저리고, 시리고, 근육 속이 아픈 통증이 생깁니다  \n* 수면을 방해하며 만성피로를 느끼게 됩니다. ")
+                                Spacer()
+                            }
+                            Text("방사통이 심해 잠을 이루기 힘들거나 팔 힘이 약해지는 증상이 생기면 빨리 전문의의 진찰을 받아야 합니다.")
+                                .foregroundColor(.red)
                         }
                     }
                     
                     CollapsibleView {
                         Text("✓ 어떻게 예방할 수 있나요?")
                     } content: {
-                        VStack(alignment: .leading) {
-                            Text("가장 중요한 예방법은 바른 자세를 유지하는 것입니다. 등을 곧게 펴는 자세가 중요합니다.")
-                            Text("\n* 컴퓨터를 사용할 때 모니터 상단과 눈높이가 일치하도록 위치시키고 시선이 아래로 15~30도 이내에 머물도록 조정해보세요.")
-                                .foregroundColor(.red)
+                        HStack {
+                            Text("* 모니터 높이를 높이기 \n* 운전 중 요추 경추 전만 유지하기 \n* 스마트폰을 볼 경우, 무조건 높이 들기 \n* 서거나 걸을 때 허리를 꼿꼿이 유지하기")
+                            Spacer()
                         }
                     }
                     .padding(.bottom, 10)
                     
-                    VStack(alignment: .leading, spacing: 7) {
+                    VStack(alignment: .leading, spacing: 3) {
                         Text("데이터 결과는 참조용으로 의료기기의 데이터 기반이 될 수 없습니다. 진단 및 치료에 대한 결정은 의사 및 기타 의료 전문가의 조언을 구하세요.")
                             .font(.caption)
                             .foregroundColor(.gray)

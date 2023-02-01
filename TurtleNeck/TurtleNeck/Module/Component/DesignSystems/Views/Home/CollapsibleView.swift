@@ -32,9 +32,17 @@ struct CollapsibleView<Content: View>: View {
                 Divider().padding(.horizontal, 20)
                 content()
                     .font(.caption)
-                    .padding(.bottom)
+                    .padding(.bottom, 12)
                     .padding(.horizontal)
                     .foregroundColor(.gray)
+                HStack {
+                    Spacer()
+                    Text("출처: 국가건강정보포털(health.kdca.go.kr)")
+                        .font(.caption)
+                        .padding(.trailing, 3)
+                        .foregroundColor(.gray)
+                }
+                .padding(.bottom, 3)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
             .animation(.easeOut, value: collapsed)
