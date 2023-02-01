@@ -12,8 +12,8 @@ import ComposableArchitecture
 struct ResultCore: ReducerProtocol {
     struct State: Equatable {
         var resultImage: UIImage
-        var degree: Double
-        var score: Int
+        var degree: Int
+        var kilogram: Int
         var isPoseNil = true
     }
     
@@ -26,9 +26,9 @@ struct ResultCore: ReducerProtocol {
             switch action {
             case .saveData(in: let context):
                 let user = User(context: context)
-                user.score = Int32(state.score)
+                user.kilogram = Int32(state.kilogram)
                 user.image = state.resultImage.pngData()
-                user.degree = state.degree
+                user.degree = Int32(state.degree)
                 user.date = Date()
                 
                 DataManager.shared.saveContext()

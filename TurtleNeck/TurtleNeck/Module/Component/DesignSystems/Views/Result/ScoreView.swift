@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ScoreView: View {
-    let score: Int
+    let kilogram: Int
     
     var body: some View {
         ZStack {
-            ProgressView(value: Double(score), total: 100)
-                .progressViewStyle(ResultProgressStyle(score: Double(score)))
+            ProgressView(value: Double(kilogram), total: 27)
+                .progressViewStyle(ResultProgressStyle(kilogram: Double(kilogram)))
                 .frame(width: 200, height: 200)
                 .contentShape(Rectangle())
-            RollingText(value: score)
+            RollingText(value: kilogram)
         }
     }
 }
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreView(score: 50)
+        ScoreView(kilogram: 27)
     }
 }

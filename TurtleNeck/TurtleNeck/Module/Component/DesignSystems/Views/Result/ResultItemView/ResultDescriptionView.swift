@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ResultDescriptionView: View {
-    let score: Int
-    let degree: Double
+    let kilogram: Int
+    let degree: Int
     let grade: Grade
     
     var body: some View {
@@ -22,14 +22,14 @@ struct ResultDescriptionView: View {
                     .foregroundColor(.deepBlue)
                     .bold()
             }
-            HStack {
-                Text("Grade")
-                    .foregroundColor(Color(.systemGray4))
-                Spacer()
-                Text("\(grade.rawValue)")
-                    .foregroundColor(.deepBlue)
-                    .bold()
-            }
+//            HStack {
+//                Text("Grade")
+//                    .foregroundColor(Color(.systemGray4))
+//                Spacer()
+//                Text("\(grade.rawValue)")
+//                    .foregroundColor(.deepBlue)
+//                    .bold()
+//            }
             HStack {
                 Text("Degree")
                     .foregroundColor(Color(.systemGray4))
@@ -39,10 +39,10 @@ struct ResultDescriptionView: View {
                     .bold()
             }
             HStack {
-                Text("Total Score")
+                Text("Pressure")
                     .foregroundColor(Color(.systemGray4))
                 Spacer()
-                Text("\(score)")
+                Text("\(kilogram)")
                     .foregroundColor(.deepBlue)
                     .bold()
             }
@@ -62,6 +62,6 @@ struct ResultDescriptionView: View {
 
 struct ResultDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultDescriptionView(score: 50, degree: 30, grade: .veryGood)
+        ResultDescriptionView(kilogram: 50, degree: 30, grade: .veryGood)
     }
 }
