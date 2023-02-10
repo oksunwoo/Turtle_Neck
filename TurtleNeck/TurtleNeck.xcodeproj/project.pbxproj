@@ -51,6 +51,7 @@
 		53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */; };
 		53C338E728B4DB00002D8C77 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E628B4DB00002D8C77 /* AppView.swift */; };
 		53C338EC28B4DB02002D8C77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */; };
+		53C6A2412996712300EE2F45 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6A2402996712300EE2F45 /* ProgressBar.swift */; };
 		53CDEDF429421D1D00A4B1EA /* PoseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEDF329421D1D00A4B1EA /* PoseClient.swift */; };
 		53CDEDF6294325D600A4B1EA /* PoseInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53CDEDF5294325D600A4B1EA /* PoseInfo.plist */; };
 		53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CDEDF729432FD300A4B1EA /* TurtleNeck++Bundle.swift */; };
@@ -108,6 +109,7 @@
 		53C338E828B4DB02002D8C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53C338F228B4DCA5002D8C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53C6A2402996712300EE2F45 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		53CDEDF329421D1D00A4B1EA /* PoseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseClient.swift; sourceTree = "<group>"; };
 		53CDEDF5294325D600A4B1EA /* PoseInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PoseInfo.plist; sourceTree = "<group>"; };
 		53CDEDF729432FD300A4B1EA /* TurtleNeck++Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TurtleNeck++Bundle.swift"; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				537C29702955C0A40015A69A /* ResultProgressStyle.swift */,
+				53C6A2402996712300EE2F45 /* ProgressBar.swift */,
 				53E9233F296C558B008D7794 /* RollingText.swift */,
 			);
 			path = Animations;
@@ -684,6 +687,7 @@
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,
 				53CDEE0129436F2D00A4B1EA /* Pose.swift in Sources */,
 				3B57394228D8AE0E00529A3E /* VersionView.swift in Sources */,
+				53C6A2412996712300EE2F45 /* ProgressBar.swift in Sources */,
 				3B57394428D9958600529A3E /* Notice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -808,7 +812,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -842,6 +846,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TurtleNeck.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -878,6 +883,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

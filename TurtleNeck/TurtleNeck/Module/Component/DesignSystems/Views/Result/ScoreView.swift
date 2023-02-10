@@ -11,11 +11,13 @@ struct ScoreView: View {
     let kilogram: Int
     
     var body: some View {
-        ZStack {
-            ProgressView(value: Double(kilogram), total: 27)
-                .progressViewStyle(ResultProgressStyle(kilogram: Double(kilogram)))
-                .frame(width: 200, height: 200)
-                .contentShape(Rectangle())
+        VStack {
+//            ProgressView(value: Double(kilogram), total: 27)
+//                .progressViewStyle(ResultProgressStyle(kilogram: Double(kilogram)))
+//                .frame(width: 200, height: 200)
+//                .contentShape(Rectangle())
+            ProgressBar(kilogram: CGFloat(kilogram))
+                .animation(.linear(duration: 1.0), value: 0)
             RollingText(value: kilogram)
         }
     }
@@ -23,6 +25,6 @@ struct ScoreView: View {
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreView(kilogram: 27)
+        ScoreView(kilogram: 10)
     }
 }
