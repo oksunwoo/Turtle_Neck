@@ -63,6 +63,7 @@
 		53E92340296C558B008D7794 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9233F296C558B008D7794 /* RollingText.swift */; };
 		53ECF5B6299A2EA500AE692D /* KilogramBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECF5B5299A2EA500AE692D /* KilogramBar.swift */; };
 		53ECF5B8299A32C000AE692D /* ScaleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECF5B7299A32C000AE692D /* ScaleBar.swift */; };
+		53ECF5BA299A402E00AE692D /* AngleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECF5B9299A402E00AE692D /* AngleAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		53E9233F296C558B008D7794 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
 		53ECF5B5299A2EA500AE692D /* KilogramBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KilogramBar.swift; sourceTree = "<group>"; };
 		53ECF5B7299A32C000AE692D /* ScaleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBar.swift; sourceTree = "<group>"; };
+		53ECF5B9299A402E00AE692D /* AngleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +456,7 @@
 				537C29702955C0A40015A69A /* ResultProgressStyle.swift */,
 				53C6A2402996712300EE2F45 /* ProgressBar.swift */,
 				53E9233F296C558B008D7794 /* RollingText.swift */,
+				53ECF5B9299A402E00AE692D /* AngleAnimation.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */,
 				53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */,
 				537C296529546AB20015A69A /* ScoreView.swift in Sources */,
+				53ECF5BA299A402E00AE692D /* AngleAnimation.swift in Sources */,
 				3BD0CB6329695D4800F06968 /* RecordList.swift in Sources */,
 				53ECF5B8299A32C000AE692D /* ScaleBar.swift in Sources */,
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,
