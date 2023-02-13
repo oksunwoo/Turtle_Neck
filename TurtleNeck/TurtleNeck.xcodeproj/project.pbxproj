@@ -61,6 +61,8 @@
 		53D65A0D28C880A800F3128A /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A0C28C880A800F3128A /* SettingsRow.swift */; };
 		53D65A1528C8907600F3128A /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D65A1428C8907600F3128A /* NoticeView.swift */; };
 		53E92340296C558B008D7794 /* RollingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9233F296C558B008D7794 /* RollingText.swift */; };
+		53ECF5B6299A2EA500AE692D /* KilogramBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECF5B5299A2EA500AE692D /* KilogramBar.swift */; };
+		53ECF5B8299A32C000AE692D /* ScaleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECF5B7299A32C000AE692D /* ScaleBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,8 @@
 		53D65A0C28C880A800F3128A /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsRow.swift; path = TurtleNeck/Module/Component/DesignSystems/Views/Settings/SettingsRow.swift; sourceTree = SOURCE_ROOT; };
 		53D65A1428C8907600F3128A /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		53E9233F296C558B008D7794 /* RollingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingText.swift; sourceTree = "<group>"; };
+		53ECF5B5299A2EA500AE692D /* KilogramBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KilogramBar.swift; sourceTree = "<group>"; };
+		53ECF5B7299A32C000AE692D /* ScaleBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,6 +518,8 @@
 			isa = PBXGroup;
 			children = (
 				53CFB17F295EF0A3001F648D /* ResultItemView */,
+				53ECF5B5299A2EA500AE692D /* KilogramBar.swift */,
+				53ECF5B7299A32C000AE692D /* ScaleBar.swift */,
 				537C296429546AB20015A69A /* ScoreView.swift */,
 				537C296C29559C290015A69A /* SolutionView.swift */,
 			);
@@ -650,6 +656,7 @@
 				3B57393E28D882C100529A3E /* Setting.swift in Sources */,
 				534CF491295B08B800C5EACF /* KilogramCalculator.swift in Sources */,
 				3B57868628E41F65002327F8 /* UploadView.swift in Sources */,
+				53ECF5B6299A2EA500AE692D /* KilogramBar.swift in Sources */,
 				537C296F2955A28F0015A69A /* VerticalLine.swift in Sources */,
 				3B06B0962951E3E0003B8BC5 /* PhotoGuideView.swift in Sources */,
 				3B31240C29602C850060B00E /* CollapsibleView.swift in Sources */,
@@ -684,6 +691,7 @@
 				53CDEDF829432FD300A4B1EA /* TurtleNeck++Bundle.swift in Sources */,
 				537C296529546AB20015A69A /* ScoreView.swift in Sources */,
 				3BD0CB6329695D4800F06968 /* RecordList.swift in Sources */,
+				53ECF5B8299A32C000AE692D /* ScaleBar.swift in Sources */,
 				53D65A1528C8907600F3128A /* NoticeView.swift in Sources */,
 				53CDEE0129436F2D00A4B1EA /* Pose.swift in Sources */,
 				3B57394228D8AE0E00529A3E /* VersionView.swift in Sources */,

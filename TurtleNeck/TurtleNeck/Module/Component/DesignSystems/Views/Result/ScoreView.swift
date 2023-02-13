@@ -12,19 +12,17 @@ struct ScoreView: View {
     
     var body: some View {
         VStack {
-//            ProgressView(value: Double(kilogram), total: 27)
-//                .progressViewStyle(ResultProgressStyle(kilogram: Double(kilogram)))
-//                .frame(width: 200, height: 200)
-//                .contentShape(Rectangle())
-            ProgressBar(kilogram: CGFloat(kilogram))
-                .animation(.linear(duration: 1.0), value: 0)
-            RollingText(value: kilogram)
+            ZStack {
+                ProgressBar(kilogram: CGFloat(kilogram))
+                KilogramBar()
+                    .offset(y: 5)
+            }
         }
     }
 }
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreView(kilogram: 10)
+        ScoreView(kilogram: 5)
     }
 }
