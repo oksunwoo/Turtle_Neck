@@ -10,7 +10,8 @@ import SwiftUI
 struct KilogramBar: View {
     var body: some View {
         VStack(alignment: .trailing, spacing: -5) {
-            Text("kg")
+            Text("(목의 하중)kg")
+                .font(.system(size: 12))
                 .offset(y: -10)
             RoundedRectangle(cornerRadius: 5, style: .continuous)
                 .frame(width: 270, height: 30)

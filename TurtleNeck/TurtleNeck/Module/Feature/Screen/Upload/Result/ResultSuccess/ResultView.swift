@@ -22,7 +22,7 @@ struct ResultView: View {
                     Color.background
                         .ignoresSafeArea()
                     VStack {
-                        ScoreView(kilogram: viewStore.kilogram)
+                        ScoreView(kilogram: viewStore.kilogram, degree: viewStore.degree)
                             .padding(.bottom, 50)
                         VStack {
                             ResultItemView(resultImage: viewStore.resultImage, kilogram: viewStore.kilogram, degree: viewStore.degree)
