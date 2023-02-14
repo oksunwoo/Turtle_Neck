@@ -30,7 +30,7 @@ struct RecordView: View {
                                 .cornerRadius(10)
                                 .padding(.vertical, 20)
                             
-                            SolutionView(grade: Grade(kilogram: Int(data.kilogram)))
+                            SolutionView(grade: Grade(kilogram: Int(data.kilogram)), degree: Int(data.degree))
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)

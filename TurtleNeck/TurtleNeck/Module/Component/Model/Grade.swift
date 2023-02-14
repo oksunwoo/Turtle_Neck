@@ -34,13 +34,13 @@ enum Grade: String {
     var longDescription: String {
         switch self {
         case .excellent:
-            return "목이 5kg의 하중을 받고있어요."
+            return "목이 5kg 의 하중을 받고있어요."
         case .veryGood:
-            return "목이 12kg의 하중을 받고있어요."
+            return "목이 12kg 의 하중을 받고있어요."
         case .good:
-            return "목이 18kg의 하중을 받고있어요."
+            return "목이 18kg 의 하중을 받고있어요."
         case .dangerous:
-            return "목이 22kg의 하중을 받고있어요."
+            return "목이 22kg 의 하중을 받고있어요."
         case .terrible:
             return "목이 27kg 이상의 하중을 받고있어요."
         }
