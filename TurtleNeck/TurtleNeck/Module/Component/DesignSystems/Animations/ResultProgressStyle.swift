@@ -19,12 +19,12 @@ struct ResultProgressStyle: ProgressViewStyle {
                 .stroke(Color.gray.opacity(0.1), style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
             Circle()
                 .trim(from: 0, to: fractionCompleted)
-                .stroke(strokeColor, style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round))
+                .stroke(strokeColor, style: StrokeStyle(lineWidth: strokeWidth, lineCap: .butt))
                 .rotationEffect(.degrees(-90))
                 .shadow(radius: 3, y: 3)
                 .animation(.linear(duration: 1.5), value: fractionCompleted)
                 .onAppear {
-                    fractionCompleted += (degree/27)
+                    fractionCompleted += (1 - degree/360)
                 }
         }
     }

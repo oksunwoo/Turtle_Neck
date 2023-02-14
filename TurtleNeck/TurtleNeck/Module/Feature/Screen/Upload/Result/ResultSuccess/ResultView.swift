@@ -28,7 +28,7 @@ struct ResultView: View {
                             ResultItemView(resultImage: viewStore.resultImage, kilogram: viewStore.kilogram, degree: viewStore.degree)
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
-                            SolutionView(grade: Grade(kilogram: viewStore.kilogram))
+                            SolutionView(grade: Grade(kilogram: viewStore.kilogram), degree: viewStore.degree)
                                 .cornerRadius(10)
                         }
                         .frame(width: 350)
