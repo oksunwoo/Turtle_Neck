@@ -7,15 +7,12 @@
 
 import Foundation
 
-struct Pose: Decodable, Equatable {
-    let area: Double
-    let bbox: [Double]
-    let categoryId: Int
-    let keypoints: [Double]
-    let score: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case area, bbox, keypoints, score
-        case categoryId = "category_id"
-    }
+// MARK: - Pose
+struct Pose: Codable {
+    let predictions: [[String: Prediction]]
+}
+
+// MARK: - Prediction
+struct Prediction: Codable {
+    let score, x, y: Double
 }
