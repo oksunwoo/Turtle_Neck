@@ -68,7 +68,7 @@ struct UploadCore: ReducerProtocol {
                 return .none
                 
             case .poseResponse(.success(let response)):
-                let test = response
+                let test = response.predictions
                 print(test)
 //                let degree = calculateDegree(pose: response!)
 //                let kilogram = calculateKilogram(with: degree)

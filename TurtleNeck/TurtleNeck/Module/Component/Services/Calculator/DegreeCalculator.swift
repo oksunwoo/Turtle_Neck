@@ -7,32 +7,31 @@
 
 import Foundation
 
-//func calculateDegree(pose: [Pose]) -> Int {
-//    guard let pose = pose.first else {
-//        return 0
-//    }
-//    
-//    let leftEar = 9
-//    let rightEar = 12
-//    let leftShoulder = 15
-//    let rightShoulder = 18
-//    
-//    let keypoints = pose.keypoints
-//    let leftSide = keypoints[leftEar + 2] > keypoints[rightEar + 2] ? true : false
-//    
-//    var base = 0.0
-//    var height = 0.0
-//    
-//    if leftSide {
-//        base = abs(keypoints[leftEar + 1] - keypoints[leftShoulder + 1])
-//        height = abs(keypoints[leftEar] - keypoints[leftShoulder])
-//    } else {
-//        base = abs(keypoints[rightEar + 1] - keypoints[rightShoulder + 1])
-//        height = abs(keypoints[rightEar] - keypoints[rightShoulder])
-//    }
-//    
-//    let radian = atan(height/base)
-//    let degree = round((radian * 180/Double.pi) * 100) / 100
-//    
-//    return Int(degree)
-//}
+func calculateDegree(pose: Pose) -> Int {
+    guard let pose = pose.predictions.first else {
+        return 0
+    }
+    
+    let leftEar = "17"
+    let rightEar = "16"
+    let leftShoulder = "5"
+    let rightSoulder = "2"
+    
+    
+    let leftSide = pose.keys.contains(leftEar)
+    var base = 0.0
+    var height = 0.0
+    
+    if leftSide {
+        base = abs(pose[leftEar]!.y - pose[leftShoulder]!.y)
+        height = abs(pose[leftEar]!.x - pose[leftShoulder]!.x)
+    } else {
+        base = abs(pose[rightEar]!.y - pose[rightSoulder]!.y)
+        height = abs(pose[rightEar]!.x - pose[rightSoulder]!.x)
+    }
+    
+    let radian = atan(height/base)
+    let degree = round((radian * 180/Double.pi) * 100) / 100
+    
+    return Int(degree)
+}
