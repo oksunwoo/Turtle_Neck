@@ -47,7 +47,6 @@
 		53AE2ACF28B8B86B00BC66B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */; };
 		53AE2AD128B8B87A00BC66B2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */; };
 		53AE2AD328B8DF7800BC66B2 /* PopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */; };
-		53B541EA2964103D0064713E /* ValidityCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B541E92964103D0064713E /* ValidityCalculator.swift */; };
 		53C338E528B4DB00002D8C77 /* TurtleNeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */; };
 		53C338E728B4DB00002D8C77 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C338E628B4DB00002D8C77 /* AppView.swift */; };
 		53C338EC28B4DB02002D8C77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53C338EB28B4DB02002D8C77 /* Preview Assets.xcassets */; };
@@ -105,7 +104,6 @@
 		53AE2ACE28B8B86B00BC66B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		53AE2AD028B8B87A00BC66B2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = TurtleNeck/Module/Feature/Screen/Settings/SettingsView/SettingsView.swift; sourceTree = SOURCE_ROOT; };
 		53AE2AD228B8DF7800BC66B2 /* PopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpButton.swift; sourceTree = "<group>"; };
-		53B541E92964103D0064713E /* ValidityCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidityCalculator.swift; sourceTree = "<group>"; };
 		53C338E128B4DB00002D8C77 /* TurtleNeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurtleNeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53C338E428B4DB00002D8C77 /* TurtleNeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleNeckApp.swift; sourceTree = "<group>"; };
 		53C338E628B4DB00002D8C77 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -550,7 +548,6 @@
 			children = (
 				537C295B29533ECF0015A69A /* DegreeCalculator.swift */,
 				534CF490295B08B800C5EACF /* KilogramCalculator.swift */,
-				53B541E92964103D0064713E /* ValidityCalculator.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -672,7 +669,6 @@
 				537C296729546AC20015A69A /* ResultItemView.swift in Sources */,
 				3B57868F28E6E094002327F8 /* ResultFailView.swift in Sources */,
 				3BC527CF29659FED003174B7 /* DataManager.swift in Sources */,
-				53B541EA2964103D0064713E /* ValidityCalculator.swift in Sources */,
 				3BF63988292CB4490002A03E /* UploadCore.swift in Sources */,
 				3B22F0C9296419A200E3F93A /* User.xcdatamodeld in Sources */,
 				3B733526294B18F400938B1A /* Grade.swift in Sources */,

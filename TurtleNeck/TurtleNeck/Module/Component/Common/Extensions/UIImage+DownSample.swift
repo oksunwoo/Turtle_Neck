@@ -67,9 +67,6 @@ extension UIImage {
         context.setLineWidth(3.0)
         context.setStrokeColor(UIColor.systemYellow.cgColor)
         
-        print(pose[nose]!.x)
-        print(pose[nose]!.y)
-        
         if leftSide {
             context.addEllipse(in: CGRect(x: pose[nose]!.x * xPortion, y: pose[nose]!.y * yPortion, width: width, height: height))
             context.move(to: CGPoint(x: pose[nose]!.x * xPortion + 3, y: pose[nose]!.y * yPortion))
