@@ -68,14 +68,12 @@ struct UploadCore: ReducerProtocol {
                 return .none
                 
             case .poseResponse(.success(let response)):
-                let test = response.predictions
-                print(test)
-//                let degree = calculateDegree(pose: response!)
-//                let kilogram = calculateKilogram(with: degree)
-//                let resultImage = state.selectedImage!.addDot(with: response!)
-//
-//                state.isPoseRequest = false
-//                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response!.count == 0, date: Date())
+                let degree = calculateDegree(pose: response)
+                let kilogram = calculateKilogram(with: degree)
+                let resultImage = state.selectedImage!.addDot(with: response)
+
+                state.isPoseRequest = false
+                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response.predictions.count == 0, date: Date())
                 return .none
                 
             case .poseResponse(.failure):
