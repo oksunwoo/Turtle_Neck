@@ -8,11 +8,11 @@
 import Foundation
 
 // MARK: - Pose
-struct Pose: Codable {
+struct Pose: Decodable, Equatable {
     let predictions: [[String: Prediction]]
 }
 
 // MARK: - Prediction
-struct Prediction: Codable {
+struct Prediction: Decodable, Equatable {
     let score, x, y: Double
 }

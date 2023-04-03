@@ -25,7 +25,7 @@ struct UploadCore: ReducerProtocol {
     enum Action: BindableAction, Equatable {
         case confirmButtonTapped(isNavigationActive: Bool)
         case binding(BindingAction<State>)
-        case poseResponse(TaskResult<[Pose]?>)
+        case poseResponse(TaskResult<Pose>)
         case optionalResult(ResultCore.Action)
         case showAlert
         case dismissAlert
@@ -60,19 +60,22 @@ struct UploadCore: ReducerProtocol {
                 return .cancel(id: CancelID.self)
                 
             case .binding(\.$selectedImage):
-                state.selectedImage = state.selectedImage?.downSample(size: CGSize(width: 100, height: 300))
+                state.selectedImage = state.selectedImage!
+                //?.downSample(size: CGSize(width: 100, height: 300))
                 return .none
                 
             case .binding:
                 return .none
                 
             case .poseResponse(.success(let response)):
-                let degree = calculateDegree(pose: response!)
-                let kilogram = calculateKilogram(with: degree)
-                let resultImage = state.selectedImage!.addDot(with: response!)
-                
-                state.isPoseRequest = false
-                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response!.count == 0, date: Date())
+                let test = response
+                print(test)
+//                let degree = calculateDegree(pose: response!)
+//                let kilogram = calculateKilogram(with: degree)
+//                let resultImage = state.selectedImage!.addDot(with: response!)
+//
+//                state.isPoseRequest = false
+//                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response!.count == 0, date: Date())
                 return .none
                 
             case .poseResponse(.failure):
