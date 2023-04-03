@@ -15,19 +15,24 @@ func calculateDegree(pose: Pose) -> Int {
     let leftEar = "17"
     let rightEar = "16"
     let leftShoulder = "5"
-    let rightSoulder = "2"
+    let rightShoulder = "2"
     
     
-    let leftSide = pose.keys.contains(leftEar)
+    let leftSide = pose.keys.contains(leftShoulder) && pose.keys.contains(leftEar)
+    let rightSide = pose.keys.contains(rightShoulder) && pose.keys.contains(rightEar)
     var base = 0.0
     var height = 0.0
+    
+    print(pose.sorted { $0.0 < $1.0 })
     
     if leftSide {
         base = abs(pose[leftEar]!.y - pose[leftShoulder]!.y)
         height = abs(pose[leftEar]!.x - pose[leftShoulder]!.x)
+    } else if rightSide {
+        base = abs(pose[rightEar]!.y - pose[rightShoulder]!.y)
+        height = abs(pose[rightEar]!.x - pose[rightShoulder]!.x)
     } else {
-        base = abs(pose[rightEar]!.y - pose[rightSoulder]!.y)
-        height = abs(pose[rightEar]!.x - pose[rightSoulder]!.x)
+        return 0
     }
     
     let radian = atan(height/base)

@@ -37,7 +37,6 @@ extension UIImage {
         self.draw(at: CGPointMake(0, 0))
         
         let nose = "0"
-        let neck = "1"
         let rightShoulder = "2"
         let rightElbow = "3"
         let rightWrist = "4"
@@ -55,87 +54,94 @@ extension UIImage {
         let rightEar = "16"
         let leftEar = "17"
 
-        let leftSide = pose.keys.contains(leftEar)
+        let leftSide = pose.keys.contains(leftEar) && pose.keys.contains(leftShoulder)
+        let rightSide = pose.keys.contains(rightEar) && pose.keys.contains(rightShoulder)
         
-        let width = 7.0
-        let height = 7.0
+        let width = 3.0
+        let height = 3.0
+        let xPortion: Double = 330
+        let yPortion: Double = 450
+        
         let context = UIGraphicsGetCurrentContext()!
         
-        context.setLineWidth(10.0)
+        context.setLineWidth(3.0)
         context.setStrokeColor(UIColor.systemYellow.cgColor)
         
+        print(pose[nose]!.x)
+        print(pose[nose]!.y)
+        
         if leftSide {
-            context.addEllipse(in: CGRect(x: pose[nose]!.x, y: pose[nose]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[nose]!.x + 3, y: pose[nose]!.y))
+            context.addEllipse(in: CGRect(x: pose[nose]!.x * xPortion, y: pose[nose]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[nose]!.x * xPortion + 3, y: pose[nose]!.y * yPortion))
+
+            context.addLine(to: CGPoint(x: pose[leftEye]!.x * xPortion + 2, y: pose[leftEye]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[leftEye]!.x * xPortion, y: pose[leftEye]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[leftEye]!.x * xPortion, y: pose[leftEye]!.y * yPortion + 0.5))
+
+            context.addLine(to: CGPoint(x: pose[leftEar]!.x * xPortion, y: pose[leftEar]!.y * yPortion + 0.5))
+            context.addEllipse(in: CGRect(x: pose[leftEar]!.x * xPortion, y: pose[leftEar]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[leftEar]!.x * xPortion + 2, y: pose[leftEar]!.y * yPortion))
             
-            context.addLine(to: CGPoint(x: pose[leftEye]!.x + 2, y: pose[leftEye]!.y))
-            context.addEllipse(in: CGRect(x: pose[leftEye]!.x, y: pose[leftEye]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[leftEye]!.x, y: pose[leftEye]!.y + 4))
+            context.addLine(to: CGPoint(x: pose[leftShoulder]!.x * xPortion + 2, y: pose[leftShoulder]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[leftShoulder]!.x * xPortion, y: pose[leftShoulder]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[leftShoulder]!.x * xPortion + 4, y: pose[leftShoulder]!.y * yPortion))
+
+            context.addLine(to: CGPoint(x: pose[leftElbow]!.x * xPortion + 0.5, y: pose[leftElbow]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[leftShoulder]!.x * xPortion, y: pose[leftShoulder]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[leftShoulder]!.x * xPortion + 0.5, y: pose[leftShoulder]!.y * yPortion))
+
+            context.addLine(to: CGPoint(x: pose[leftHip]!.x * xPortion + 0.5, y: pose[leftHip]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[leftElbow]!.x * xPortion, y: pose[leftElbow]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[leftElbow]!.x * xPortion + 0.5, y: pose[leftElbow]!.y * yPortion + 0.5))
+
+            context.addLine(to: CGPoint(x: pose[leftWrist]!.x * xPortion + 0.5, y: pose[leftWrist]!.y * yPortion + 0.5))
+            context.addEllipse(in: CGRect(x: pose[leftWrist]!.x * xPortion, y: pose[leftWrist]!.y * yPortion, width: width, height: height))
+
+            context.addEllipse(in: CGRect(x: pose[leftHip]!.x * xPortion, y: pose[leftHip]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[leftHip]!.x * xPortion + 0.5, y: pose[leftHip]!.y * yPortion))
+
+            context.addLine(to: CGPoint(x: pose[leftKnee]!.x * xPortion + 0.5, y: pose[leftKnee]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[leftKnee]!.x * xPortion, y: pose[leftKnee]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[leftKnee]!.x * xPortion + 0.5, y: pose[leftKnee]!.y * yPortion))
+
+            context.addLine(to: CGPoint(x: pose[leftAnkle]!.x * xPortion + 0.5, y: pose[leftAnkle]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[leftAnkle]!.x * xPortion, y: pose[leftAnkle]!.y * yPortion, width: width, height: height))
+        } else if rightSide {
+            context.addEllipse(in: CGRect(x: pose[nose]!.x * xPortion, y: pose[nose]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[nose]!.x * xPortion + 3, y: pose[nose]!.y * yPortion))
             
-            context.addLine(to: CGPoint(x: pose[leftEar]!.x, y: pose[leftEar]!.y + 4))
-            context.addEllipse(in: CGRect(x: pose[leftEar]!.x, y: pose[leftEar]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[leftEar]!.x + 2, y: pose[leftEar]!.y))
+            context.addLine(to: CGPoint(x: pose[rightEye]!.x * xPortion, y: pose[rightEye]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[rightEye]!.x * xPortion, y: pose[rightEye]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[rightEye]!.x * xPortion, y: pose[rightEye]!.y * yPortion + 2))
             
-            context.addLine(to: CGPoint(x: pose[leftShoulder]!.x + 2, y: pose[leftShoulder]!.y))
-            context.addEllipse(in: CGRect(x: pose[leftShoulder]!.x, y: pose[leftShoulder]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[leftShoulder]!.x + 4, y: pose[leftShoulder]!.y))
+            context.addLine(to: CGPoint(x: pose[rightEar]!.x * xPortion, y: pose[rightEar]!.y * yPortion + 2))
+            context.addEllipse(in: CGRect(x: pose[rightEar]!.x * xPortion, y: pose[rightEar]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[rightEar]!.x * xPortion + 4, y: pose[rightEar]!.y * yPortion))
             
-            context.addLine(to: CGPoint(x: pose[leftElbow]!.x + 4, y: pose[leftElbow]!.y))
-            context.addEllipse(in: CGRect(x: pose[leftShoulder]!.x, y: pose[leftShoulder]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[leftShoulder]!.x + 4, y: pose[leftShoulder]!.y))
+            context.addLine(to: CGPoint(x: pose[rightShoulder]!.x * xPortion + 4, y: pose[rightShoulder]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[rightShoulder]!.x * xPortion, y: pose[rightShoulder]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[rightShoulder]!.x * xPortion + 4, y: pose[rightShoulder]!.y * yPortion))
             
-            context.addLine(to: CGPoint(x: pose[leftHip]!.x + 4, y: pose[leftHip]!.y))
-            context.addEllipse(in: CGRect(x: pose[leftElbow]!.x, y: pose[leftElbow]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[leftElbow]!.x + 4, y: pose[leftElbow]!.y + 4))
+            context.addLine(to: CGPoint(x: pose[rightElbow]!.x * xPortion + 4, y: pose[rightElbow]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[rightElbow]!.x * xPortion, y: pose[rightElbow]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[rightElbow]!.x * xPortion + 4, y: pose[rightElbow]!.y * yPortion + 4))
             
-            context.addLine(to: CGPoint(x: pose[leftWrist]!.x + 4, y: pose[leftWrist]!.y + 4))
-            context.addEllipse(in: CGRect(x: pose[leftWrist]!.x, y: pose[leftWrist]!.y, width: width, height: height))
+            context.addLine(to: CGPoint(x: pose[rightWrist]!.x * xPortion + 4, y: pose[rightWrist]!.y * yPortion + 4))
+            context.addEllipse(in: CGRect(x: pose[rightWrist]!.x * xPortion, y: pose[rightWrist]!.y * yPortion, width: width, height: height))
             
-            context.addEllipse(in: CGRect(x: pose[leftHip]!.x, y: pose[leftHip]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[leftHip]!.x + 4, y: pose[leftHip]!.y))
+            context.addEllipse(in: CGRect(x: pose[rightShoulder]!.x * xPortion, y: pose[rightShoulder]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[rightShoulder]!.x * xPortion + 4, y: pose[rightShoulder]!.y * yPortion))
             
-            context.addLine(to: CGPoint(x: pose[leftKnee]!.x + 4, y: pose[leftKnee]!.y))
-            context.addEllipse(in: CGRect(x: pose[leftKnee]!.x, y: pose[leftKnee]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[leftKnee]!.x + 2, y: pose[leftKnee]!.y))
+            context.addLine(to: CGPoint(x: pose[rightHip]!.x * xPortion + 4, y: pose[rightHip]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[rightHip]!.x * xPortion, y: pose[rightHip]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[rightHip]!.x * xPortion + 4, y: pose[rightHip]!.y * yPortion))
             
-            context.addLine(to: CGPoint(x: pose[leftAnkle]!.x + 2, y: pose[leftAnkle]!.y))
-            context.addEllipse(in: CGRect(x: pose[leftAnkle]!.x, y: pose[leftAnkle]!.y, width: width, height: height))
-        } else {
-            context.addEllipse(in: CGRect(x: pose[nose]!.x, y: pose[nose]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[nose]!.x + 3, y: pose[nose]!.y))
+            context.addLine(to: CGPoint(x: pose[rightKnee]!.x * xPortion + 4, y: pose[rightKnee]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[rightKnee]!.x * xPortion, y: pose[rightKnee]!.y * yPortion, width: width, height: height))
+            context.move(to: CGPoint(x: pose[rightKnee]!.x * xPortion + 4, y: pose[rightKnee]!.y * yPortion))
             
-            context.addLine(to: CGPoint(x: pose[rightEye]!.x, y: pose[rightEye]!.y))
-            context.addEllipse(in: CGRect(x: pose[rightEye]!.x, y: pose[rightEye]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[rightEye]!.x, y: pose[rightEye]!.y + 2))
-            
-            context.addLine(to: CGPoint(x: pose[rightEar]!.x, y: pose[rightEar]!.y + 2))
-            context.addEllipse(in: CGRect(x: pose[rightEar]!.x, y: pose[rightEar]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[rightEar]!.x + 4, y: pose[rightEar]!.y))
-            
-            context.addLine(to: CGPoint(x: pose[rightShoulder]!.x + 4, y: pose[rightShoulder]!.y))
-            context.addEllipse(in: CGRect(x: pose[rightShoulder]!.x, y: pose[rightShoulder]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[rightShoulder]!.x + 4, y: pose[rightShoulder]!.y))
-            
-            context.addLine(to: CGPoint(x: pose[rightElbow]!.x + 4, y: pose[rightElbow]!.y))
-            context.addEllipse(in: CGRect(x: pose[rightElbow]!.x, y: pose[rightElbow]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[rightElbow]!.x + 4, y: pose[rightElbow]!.y + 4))
-            
-            context.addLine(to: CGPoint(x: pose[rightWrist]!.x + 4, y: pose[rightWrist]!.y + 4))
-            context.addEllipse(in: CGRect(x: pose[rightWrist]!.x, y: pose[rightWrist]!.y, width: width, height: height))
-            
-            context.addEllipse(in: CGRect(x: pose[rightShoulder]!.x, y: pose[rightShoulder]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[rightShoulder]!.x + 4, y: pose[rightShoulder]!.y))
-            
-            context.addLine(to: CGPoint(x: pose[rightHip]!.x + 4, y: pose[rightHip]!.y))
-            context.addEllipse(in: CGRect(x: pose[rightHip]!.x, y: pose[rightHip]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[rightHip]!.x + 4, y: pose[rightHip]!.y))
-            
-            context.addLine(to: CGPoint(x: pose[rightKnee]!.x + 4, y: pose[rightKnee]!.y))
-            context.addEllipse(in: CGRect(x: pose[rightKnee]!.x, y: pose[rightKnee]!.y, width: width, height: height))
-            context.move(to: CGPoint(x: pose[rightKnee]!.x + 4, y: pose[rightKnee]!.y))
-            
-            context.addLine(to: CGPoint(x: pose[rightAnkle]!.x + 4, y: pose[rightAnkle]!.y))
-            context.addEllipse(in: CGRect(x: pose[rightAnkle]!.x, y: pose[rightAnkle]!.y, width: width, height: height))
+            context.addLine(to: CGPoint(x: pose[rightAnkle]!.x * xPortion + 4, y: pose[rightAnkle]!.y * yPortion))
+            context.addEllipse(in: CGRect(x: pose[rightAnkle]!.x * xPortion, y: pose[rightAnkle]!.y * yPortion, width: width, height: height))
         }
         context.strokePath()
         

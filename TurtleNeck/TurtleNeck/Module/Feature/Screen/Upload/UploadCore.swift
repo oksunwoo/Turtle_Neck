@@ -60,8 +60,7 @@ struct UploadCore: ReducerProtocol {
                 return .cancel(id: CancelID.self)
                 
             case .binding(\.$selectedImage):
-                state.selectedImage = state.selectedImage!
-                //?.downSample(size: CGSize(width: 100, height: 300))
+                state.selectedImage = state.selectedImage?.downSample(size: CGSize(width: 50, height: 150))
                 return .none
                 
             case .binding:
@@ -73,11 +72,12 @@ struct UploadCore: ReducerProtocol {
                 let resultImage = state.selectedImage!.addDot(with: response)
 
                 state.isPoseRequest = false
-                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response.predictions.count == 0, date: Date())
+                state.optionalResult = ResultCore.State(resultImage: resultImage, degree: degree, kilogram: kilogram, isPoseNil: response.predictions.count == 0 ? true : false, date: Date())
                 return .none
                 
             case .poseResponse(.failure):
                 state.isPoseRequest = false
+                state.optionalResult = ResultCore.State(resultImage: UIImage(), degree: Int(), kilogram: Int(), isPoseNil: true, date: Date())
                 return .none
                 
             case .optionalResult:
