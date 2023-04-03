@@ -23,8 +23,6 @@ func calculateDegree(pose: Pose) -> Int {
     var base = 0.0
     var height = 0.0
     
-    print(pose.sorted { $0.0 < $1.0 })
-    
     if leftSide {
         base = abs(pose[leftEar]!.y - pose[leftShoulder]!.y)
         height = abs(pose[leftEar]!.x - pose[leftShoulder]!.x)
