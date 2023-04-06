@@ -46,7 +46,6 @@ struct VersionView_Previews: PreviewProvider {
 private extension VersionView {
     func checkVersion(completionHandler: @escaping (String?) -> Void) {
         guard let url = URL(string: "http://itunes.apple.com/lookup?bundleId=com.sunwoo.TurtleNeck") else {
-            print("앱 출시 전")
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
