@@ -17,7 +17,6 @@ func calculateDegree(pose: Pose) -> Int {
     let leftShoulder = "5"
     let rightShoulder = "2"
     
-    
     let leftSide = pose.keys.contains(leftShoulder) && pose.keys.contains(leftEar)
     let rightSide = pose.keys.contains(rightShoulder) && pose.keys.contains(rightEar)
     var base = 0.0
